@@ -446,6 +446,7 @@
             this.Controls.Add(this.btnRead);
             this.Controls.Add(this.mnuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnuStrip;
             this.MaximizeBox = false;
             this.Name = "frmMain";
