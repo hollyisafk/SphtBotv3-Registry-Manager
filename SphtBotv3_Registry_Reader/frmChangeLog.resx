@@ -117,47 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="mnuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="ttUDP.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>892, 17</value>
-  </metadata>
-  <metadata name="ttAI.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>351, 17</value>
-  </metadata>
-  <metadata name="ttSU.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>422, 17</value>
-  </metadata>
-  <metadata name="ttEW.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>497, 17</value>
-  </metadata>
-  <metadata name="ttDAB.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>575, 17</value>
-  </metadata>
-  <metadata name="ttDUF.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>659, 17</value>
-  </metadata>
-  <metadata name="ttCO.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>742, 17</value>
-  </metadata>
-  <data name="label2.ToolTip" xml:space="preserve">
-    <value>Enable or Disable the channel ordering process. Having this option on displays the operators at the top.
-NOTE: There is a problem with SphtBotv3 that when you ignore a user the channel list gets scrambled. I recommend disabling this unless you don't care about visual bugs</value>
+  <data name="rtbChangeLog.Text" xml:space="preserve">
+    <value>1.0.20.0719 (Beta)
+- Added more options to be configured and added an in-application ChangeLog
+
+0.1.7 (Alpha)
+- Fixed Unhandled Exception (a different one &gt;.&lt;)
+
+0.1.6 (Alpha)
+- Optimized some more code
+- Fixed registry confirmation. It will now yield a result letting you know it failed, if it does.
+
+0.1.5 (Alpha)
+- Optimized some code here and there
+- Fixed compilation date and time
+
+0.1.4 (Alpha)
+- Fixed Unhandled Exception as soon as the program was loaded
+
+0.1.3 (Alpha)
+- Fixed the problem with the program crashing if the registry keys didn't exist. It now checks and creates the keys with the default value of "Disabled".
+
+0.1.2 (Alpha)
+- Added ToolTips for better explanations
+
+0.1.1 (Alpha)
+- Initial re-release with auto-update through ClickOnce (Let me know if there are problems)</value>
   </data>
-  <metadata name="ttBT.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>819, 17</value>
-  </metadata>
-  <metadata name="ttBindIP.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>976, 17</value>
-  </metadata>
-  <metadata name="ttIPM.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>118, 17</value>
-  </metadata>
-  <metadata name="ttRC.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>199, 17</value>
-  </metadata>
-  <metadata name="ttRN.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>274, 17</value>
-  </metadata>
 </root>

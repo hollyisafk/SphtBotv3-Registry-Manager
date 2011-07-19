@@ -32,9 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.mnuStrip = new System.Windows.Forms.MenuStrip();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changelogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnRead = new System.Windows.Forms.Button();
             this.btnWrite = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtUDPPort = new System.Windows.Forms.TextBox();
             this.cboAwayIdle = new System.Windows.Forms.ComboBox();
             this.cboExtendedWhois = new System.Windows.Forms.ComboBox();
             this.cboShowUndecoded = new System.Windows.Forms.ComboBox();
@@ -50,6 +53,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtBindIP = new System.Windows.Forms.TextBox();
             this.txtIgnorePluginMask = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtRealmCharacter = new System.Windows.Forms.TextBox();
@@ -66,6 +71,8 @@
             this.ttDUF = new System.Windows.Forms.ToolTip(this.components);
             this.ttCO = new System.Windows.Forms.ToolTip(this.components);
             this.ttBT = new System.Windows.Forms.ToolTip(this.components);
+            this.ttUDP = new System.Windows.Forms.ToolTip(this.components);
+            this.ttBindIP = new System.Windows.Forms.ToolTip(this.components);
             this.mnuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -74,7 +81,8 @@
             // mnuStrip
             // 
             this.mnuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
+            this.aboutToolStripMenuItem,
+            this.changelogToolStripMenuItem});
             this.mnuStrip.Location = new System.Drawing.Point(0, 0);
             this.mnuStrip.Name = "mnuStrip";
             this.mnuStrip.Size = new System.Drawing.Size(495, 24);
@@ -88,9 +96,16 @@
             this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // changelogToolStripMenuItem
+            // 
+            this.changelogToolStripMenuItem.Name = "changelogToolStripMenuItem";
+            this.changelogToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.changelogToolStripMenuItem.Text = "&ChangeLog";
+            this.changelogToolStripMenuItem.Click += new System.EventHandler(this.changelogToolStripMenuItem_Click);
+            // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(251, 137);
+            this.btnRead.Location = new System.Drawing.Point(251, 172);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(97, 35);
             this.btnRead.TabIndex = 3;
@@ -100,7 +115,7 @@
             // 
             // btnWrite
             // 
-            this.btnWrite.Location = new System.Drawing.Point(385, 137);
+            this.btnWrite.Location = new System.Drawing.Point(385, 172);
             this.btnWrite.Name = "btnWrite";
             this.btnWrite.Size = new System.Drawing.Size(97, 35);
             this.btnWrite.TabIndex = 4;
@@ -110,6 +125,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.txtUDPPort);
             this.groupBox1.Controls.Add(this.cboAwayIdle);
             this.groupBox1.Controls.Add(this.cboExtendedWhois);
             this.groupBox1.Controls.Add(this.cboShowUndecoded);
@@ -126,10 +143,29 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 27);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(224, 207);
+            this.groupBox1.Size = new System.Drawing.Size(224, 237);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DWORD Values";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(6, 209);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(52, 13);
+            this.label11.TabIndex = 72;
+            this.label11.Text = "UDP Port";
+            this.ttUDP.SetToolTip(this.label11, "Sets the UDP port you want to use for the game you\'re connecting to?");
+            // 
+            // txtUDPPort
+            // 
+            this.txtUDPPort.Location = new System.Drawing.Point(114, 206);
+            this.txtUDPPort.MaxLength = 5;
+            this.txtUDPPort.Name = "txtUDPPort";
+            this.txtUDPPort.Size = new System.Drawing.Size(102, 20);
+            this.txtUDPPort.TabIndex = 71;
             // 
             // cboAwayIdle
             // 
@@ -299,6 +335,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.txtBindIP);
             this.groupBox2.Controls.Add(this.txtIgnorePluginMask);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtRealmCharacter);
@@ -307,10 +345,31 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Location = new System.Drawing.Point(242, 27);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(249, 104);
+            this.groupBox2.Size = new System.Drawing.Size(249, 133);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "String Values";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(6, 104);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 13);
+            this.label12.TabIndex = 72;
+            this.label12.Text = "Bind IP";
+            this.ttBindIP.SetToolTip(this.label12, "Can be used to override the IP address with which the program uses to connect to " +
+                    "various networks\r\nWARNING: If you don\'t know what you\'re doing, don\'t mess with " +
+                    "this.");
+            // 
+            // txtBindIP
+            // 
+            this.txtBindIP.Location = new System.Drawing.Point(110, 101);
+            this.txtBindIP.MaxLength = 15;
+            this.txtBindIP.Name = "txtBindIP";
+            this.txtBindIP.Size = new System.Drawing.Size(130, 20);
+            this.txtBindIP.TabIndex = 71;
             // 
             // txtIgnorePluginMask
             // 
@@ -380,7 +439,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(495, 244);
+            this.ClientSize = new System.Drawing.Size(495, 270);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnWrite);
@@ -442,6 +501,13 @@
         private System.Windows.Forms.ToolTip ttDUF;
         private System.Windows.Forms.ToolTip ttCO;
         private System.Windows.Forms.ToolTip ttBT;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ToolTip ttUDP;
+        private System.Windows.Forms.TextBox txtUDPPort;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ToolTip ttBindIP;
+        private System.Windows.Forms.TextBox txtBindIP;
+        private System.Windows.Forms.ToolStripMenuItem changelogToolStripMenuItem;
     }
 }
 

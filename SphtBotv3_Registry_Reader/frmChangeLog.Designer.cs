@@ -1,6 +1,6 @@
 ﻿namespace SphtBotv3_Registry_Manager
 {
-    partial class frmAbout
+    partial class frmChangeLog
     {
         /// <summary>
         /// Required designer variable.
@@ -28,64 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAbout));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChangeLog));
+            this.rtbChangeLog = new System.Windows.Forms.RichTextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // rtbChangeLog
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(375, 39);
-            this.label1.TabIndex = 0;
-            this.label1.Text = resources.GetString("label1.Text");
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 63);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(350, 26);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "This program was last compiled on Friday, July 19, 2011 @ 6:40 AM EST\r\nThis progr" +
-                "am was coded in C# for the .NET 4.0 Framework";
+            this.rtbChangeLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbChangeLog.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbChangeLog.Location = new System.Drawing.Point(12, 12);
+            this.rtbChangeLog.Name = "rtbChangeLog";
+            this.rtbChangeLog.ReadOnly = true;
+            this.rtbChangeLog.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtbChangeLog.Size = new System.Drawing.Size(460, 312);
+            this.rtbChangeLog.TabIndex = 0;
+            this.rtbChangeLog.Text = resources.GetString("rtbChangeLog.Text");
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(137, 107);
+            this.btnClose.Location = new System.Drawing.Point(192, 330);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(100, 46);
-            this.btnClose.TabIndex = 2;
+            this.btnClose.TabIndex = 3;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // frmAbout
+            // frmChangeLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 165);
+            this.ClientSize = new System.Drawing.Size(484, 382);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.rtbChangeLog);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmAbout";
+            this.Name = "frmChangeLog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "About";
+            this.Text = "ChangeLog";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RichTextBox rtbChangeLog;
         private System.Windows.Forms.Button btnClose;
     }
 }
