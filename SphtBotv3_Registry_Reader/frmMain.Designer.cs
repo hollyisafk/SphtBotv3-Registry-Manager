@@ -73,6 +73,8 @@
             this.ttBT = new System.Windows.Forms.ToolTip(this.components);
             this.ttUDP = new System.Windows.Forms.ToolTip(this.components);
             this.ttBindIP = new System.Windows.Forms.ToolTip(this.components);
+            this.cboProfiles = new System.Windows.Forms.ComboBox();
+            this.lblProfiles = new System.Windows.Forms.Label();
             this.mnuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -85,7 +87,7 @@
             this.changelogToolStripMenuItem});
             this.mnuStrip.Location = new System.Drawing.Point(0, 0);
             this.mnuStrip.Name = "mnuStrip";
-            this.mnuStrip.Size = new System.Drawing.Size(495, 24);
+            this.mnuStrip.Size = new System.Drawing.Size(499, 24);
             this.mnuStrip.TabIndex = 0;
             this.mnuStrip.Text = "mnuStrip";
             // 
@@ -105,7 +107,7 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(251, 172);
+            this.btnRead.Location = new System.Drawing.Point(267, 206);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(97, 35);
             this.btnRead.TabIndex = 3;
@@ -115,7 +117,7 @@
             // 
             // btnWrite
             // 
-            this.btnWrite.Location = new System.Drawing.Point(385, 172);
+            this.btnWrite.Location = new System.Drawing.Point(370, 206);
             this.btnWrite.Name = "btnWrite";
             this.btnWrite.Size = new System.Drawing.Size(97, 35);
             this.btnWrite.TabIndex = 4;
@@ -141,7 +143,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 27);
+            this.groupBox1.Location = new System.Drawing.Point(12, 67);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(224, 237);
             this.groupBox1.TabIndex = 18;
@@ -343,7 +345,7 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.cboRealmName);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Location = new System.Drawing.Point(242, 27);
+            this.groupBox2.Location = new System.Drawing.Point(242, 67);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(249, 133);
             this.groupBox2.TabIndex = 19;
@@ -435,11 +437,31 @@
             this.label8.Text = "Realm name";
             this.ttRN.SetToolTip(this.label8, "The name of the Diablo II MCP realm that you want to connect to");
             // 
+            // cboProfiles
+            // 
+            this.cboProfiles.FormattingEnabled = true;
+            this.cboProfiles.Location = new System.Drawing.Point(15, 40);
+            this.cboProfiles.Name = "cboProfiles";
+            this.cboProfiles.Size = new System.Drawing.Size(161, 21);
+            this.cboProfiles.TabIndex = 20;
+            // 
+            // lblProfiles
+            // 
+            this.lblProfiles.AutoSize = true;
+            this.lblProfiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfiles.Location = new System.Drawing.Point(12, 24);
+            this.lblProfiles.Name = "lblProfiles";
+            this.lblProfiles.Size = new System.Drawing.Size(97, 13);
+            this.lblProfiles.TabIndex = 73;
+            this.lblProfiles.Text = "{0} Profile(s) Found";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(495, 270);
+            this.ClientSize = new System.Drawing.Size(499, 310);
+            this.Controls.Add(this.lblProfiles);
+            this.Controls.Add(this.cboProfiles);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnWrite);
@@ -509,6 +531,8 @@
         private System.Windows.Forms.ToolTip ttBindIP;
         private System.Windows.Forms.TextBox txtBindIP;
         private System.Windows.Forms.ToolStripMenuItem changelogToolStripMenuItem;
+        private System.Windows.Forms.ComboBox cboProfiles;
+        private System.Windows.Forms.Label lblProfiles;
     }
 }
 

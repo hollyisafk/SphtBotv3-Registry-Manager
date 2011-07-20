@@ -118,7 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="rtbChangeLog.Text" xml:space="preserve">
-    <value>1.0.21.0719 (Beta)
+    <value>1.1 (Release)
+- Added ProfileLauncher profile support (I will be adding an option to edit the name of the profile at a later date)
+- Another thing on the to-do is easily configure all the profiles within this program instead of through the actual bot
+
+1.0.21.0719 (Beta)
 - New program icon :)
 
 1.0.20.0719 (Beta)
