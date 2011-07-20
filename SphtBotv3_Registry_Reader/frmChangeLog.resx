@@ -118,7 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="rtbChangeLog.Text" xml:space="preserve">
-    <value>1.1.0.0720 (Release)
+    <value>1.1.1.0720 (Release)
+- Little did I know, 32-bit architecture profiles are saved to Local Machine instead of Current User. This SHOULD be fixed or I'm going to be really pissed off
+- A fix for 64-bit architectures will be coming at some point
+
+1.1.0.0720 (Release)
 - Fixed SubKey writing to an improper place
 
 1.1 (Release)

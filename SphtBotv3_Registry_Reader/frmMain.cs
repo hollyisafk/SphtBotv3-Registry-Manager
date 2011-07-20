@@ -29,7 +29,7 @@ namespace SphtBotv3_Registry_Manager
 
             // Since the global profile ("SphtBotv3" SubKey) is 2 SubKeys up from the "Profiles" SubKey, it needs to be declared separately
             RegistryKey regKeyGlobal = Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3");
-            RegistryKey regKeyProfile = Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3\\Global Settings\\Profiles");
+            RegistryKey regKeyProfile = Registry.LocalMachine.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3\\Profiles");
 
             // For each SuBKey listed under the "Profiles" Key, create the DWORD and STRING values if they don't exist. This works well with foreach
             foreach (string rValue in regKeyProfile.GetSubKeyNames())
@@ -113,7 +113,7 @@ namespace SphtBotv3_Registry_Manager
         private void Read()
         {
             RegistryKey regKeyGlobal = Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3");
-            RegistryKey regKeyProfile = Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3\\Profiles");
+            RegistryKey regKeyProfile = Registry.LocalMachine.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3\\Profiles");
 
             string NAME = cboProfiles.Text;
 
@@ -169,7 +169,7 @@ namespace SphtBotv3_Registry_Manager
         {
             bool Result;
             RegistryKey regKeyGlobal = Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3");
-            RegistryKey regKeyProfile = Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3\\Profiles");
+            RegistryKey regKeyProfile = Registry.LocalMachine.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3\\Profiles");
 
             string NAME = cboProfiles.Text;
 
