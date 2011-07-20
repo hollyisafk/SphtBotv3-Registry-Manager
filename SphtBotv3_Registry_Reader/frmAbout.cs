@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Resources;
-using Microsoft.Win32;
 using System.Diagnostics;
+using System.Windows;
+using System.Windows.Forms;
+using System.Security.Principal;
+using System.Reflection;
+using Microsoft.Win32;
 
 namespace SphtBotv3_Registry_Manager
 {
