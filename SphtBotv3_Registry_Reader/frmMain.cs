@@ -113,7 +113,7 @@ namespace SphtBotv3_Registry_Manager
         private void Read()
         {
             RegistryKey regKeyGlobal = Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3");
-            RegistryKey regKeyProfile = Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3\\Global Settings\\Profiles");
+            RegistryKey regKeyProfile = Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3\\Profiles");
 
             string NAME = cboProfiles.Text;
 
@@ -169,7 +169,7 @@ namespace SphtBotv3_Registry_Manager
         {
             bool Result;
             RegistryKey regKeyGlobal = Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3");
-            RegistryKey regKeyProfile = Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3\\Global Settings\\Profiles");
+            RegistryKey regKeyProfile = Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3\\Profiles");
 
             string NAME = cboProfiles.Text;
 
