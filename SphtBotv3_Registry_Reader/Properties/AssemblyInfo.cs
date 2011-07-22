@@ -9,7 +9,7 @@ using System.Resources;
 [assembly: AssemblyTitle("SphtBotv3 Registry Manager")]
 [assembly: AssemblyDescription("Easily read and write registry values for SphtBotv3 that is not included in the program's user interface")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("NULL")]
+[assembly: AssemblyCompany("Clan NULL")]
 [assembly: AssemblyProduct("SphtBotv3 Registry Manager")]
 [assembly: AssemblyCopyright("Copyright © Holly Lane 2011")]
 [assembly: AssemblyTrademark("")]
@@ -33,6 +33,6 @@ using System.Resources;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.1.2.0720")]
-[assembly: AssemblyFileVersion("1.1.2.0720")]
+[assembly: AssemblyVersion("1.1.3.0")]
+[assembly: AssemblyFileVersion("1.1.3.0")]
 [assembly: NeutralResourcesLanguageAttribute("en-US")]

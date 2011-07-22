@@ -18,10 +18,10 @@ namespace SphtBotv3_Registry_Manager
 
         private bool IsRunAsAdmin()
         {
-            var wi = WindowsIdentity.GetCurrent();
-            var wp = new WindowsPrincipal(wi);
+            var WI = WindowsIdentity.GetCurrent();
+            var WP = new WindowsPrincipal(WI);
 
-            return wp.IsInRole(WindowsBuiltInRole.Administrator);
+            return WP.IsInRole(WindowsBuiltInRole.Administrator);
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -98,42 +98,14 @@ namespace SphtBotv3_Registry_Manager
 
                 // Since retrieving SubKeys is an array, declare it as such. It's an array because it's possible for more than 1 string SubKey (Profile in this case) to exist
                 string[] regName = regKeyProfile.GetSubKeyNames();
-                // Count the keys (int) and convert it to a string so it can be assigned to the ComboBox as text
-                switch (regKeyProfile.SubKeyCount.ToString())
-                {
-                    // If it comes back as 0, you have no profile SubKeys
-                    case "0":
-                        lblProfiles.Text = regKeyProfile.SubKeyCount.ToString() + " profiles found";
-                        break;
-                    // If it comes back as 1, you have 1 additional profile SubKey
-                    case "1":
-                        lblProfiles.Text = regKeyProfile.SubKeyCount.ToString() + " profile found";
-                        foreach (string Value in regName)
-                        {
-                            // So add that SubKey to the ComboBox
-                            cboProfiles.Items.Add(Value);
-                        }
-                        break;
-                    default:
-                        // If you don't have 0 or 1, you have multiple profiles (undetermined amount) so add them all in the ComboBox
-                        lblProfiles.Text = regKeyProfile.SubKeyCount.ToString() + " profiles found";
-                        foreach (string Value in regName)
-                        {
-                            cboProfiles.Items.Add(Value);
-                        }
-                        break;
-                }
 
-                //
-                // I did it like this because it's more proper to say 0 profiles, 1 profile, and say 5 profiles. The number zero is usually described as plural (dunno why)
-                // Otherwise I could of easily done this to achieve the same effect instead of doing a switch statement
-                //
-                // lblProfiles.Text = regKeyProfile.SubKeyCount.ToString() + " profile(s) found"
-                // foreach (string Value in regName)
-                // {
-                //      cboProfiles.Items.Add(Value);
-                // }
-                //
+                // Count the keys (int) and convert it to a string so it can be assigned to the ComboBox as text
+                lblProfiles.Text = string.Format("{0} profile{1} found", regKeyProfile.SubKeyCount.ToString(), regKeyProfile.SubKeyCount != 1 ? "s" : "");
+                foreach (string Value in regName)
+                {
+                    // So add that SubKey to the ComboBox
+                    cboProfiles.Items.Add(Value);
+                }
 
                 // Closes the registry until it's used again either by read or write
                 regKeyProfile.Close();
@@ -143,45 +115,24 @@ namespace SphtBotv3_Registry_Manager
 
         private void Read()
         {
-            RegistryKey regKeyGlobal = Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3", RegistryKeyPermissionCheck.ReadWriteSubTree);
-            RegistryKey regKeyProfile = Registry.LocalMachine.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3\\Profiles", RegistryKeyPermissionCheck.ReadWriteSubTree);
+            // If the combo box text says "Global", then use the CurrentUser Registry, otherwise use the LocalMachine (where the profiles are held)
+            bool global = cboProfiles.Text == "Global";
+            RegistryKey regKey = global ? Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3", RegistryKeyPermissionCheck.ReadWriteSubTree) :
+                                          Registry.LocalMachine.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3\\Profiles", RegistryKeyPermissionCheck.ReadWriteSubTree);
 
-            string NAME = cboProfiles.Text;
-
-            if (cboProfiles.Text != "Global")
-            {
-                using (RegistryKey regKey = regKeyProfile.CreateSubKey(NAME))
-                {
-                    cboAwayIdle.Text = Convert.ToString((Int32)regKey.GetValue("Away Idle", 0, RegistryValueOptions.None));
-                    cboBleedTimestamps.Text = Convert.ToString((Int32)regKey.GetValue("Bleed Timestamps", 0, RegistryValueOptions.None));
-                    cboChannelOrder.Text = Convert.ToString((Int32)regKey.GetValue("Channel Order", 0, RegistryValueOptions.None));
-                    cboDescribeUserFlags.Text = Convert.ToString((Int32)regKey.GetValue("Describe User Flags", 0, RegistryValueOptions.None));
-                    cboADBanner.Text = Convert.ToString((Int32)regKey.GetValue("Display AD-Banner", 0, RegistryValueOptions.None));
-                    cboShowUndecoded.Text = Convert.ToString((Int32)regKey.GetValue("Show Undecoded", 0, RegistryValueOptions.None));
-                    cboExtendedWhois.Text = Convert.ToString((Int32)regKey.GetValue("Extended Whois", 0, RegistryValueOptions.None));
-                    txtUDPPort.Text = Convert.ToString((Int32)regKey.GetValue("UDP Port", 0, RegistryValueOptions.None));
-                    txtIgnorePluginMask.Text = (string)regKey.GetValue("Ignore Plugin Mask", System.String.Empty, RegistryValueOptions.None);
-                    txtRealmCharacter.Text = (string)regKey.GetValue("Realm Character", System.String.Empty, RegistryValueOptions.None);
-                    cboRealmName.Text = (string)regKey.GetValue("Realm Name", "USEast", RegistryValueOptions.None);
-                    txtBindIP.Text = (string)regKey.GetValue("Bind IP", System.String.Empty, RegistryValueOptions.None);
-                }
-            }
-            else
-            {
-                // Get values of all the designated keys. Since the DWORD values come out as strings, they need to be converted
-                cboAwayIdle.Text = Convert.ToString((Int32)regKeyGlobal.GetValue("Away Idle", 0, RegistryValueOptions.None));
-                cboBleedTimestamps.Text = Convert.ToString((Int32)regKeyGlobal.GetValue("Bleed Timestamps", 0, RegistryValueOptions.None));
-                cboChannelOrder.Text = Convert.ToString((Int32)regKeyGlobal.GetValue("Channel Order", 0, RegistryValueOptions.None));
-                cboDescribeUserFlags.Text = Convert.ToString((Int32)regKeyGlobal.GetValue("Describe User Flags", 0, RegistryValueOptions.None));
-                cboADBanner.Text = Convert.ToString((Int32)regKeyGlobal.GetValue("Display AD-Banner", 0, RegistryValueOptions.None));
-                cboShowUndecoded.Text = Convert.ToString((Int32)regKeyGlobal.GetValue("Show Undecoded", 0, RegistryValueOptions.None));
-                cboExtendedWhois.Text = Convert.ToString((Int32)regKeyGlobal.GetValue("Extended Whois", 0, RegistryValueOptions.None));
-                txtUDPPort.Text = Convert.ToString((Int32)regKeyGlobal.GetValue("UDP Port", 0, RegistryValueOptions.None));
-                txtIgnorePluginMask.Text = (string)regKeyGlobal.GetValue("Ignore Plugin Mask", System.String.Empty, RegistryValueOptions.None);
-                txtRealmCharacter.Text = (string)regKeyGlobal.GetValue("Realm Character", System.String.Empty, RegistryValueOptions.None);
-                cboRealmName.Text = (string)regKeyGlobal.GetValue("Realm Name", "USEast", RegistryValueOptions.None);
-                txtBindIP.Text = (string)regKeyGlobal.GetValue("Bind IP", System.String.Empty, RegistryValueOptions.None);
-            }
+            // Get values of all the designated keys. Since the DWORD values come out as strings, they need to be converted
+            cboAwayIdle.Text = Convert.ToString((Int32)regKey.GetValue("Away Idle", 0, RegistryValueOptions.None));
+            cboBleedTimestamps.Text = Convert.ToString((Int32)regKey.GetValue("Bleed Timestamps", 0, RegistryValueOptions.None));
+            cboChannelOrder.Text = Convert.ToString((Int32)regKey.GetValue("Channel Order", 0, RegistryValueOptions.None));
+            cboDescribeUserFlags.Text = Convert.ToString((Int32)regKey.GetValue("Describe User Flags", 0, RegistryValueOptions.None));
+            cboADBanner.Text = Convert.ToString((Int32)regKey.GetValue("Display AD-Banner", 0, RegistryValueOptions.None));
+            cboShowUndecoded.Text = Convert.ToString((Int32)regKey.GetValue("Show Undecoded", 0, RegistryValueOptions.None));
+            cboExtendedWhois.Text = Convert.ToString((Int32)regKey.GetValue("Extended Whois", 0, RegistryValueOptions.None));
+            txtUDPPort.Text = Convert.ToString((Int32)regKey.GetValue("UDP Port", 0, RegistryValueOptions.None));
+            txtIgnorePluginMask.Text = (string)regKey.GetValue("Ignore Plugin Mask", System.String.Empty, RegistryValueOptions.None);
+            txtRealmCharacter.Text = (string)regKey.GetValue("Realm Character", System.String.Empty, RegistryValueOptions.None);
+            cboRealmName.Text = (string)regKey.GetValue("Realm Name", "USEast", RegistryValueOptions.None);
+            txtBindIP.Text = (string)regKey.GetValue("Bind IP", System.String.Empty, RegistryValueOptions.None);
 
             // Since the DWORD values come back as 1 or 0 due to how the program recognizes it, this basically translates 1 into Enabled or 0 into Disabled using a Ternary Operator
             cboBleedTimestamps.Text = cboBleedTimestamps.Text == "1" ? "Enabled" : "Disabled";
@@ -192,225 +143,57 @@ namespace SphtBotv3_Registry_Manager
             cboADBanner.Text = cboADBanner.Text == "1" ? "Enabled" : "Disabled";
             cboExtendedWhois.Text = cboExtendedWhois.Text == "1" ? "Enabled" : "Disabled";
 
-            regKeyGlobal.Close();
-            regKeyProfile.Close();
+            regKey.Close();
+        }
+
+        private void SetAbled(RegistryKey regKey, ComboBox cboB, string strKey)
+        {
+            regKey.SetValue(strKey, cboB.Text == "Enabled" ? 1 : 0, RegistryValueKind.DWord);
+        }
+
+        private void SetValue(RegistryKey regKey, string strKey, string Value, RegistryValueKind regKind)
+        {
+            regKey.SetValue(strKey, Value, regKind);
         }
 
         private void Write()
         {
-            bool Result;
-            RegistryKey regKeyGlobal = Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3", RegistryKeyPermissionCheck.ReadWriteSubTree);
-            RegistryKey regKeyProfile = Registry.LocalMachine.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3\\Profiles", RegistryKeyPermissionCheck.ReadWriteSubTree);
-
-            string NAME = cboProfiles.Text;
+            bool global = cboProfiles.Text == "Global";
+            bool result = false;
+            RegistryKey regKey = global ? Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3", RegistryKeyPermissionCheck.ReadWriteSubTree) :
+                                          Registry.LocalMachine.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3\\Profiles", RegistryKeyPermissionCheck.ReadWriteSubTree);
 
             try
             {
-                if (cboProfiles.Text == "Global")
-                {
-                    if (cboBleedTimestamps.Text == "Enabled")
-                    {
-                        regKeyGlobal.SetValue("Bleed Timestamps", 1, RegistryValueKind.DWord);
-                        Result = true;
-                    }
-                    else if (cboBleedTimestamps.Text == "Disabled")
-                    {
-                        regKeyGlobal.SetValue("Bleed Timestamps", 0, RegistryValueKind.DWord);
-                        Result = true;
-                    }
-                    else Result = false;
+                SetAbled(regKey, cboBleedTimestamps, "Bleed Timestamps");
+                SetAbled(regKey, cboChannelOrder, "Channel Order");
+                SetAbled(regKey, cboDescribeUserFlags, "Describe User Flags");
+                SetAbled(regKey, cboADBanner, "Display AD-Banner");
+                SetAbled(regKey, cboAwayIdle, "Away Idle");
+                SetAbled(regKey, cboShowUndecoded, "Show Undecoded");
+                SetAbled(regKey, cboExtendedWhois, "Extended Whois");
 
-                    if (cboChannelOrder.Text == "Enabled")
-                    {
-                        regKeyGlobal.SetValue("Channel Order", 1, RegistryValueKind.DWord);
-                        Result = true;
-                    }
-                    else if (cboChannelOrder.Text == "Disabled")
-                    {
-                        regKeyGlobal.SetValue("Channel Order", 0, RegistryValueKind.DWord);
-                        Result = true;
-                    }
-                    else Result = false;
-
-                    if (cboDescribeUserFlags.Text == "Enabled")
-                    {
-                        regKeyGlobal.SetValue("Describe User Flags", 1, RegistryValueKind.DWord);
-                        Result = true;
-                    }
-                    else if (cboDescribeUserFlags.Text == "Disabled")
-                    {
-                        regKeyGlobal.SetValue("Describe User Flags", 0, RegistryValueKind.DWord);
-                        Result = true;
-                    }
-                    else Result = false;
-
-                    if (cboADBanner.Text == "Enabled")
-                    {
-                        regKeyGlobal.SetValue("Display AD-Banner", 1, RegistryValueKind.DWord);
-                        Result = true;
-                    }
-                    else if (cboADBanner.Text == "Disabled")
-                    {
-                        regKeyGlobal.SetValue("Display AD-Banner", 0, RegistryValueKind.DWord);
-                        Result = true;
-                    }
-                    else Result = false;
-
-                    if (cboAwayIdle.Text == "Enabled")
-                    {
-                        regKeyGlobal.SetValue("Away Idle", 1, RegistryValueKind.DWord);
-                        Result = true;
-                    }
-                    else if (cboAwayIdle.Text == "Disabled")
-                    {
-                        regKeyGlobal.SetValue("Away Idle", 0, RegistryValueKind.DWord);
-                        Result = true;
-                    }
-                    else Result = false;
-
-                    if (cboShowUndecoded.Text == "Enabled")
-                    {
-                        regKeyGlobal.SetValue("Show Undecoded", 1, RegistryValueKind.DWord);
-                        Result = true;
-                    }
-                    else if (cboShowUndecoded.Text == "Disabled")
-                    {
-                        regKeyGlobal.SetValue("Show Undecoded", 0, RegistryValueKind.DWord);
-                        Result = true;
-                    }
-                    else Result = false;
-
-                    if (cboExtendedWhois.Text == "Enabled")
-                    {
-                        regKeyGlobal.SetValue("Extended Whois", 1, RegistryValueKind.DWord);
-                        Result = true;
-                    }
-                    else if (cboExtendedWhois.Text == "Disabled")
-                    {
-                        regKeyGlobal.SetValue("Extended Whois", 0, RegistryValueKind.DWord);
-                        Result = true;
-                    }
-                    else Result = false;
-
-                    regKeyGlobal.SetValue("UDP Port", txtUDPPort.Text, RegistryValueKind.DWord);
-                    regKeyGlobal.SetValue("Bind IP", txtBindIP.Text, RegistryValueKind.String);
-                    regKeyGlobal.SetValue("Realm Name", cboRealmName.Text, RegistryValueKind.String);
-                    regKeyGlobal.SetValue("Realm Character", txtRealmCharacter.Text, RegistryValueKind.String);
-                    regKeyGlobal.SetValue("Ignore Plugin Mask", txtIgnorePluginMask.Text, RegistryValueKind.String);
-
-                    if (Result == true)
-                        MessageBox.Show("Writing to registry was successful!", "SphtBotv3 Registry Manager", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    else
-                        MessageBox.Show("Writing to registry was unsuccessful!", "SphtBotv3 Registry Manager", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    using (RegistryKey regKey = regKeyProfile.CreateSubKey(NAME))
-                    {
-                        if (cboBleedTimestamps.Text == "Enabled")
-                        {
-                            regKey.SetValue("Bleed Timestamps", 1, RegistryValueKind.DWord);
-                            Result = true;
-                        }
-                        else if (cboBleedTimestamps.Text == "Disabled")
-                        {
-                            regKey.SetValue("Bleed Timestamps", 0, RegistryValueKind.DWord);
-                            Result = true;
-                        }
-                        else Result = false;
-
-                        if (cboChannelOrder.Text == "Enabled")
-                        {
-                            regKey.SetValue("Channel Order", 1, RegistryValueKind.DWord);
-                            Result = true;
-                        }
-                        else if (cboChannelOrder.Text == "Disabled")
-                        {
-                            regKey.SetValue("Channel Order", 0, RegistryValueKind.DWord);
-                            Result = true;
-                        }
-                        else Result = false;
-
-                        if (cboDescribeUserFlags.Text == "Enabled")
-                        {
-                            regKey.SetValue("Describe User Flags", 1, RegistryValueKind.DWord);
-                            Result = true;
-                        }
-                        else if (cboDescribeUserFlags.Text == "Disabled")
-                        {
-                            regKey.SetValue("Describe User Flags", 0, RegistryValueKind.DWord);
-                            Result = true;
-                        }
-                        else Result = false;
-
-                        if (cboADBanner.Text == "Enabled")
-                        {
-                            regKey.SetValue("Display AD-Banner", 1, RegistryValueKind.DWord);
-                            Result = true;
-                        }
-                        else if (cboADBanner.Text == "Disabled")
-                        {
-                            regKey.SetValue("Display AD-Banner", 0, RegistryValueKind.DWord);
-                            Result = true;
-                        }
-                        else Result = false;
-
-                        if (cboAwayIdle.Text == "Enabled")
-                        {
-                            regKey.SetValue("Away Idle", 1, RegistryValueKind.DWord);
-                            Result = true;
-                        }
-                        else if (cboAwayIdle.Text == "Disabled")
-                        {
-                            regKey.SetValue("Away Idle", 0, RegistryValueKind.DWord);
-                            Result = true;
-                        }
-                        else Result = false;
-
-                        if (cboShowUndecoded.Text == "Enabled")
-                        {
-                            regKey.SetValue("Show Undecoded", 1, RegistryValueKind.DWord);
-                            Result = true;
-                        }
-                        else if (cboShowUndecoded.Text == "Disabled")
-                        {
-                            regKey.SetValue("Show Undecoded", 0, RegistryValueKind.DWord);
-                            Result = true;
-                        }
-                        else Result = false;
-
-                        if (cboExtendedWhois.Text == "Enabled")
-                        {
-                            regKey.SetValue("Extended Whois", 1, RegistryValueKind.DWord);
-                            Result = true;
-                        }
-                        else if (cboExtendedWhois.Text == "Disabled")
-                        {
-                            regKey.SetValue("Extended Whois", 0, RegistryValueKind.DWord);
-                            Result = true;
-                        }
-                        else Result = false;
-
-                        regKey.SetValue("UDP Port", txtUDPPort.Text, RegistryValueKind.DWord);
-                        regKey.SetValue("Bind IP", txtBindIP.Text, RegistryValueKind.String);
-                        regKey.SetValue("Realm Name", cboRealmName.Text, RegistryValueKind.String);
-                        regKey.SetValue("Realm Character", txtRealmCharacter.Text, RegistryValueKind.String);
-                        regKey.SetValue("Ignore Plugin Mask", txtIgnorePluginMask.Text, RegistryValueKind.String);
-
-                        if (Result == true)
-                            MessageBox.Show("Writing to registry was successful for " + cboProfiles.Text + "!", "SphtBotv3 Registry Manager", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        else
-                            MessageBox.Show("Writing to registry was unsuccessful for " + cboProfiles.Text + "!", "SphtBotv3 Registry Manager", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
+                SetValue(regKey, "UDP Port", txtUDPPort.Text, RegistryValueKind.DWord);
+                SetValue(regKey, "Bind IP", txtBindIP.Text, RegistryValueKind.String);
+                SetValue(regKey, "Realm Name", cboRealmName.Text, RegistryValueKind.String);
+                SetValue(regKey, "Realm Character", txtRealmCharacter.Text, RegistryValueKind.String);
+                SetValue(regKey, "Ignore Plugin Mask", txtIgnorePluginMask.Text, RegistryValueKind.String);
+                result = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "SphtBotv3 Registry Manager", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                result = false;
             }
 
-            regKeyGlobal.Close();
-            regKeyProfile.Close();
+            switch (result)
+            {
+                case true:
+                    MessageBox.Show("Writing to registry was successful!", "SphtBotv3 Registry Manager", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                default:
+                    break;
+            }   
         }
 
         private void btnRead_Click(object sender, EventArgs e)
