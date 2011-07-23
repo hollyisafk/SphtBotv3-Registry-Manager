@@ -118,7 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="rtbChangeLog.Text" xml:space="preserve">
-    <value>1.1.3 (Release)
+    <value>1.1.3.0723 (Release)
+- There was an issue with the profiles not being read (hopefully)
+- Deleting profiles framework is there and works, just doesn't function as pretty as it should (Rename is defunct atm)
+
+1.1.3 (Release)
 - Optimized a lot more code (thanks to pianka for this; functionality is still the same)
 
 1.1.2.0720 (Release)

@@ -119,7 +119,7 @@ namespace SphtBotv3_Registry_Manager
             // If the combo box text says "Global", then use the CurrentUser Registry, otherwise use the LocalMachine (where the profiles are held)
             bool global = cboProfiles.Text == "Global";
             RegistryKey regKey = global ? Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3", RegistryKeyPermissionCheck.ReadWriteSubTree) :
-                                          Registry.LocalMachine.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3\\Profiles", RegistryKeyPermissionCheck.ReadWriteSubTree);
+                                          Registry.LocalMachine.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3\\Profiles\\" + cboProfiles.Text, RegistryKeyPermissionCheck.ReadWriteSubTree);
 
             // Get values of all the designated keys. Since the DWORD values come out as strings, they need to be converted
             cboAwayIdle.Text = Convert.ToString((Int32)regKey.GetValue("Away Idle", 0, RegistryValueOptions.None));
