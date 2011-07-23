@@ -56,6 +56,7 @@ namespace SphtBotv3_Registry_Manager
 
                 // Adds the global profile in the ComboBox for selection
                 cboProfiles.Items.Add("Global");
+                cboProfiles.Text = "Global";
 
                 // Since the global profile ("SphtBotv3" SubKey) is 2 SubKeys up from the "Profiles" SubKey, it needs to be declared separately
                 RegistryKey regKeyGlobal = Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3", RegistryKeyPermissionCheck.ReadWriteSubTree);
@@ -216,6 +217,21 @@ namespace SphtBotv3_Registry_Manager
         {
             Form frm = new frmChangeLog();
             frm.Show();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmEdit(cboProfiles.Text);
+            frm.Text = string.Format("Editing profile: {0}", cboProfiles.Text);
+            frm.Show();
+        }
+
+        private void tmrEditButton_Tick(object sender, EventArgs e)
+        {
+            if (cboProfiles.Text == "Global")
+                btnEdit.Enabled = false;
+            else
+                btnEdit.Enabled = true;
         }
     }
 }

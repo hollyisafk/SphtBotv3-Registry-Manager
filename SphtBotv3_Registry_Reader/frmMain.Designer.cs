@@ -75,6 +75,8 @@
             this.ttBindIP = new System.Windows.Forms.ToolTip(this.components);
             this.cboProfiles = new System.Windows.Forms.ComboBox();
             this.lblProfiles = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.tmrEditButton = new System.Windows.Forms.Timer(this.components);
             this.mnuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -441,6 +443,7 @@
             // 
             this.cboProfiles.FormattingEnabled = true;
             this.cboProfiles.Location = new System.Drawing.Point(15, 40);
+            this.cboProfiles.MaxDropDownItems = 16;
             this.cboProfiles.Name = "cboProfiles";
             this.cboProfiles.Size = new System.Drawing.Size(161, 21);
             this.cboProfiles.TabIndex = 20;
@@ -455,11 +458,27 @@
             this.lblProfiles.TabIndex = 73;
             this.lblProfiles.Text = "{0} Profile(s) Found";
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(182, 38);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 74;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // tmrEditButton
+            // 
+            this.tmrEditButton.Enabled = true;
+            this.tmrEditButton.Tick += new System.EventHandler(this.tmrEditButton_Tick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 310);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.lblProfiles);
             this.Controls.Add(this.cboProfiles);
             this.Controls.Add(this.groupBox2);
@@ -531,8 +550,10 @@
         private System.Windows.Forms.ToolTip ttBindIP;
         private System.Windows.Forms.TextBox txtBindIP;
         private System.Windows.Forms.ToolStripMenuItem changelogToolStripMenuItem;
-        private System.Windows.Forms.ComboBox cboProfiles;
         private System.Windows.Forms.Label lblProfiles;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Timer tmrEditButton;
+        private System.Windows.Forms.ComboBox cboProfiles;
     }
 }
 
