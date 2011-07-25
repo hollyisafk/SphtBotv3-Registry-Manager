@@ -117,63 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="rtbChangeLog.Text" xml:space="preserve">
-    <value>1.1.4 (Release)
-- Renaming profiles has been supported (also doesn't function as pretty as deleting, but none the less it works)
-
-1.1.3.0724 (Release)
-- There was also an issue with profiles being written, this should be fixed
-
-1.1.3.0723 (Release)
-- There was an issue with the profiles not being read properly (hopefully this is fixed)
-- Deleting profiles framework is there and works, just doesn't function as pretty as it should (Rename is still defunct atm)
-
-1.1.3 (Release)
-- Optimized a lot more code (thanks to pianka for this; functionality is still the same)
-
-1.1.2.0720 (Release)
-- Support for 7/Vista UAC
-
-1.1.1.0720 (Release)
-- Little did I know, 32-bit architecture profiles are saved to Local Machine instead of Current User. This SHOULD be fixed or I'm going to be really pissed off
-- A fix for 64-bit architectures will be coming at some point
-
-1.1.0.0720 (Release)
-- Fixed SubKey writing to an improper place
-
-1.1 (Release)
-- Added ProfileLauncher profile support (I will be adding an option to edit the name of the profile at a later date)
-- Another thing on the to-do is easily configure all the profiles within this program instead of through the actual bot
-
-1.0.21.0719 (Beta)
-- New program icon :)
-
-1.0.20.0719 (Beta)
-- Added more options to be configured and added an in-application ChangeLog
-
-0.1.7 (Alpha)
-- Fixed Unhandled Exception (a different one &gt;.&lt;)
-
-0.1.6 (Alpha)
-- Optimized some more code
-- Fixed registry confirmation. It will now yield a result letting you know it failed, if it does.
-
-0.1.5 (Alpha)
-- Optimized some code here and there
-- Fixed compilation date and time
-
-0.1.4 (Alpha)
-- Fixed Unhandled Exception as soon as the program was loaded
-
-0.1.3 (Alpha)
-- Fixed the problem with the program crashing if the registry keys didn't exist. It now checks and creates the keys with the default value of "Disabled".
-
-0.1.2 (Alpha)
-- Added ToolTips for better explanations
-
-0.1.1 (Alpha)
-- Initial re-release with auto-update through ClickOnce (Let me know if there are problems)</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

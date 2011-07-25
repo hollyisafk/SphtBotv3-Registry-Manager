@@ -12,15 +12,11 @@ namespace SphtBotv3_Registry_Manager
     {
         private string SelectedItem;
 
+        // Carried over from frmMain
         public frmEdit(string s)
         {
             InitializeComponent();
             SelectedItem = s;
-        }
-
-        private void frmEdit_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -51,6 +47,13 @@ namespace SphtBotv3_Registry_Manager
                     MessageBox.Show(ex.Message, "SphtBotv3 Registry Manager", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnRename_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmRename(SelectedItem);
+            frm.Text = string.Format("Renaming profile: {0}", SelectedItem);
+            frm.Show();
         }
     }
 }
