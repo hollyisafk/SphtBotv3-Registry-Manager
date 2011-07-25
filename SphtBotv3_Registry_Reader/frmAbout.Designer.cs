@@ -50,7 +50,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(350, 26);
             this.label2.TabIndex = 1;
-            this.label2.Text = "This program was last compiled on Friday, July 25, 2011 @ 2:29 PM EST\r\nThis progr" +
+            this.label2.Text = "This program was last compiled on Friday, July 25, 2011 @ 4:26 PM EST\r\nThis progr" +
                 "am was coded in C# for the .NET 4.0 Framework";
             // 
             // btnClose

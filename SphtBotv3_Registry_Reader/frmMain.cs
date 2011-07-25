@@ -136,25 +136,14 @@ namespace SphtBotv3_Registry_Manager
             txtBindIP.Text = (string)regKey.GetValue("Bind IP", System.String.Empty, RegistryValueOptions.None);
 
             // Since the DWORD values come back as 1 or 0 due to how the program recognizes it, this basically translates 1 into Enabled or 0 into Disabled using a Ternary Operator
-            /* Experimenting with DropDownList
-             * This works but there must be a simpler way
-            switch (Convert.ToString((Int32)regKey.GetValue("Bleed Timestamps")))
-            {
-                case "1":
-                    cboBleedTimestamps.Text = "Enabled";
-                    break;
-                default:
-                    cboBleedTimestamps.Text = "Disabled";
-                    break;
-            }
-             */
-            cboBleedTimestamps.Text = cboBleedTimestamps.Text == "1" ? "Enabled" : "Disabled";
-            cboAwayIdle.Text = cboAwayIdle.Text == "1" ? "Enabled" : "Disabled";
-            cboChannelOrder.Text = cboChannelOrder.Text == "1" ? "Enabled" : "Disabled";
-            cboShowUndecoded.Text = cboShowUndecoded.Text == "1" ? "Enabled" : "Disabled";
-            cboDescribeUserFlags.Text = cboDescribeUserFlags.Text == "1" ? "Enabled" : "Disabled";
-            cboADBanner.Text = cboADBanner.Text == "1" ? "Enabled" : "Disabled";
-            cboExtendedWhois.Text = cboExtendedWhois.Text == "1" ? "Enabled" : "Disabled";
+            // DropDownList items can't be temporarily edited like DropDown style can. Thus read it straight from the Registry, then assign the value
+            cboBleedTimestamps.Text = Convert.ToString((Int32)regKey.GetValue("Bleed Timestamps")) == "1" ? "Enabled" : "Disabled";
+            cboAwayIdle.Text = Convert.ToString((Int32)regKey.GetValue("Away Idle")) == "1" ? "Enabled" : "Disabled";
+            cboChannelOrder.Text = Convert.ToString((Int32)regKey.GetValue("Channel Order")) == "1" ? "Enabled" : "Disabled";
+            cboShowUndecoded.Text = Convert.ToString((Int32)regKey.GetValue("Show Undecoded")) == "1" ? "Enabled" : "Disabled";
+            cboDescribeUserFlags.Text = Convert.ToString((Int32)regKey.GetValue("Describe User Flags")) == "1" ? "Enabled" : "Disabled";
+            cboADBanner.Text = Convert.ToString((Int32)regKey.GetValue("Display AD-Banner")) == "1" ? "Enabled" : "Disabled";
+            cboExtendedWhois.Text = Convert.ToString((Int32)regKey.GetValue("Extended Whois")) == "1" ? "Enabled" : "Disabled";
 
             regKey.Close();
         }

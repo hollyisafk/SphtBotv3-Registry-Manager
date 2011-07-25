@@ -174,6 +174,7 @@
             // cboAwayIdle
             // 
             this.cboAwayIdle.BackColor = System.Drawing.Color.White;
+            this.cboAwayIdle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboAwayIdle.FormattingEnabled = true;
             this.cboAwayIdle.Items.AddRange(new object[] {
             "Enabled",
@@ -186,6 +187,7 @@
             // cboExtendedWhois
             // 
             this.cboExtendedWhois.BackColor = System.Drawing.Color.White;
+            this.cboExtendedWhois.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboExtendedWhois.FormattingEnabled = true;
             this.cboExtendedWhois.Items.AddRange(new object[] {
             "Enabled",
@@ -198,6 +200,7 @@
             // cboShowUndecoded
             // 
             this.cboShowUndecoded.BackColor = System.Drawing.Color.White;
+            this.cboShowUndecoded.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboShowUndecoded.FormattingEnabled = true;
             this.cboShowUndecoded.Items.AddRange(new object[] {
             "Enabled",
@@ -210,6 +213,7 @@
             // cboADBanner
             // 
             this.cboADBanner.BackColor = System.Drawing.Color.White;
+            this.cboADBanner.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboADBanner.FormattingEnabled = true;
             this.cboADBanner.Items.AddRange(new object[] {
             "Enabled",
@@ -222,6 +226,7 @@
             // cboDescribeUserFlags
             // 
             this.cboDescribeUserFlags.BackColor = System.Drawing.Color.White;
+            this.cboDescribeUserFlags.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDescribeUserFlags.FormattingEnabled = true;
             this.cboDescribeUserFlags.Items.AddRange(new object[] {
             "Enabled",
@@ -234,6 +239,7 @@
             // cboChannelOrder
             // 
             this.cboChannelOrder.BackColor = System.Drawing.Color.White;
+            this.cboChannelOrder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboChannelOrder.FormattingEnabled = true;
             this.cboChannelOrder.Items.AddRange(new object[] {
             "Enabled",
@@ -246,6 +252,7 @@
             // cboBleedTimestamps
             // 
             this.cboBleedTimestamps.BackColor = System.Drawing.Color.White;
+            this.cboBleedTimestamps.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboBleedTimestamps.FormattingEnabled = true;
             this.cboBleedTimestamps.Items.AddRange(new object[] {
             "Enabled",
@@ -417,6 +424,7 @@
             // cboRealmName
             // 
             this.cboRealmName.BackColor = System.Drawing.Color.White;
+            this.cboRealmName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRealmName.FormattingEnabled = true;
             this.cboRealmName.Items.AddRange(new object[] {
             "USEast",
