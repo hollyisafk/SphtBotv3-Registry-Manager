@@ -441,6 +441,7 @@
             // 
             // cboProfiles
             // 
+            this.cboProfiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProfiles.FormattingEnabled = true;
             this.cboProfiles.Location = new System.Drawing.Point(15, 40);
             this.cboProfiles.MaxDropDownItems = 16;
@@ -511,7 +512,6 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Button btnRead;
         private System.Windows.Forms.Button btnWrite;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -553,7 +553,8 @@
         private System.Windows.Forms.Label lblProfiles;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Timer tmrEditButton;
-        private System.Windows.Forms.ComboBox cboProfiles;
+        public System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.ComboBox cboProfiles;
     }
 }
 

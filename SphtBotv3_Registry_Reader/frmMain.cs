@@ -136,6 +136,18 @@ namespace SphtBotv3_Registry_Manager
             txtBindIP.Text = (string)regKey.GetValue("Bind IP", System.String.Empty, RegistryValueOptions.None);
 
             // Since the DWORD values come back as 1 or 0 due to how the program recognizes it, this basically translates 1 into Enabled or 0 into Disabled using a Ternary Operator
+            /* Experimenting with DropDownList
+             * This works but there must be a simpler way
+            switch (Convert.ToString((Int32)regKey.GetValue("Bleed Timestamps")))
+            {
+                case "1":
+                    cboBleedTimestamps.Text = "Enabled";
+                    break;
+                default:
+                    cboBleedTimestamps.Text = "Disabled";
+                    break;
+            }
+             */
             cboBleedTimestamps.Text = cboBleedTimestamps.Text == "1" ? "Enabled" : "Disabled";
             cboAwayIdle.Text = cboAwayIdle.Text == "1" ? "Enabled" : "Disabled";
             cboChannelOrder.Text = cboChannelOrder.Text == "1" ? "Enabled" : "Disabled";
