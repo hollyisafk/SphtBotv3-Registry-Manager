@@ -77,6 +77,7 @@
             this.lblProfiles = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
             this.tmrEditButton = new System.Windows.Forms.Timer(this.components);
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.mnuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -482,11 +483,22 @@
             this.tmrEditButton.Enabled = true;
             this.tmrEditButton.Tick += new System.EventHandler(this.tmrEditButton_Tick);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(263, 38);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 75;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 310);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.lblProfiles);
             this.Controls.Add(this.cboProfiles);
@@ -563,6 +575,7 @@
         private System.Windows.Forms.Timer tmrEditButton;
         public System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.ComboBox cboProfiles;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
 
