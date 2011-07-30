@@ -58,6 +58,8 @@ namespace SphtBotv3_Registry_Manager
                 if (!cboProfiles.Items.Contains("Global"))
                     cboProfiles.Items.Add("Global");
 
+                cboProfiles.Text = "Global";
+
                 // Since the global profile ("SphtBotv3" SubKey) is 2 SubKeys up from the "Profiles" SubKey, it needs to be declared separately
                 RegistryKey regKeyGlobal = Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3", RegistryKeyPermissionCheck.ReadWriteSubTree);
                 RegistryKey regKeyProfile = Registry.LocalMachine.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3\\Profiles", RegistryKeyPermissionCheck.ReadWriteSubTree);
@@ -240,6 +242,7 @@ namespace SphtBotv3_Registry_Manager
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            cboProfiles.Items.Clear();
             frmMain_Load(sender, e);
         }
     }

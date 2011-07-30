@@ -118,7 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="rtbChangeLog.Text" xml:space="preserve">
-    <value>1.1.4.0725 (Release)
+    <value>1.1.5 (Release)
+- Refresh button now works properly. If you delete or rename a profile, simply press the 'Refresh' button to see your changes
+
+1.1.4.0725 (Release)
 - You can no longer type in your own values for the DWORD values or the Profile
 
 1.1.4 (Release)
