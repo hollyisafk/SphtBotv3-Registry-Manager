@@ -48,10 +48,10 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 63);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(350, 26);
+            this.label2.Size = new System.Drawing.Size(373, 26);
             this.label2.TabIndex = 1;
-            this.label2.Text = "This program was last compiled on Friday, July 25, 2011 @ 4:26 PM EST\r\nThis progr" +
-                "am was coded in C# for the .NET 4.0 Framework";
+            this.label2.Text = "This program was last compiled on Saturday, August 6, 2011 @ 5:56 AM EST\r\nThis pr" +
+                "ogram was coded in C# for the .NET 4.0 Framework";
             // 
             // btnClose
             // 
