@@ -118,7 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="rtbChangeLog.Text" xml:space="preserve">
-    <value>1.1.6 (Release)
+    <value>1.1.6.0806 (Release)
+- Restructured some code to work with the new changes
+
+1.1.6 (Release)
 - Intended to completely replace the SphtBotv3 configuration (IRC will come once Spht polishes it up)
 - Added some more missing options
 

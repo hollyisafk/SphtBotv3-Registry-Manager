@@ -65,62 +65,64 @@ namespace SphtBotv3_Registry_Manager
                 RegistryKey regKeyGlobal = Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3", RegistryKeyPermissionCheck.ReadWriteSubTree);
                 RegistryKey regKeyProfile = Registry.LocalMachine.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3\\Profiles", RegistryKeyPermissionCheck.ReadWriteSubTree);
 
-                // For each SuBKey listed under the "Profiles" Key, create the DWORD and STRING values if they don't exist. This works well with foreach
+                // For each SubKey listed under the "Profiles" Key, create the DWORD and STRING values if they don't exist. This works well with foreach
+                /* This is old code, I had to restructure it a little bit by taking out the foreach statement
+                 * Since txtCDKey.Text and txtXPCDKey.Text can be multiple values (probably should of done an array - keeping this in mind)
                 foreach (string rValue in regKeyProfile.GetSubKeyNames())
                 {
                     // Initiate a new RegistryKey and create all the values if they don't exist for every SubKey that does exist under the "Profiles" SubKey
                     using (RegistryKey regKey = regKeyProfile.CreateSubKey(rValue))
                     {
-                        if ((string)regKey.GetValue("BNLS Address") == System.String.Empty) regKey.SetValue("BNLS Address", "bnls.mattkv.net", RegistryValueKind.String);
-                        if ((string)regKey.GetValue("Bind IP") == System.String.Empty) regKey.SetValue("Bind IP", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("BotNet Account Name") == System.String.Empty) regKey.SetValue("BotNet Account Name", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("BotNet Account Password") == System.String.Empty) regKey.SetValue("BotNet Account Password", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("BotNet Database Mask") == System.String.Empty) regKey.SetValue("BotNet Database Mask", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("BotNet Password") == System.String.Empty) regKey.SetValue("BotNet Password", "b8f9b319f223ddcc38", RegistryValueKind.String);
-                        if ((string)regKey.GetValue("BotNet Server") == System.String.Empty) regKey.SetValue("BotNet Server", "none", RegistryValueKind.String);
-                        if ((string)regKey.GetValue("Brood War CD-Key") == System.String.Empty) regKey.SetValue("Brood War CD-Key", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("CD-Key User") == System.String.Empty) regKey.SetValue("CD-Key User", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("Diablo CD-Key") == System.String.Empty) regKey.SetValue("Diablo CD-Key", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("Diablo II CD-Key") == System.String.Empty) regKey.SetValue("Diablo II CD-Key", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("Diablo II: LoD CD-Key") == System.String.Empty) regKey.SetValue("Diablo II: LoD CD-Key", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("Diablo Shareware CD-Key") == System.String.Empty) regKey.SetValue("Diablo Shareware CD-Key", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("E-Mail") == System.String.Empty) regKey.SetValue("E-Mail", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("Home Channel") == System.String.Empty) regKey.SetValue("Home Channel", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("Ignore Plugin Mask") == System.String.Empty) regKey.SetValue("Ignore Plugin Mask", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("Japan StarCraft CD-Key") == System.String.Empty) regKey.SetValue("StarCraft CD-Key", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("Message Filters") == System.String.Empty) regKey.SetValue("Message Filters", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("Password") == System.String.Empty) regKey.SetValue("Password", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("Platform") == System.String.Empty) regKey.SetValue("Platform", "IX86", RegistryValueKind.String);
-                        if ((string)regKey.GetValue("Realm Character") == System.String.Empty) regKey.SetValue("Realm Character", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("Realm Name") == System.String.Empty) regKey.SetValue("Realm Name", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("Server") == System.String.Empty) regKey.SetValue("Server", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("StarCraft CD-Key") == System.String.Empty) regKey.SetValue("StarCraft CD-Key", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("StarCraft Shareware CD-Key") == System.String.Empty) regKey.SetValue("StarCraft Shareware  CD-Key", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("The Frozen Throne CD-Key") == System.String.Empty) regKey.SetValue("The Frozen Throne CD-Key", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("Timestamp") == System.String.Empty) regKey.SetValue("User Filters", "HH:MM:SS AM/PM", RegistryValueKind.String);
-                        if ((string)regKey.GetValue("User Filters") == System.String.Empty) regKey.SetValue("User Filters", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("Username") == System.String.Empty) regKey.SetValue("Username", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("WarCraft II CD-Key") == System.String.Empty) regKey.SetValue("WarCraft II CD-Key", System.String.Empty, RegistryValueKind.String);
-                        if ((string)regKey.GetValue("WarCraft III CD-Key") == System.String.Empty) regKey.SetValue("WarCraft III CD-Key", System.String.Empty, RegistryValueKind.String);
-                        if (regKey.GetValue("Auto Rejoin") == null) regKey.SetValue("Auto Rejoin", 0, RegistryValueKind.DWord);
-                        if (regKey.GetValue("Away Idle") == null) regKey.SetValue("Away Idle", 0, RegistryValueKind.DWord);
-                        if (regKey.GetValue("Bleed Timestamps") == null) regKey.SetValue("Bleed Timestamps", 0, RegistryValueKind.DWord);
-                        if (regKey.GetValue("Channel Order") == null) regKey.SetValue("Channel Order", 0, RegistryValueKind.DWord);
-                        if (regKey.GetValue("Connect to Battle.net") == null) regKey.SetValue("Connect to Battle.net", 0, RegistryValueKind.DWord);
-                        if (regKey.GetValue("Describe User Flags") == null) regKey.SetValue("Describe User Flags", 0, RegistryValueKind.DWord);
-                        if (regKey.GetValue("Display AD-Banner") == null) regKey.SetValue("Display AD-Banner", 0, RegistryValueKind.DWord);
-                        if (regKey.GetValue("Extended Whois") == null) regKey.SetValue("Extended Whois", 0, RegistryValueKind.DWord);
-                        if (regKey.GetValue("Ignore Ping") == null) regKey.SetValue("Ignore Ping", 0, RegistryValueKind.DWord);
-                        if (regKey.GetValue("No UDP") == null) regKey.SetValue("No UDP", 0, RegistryValueKind.DWord);
-                        if (regKey.GetValue("Notify 2") == null) regKey.SetValue("Notify 2", 1, RegistryValueKind.DWord);
-                        if (regKey.GetValue("Notify") == null) regKey.SetValue("Notify", 1, RegistryValueKind.DWord);
-                        if (regKey.GetValue("Post-Reply Ping") == null) regKey.SetValue("Post-Reply Ping", 0, RegistryValueKind.DWord);
-                        if (regKey.GetValue("Product") == null) regKey.SetValue("Product", 1, RegistryValueKind.DWord);
-                        if (regKey.GetValue("Show Undecoded") == null) regKey.SetValue("Show Undecoded", 0, RegistryValueKind.DWord);
-                        if (regKey.GetValue("Spawn") == null) regKey.SetValue("Spawn", 0, RegistryValueKind.DWord);
-                        if (regKey.GetValue("UDP Port") == null) regKey.SetValue("UDP Port", 0, RegistryValueKind.DWord);
                     }
-                }
+                }*/
+                if ((string)regKeyProfile.GetValue("BNLS Address") == System.String.Empty) regKeyProfile.SetValue("BNLS Address", "bnls.mattkv.net", RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("Bind IP") == System.String.Empty) regKeyProfile.SetValue("Bind IP", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("BotNet Account Name") == System.String.Empty) regKeyProfile.SetValue("BotNet Account Name", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("BotNet Account Password") == System.String.Empty) regKeyProfile.SetValue("BotNet Account Password", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("BotNet Database Mask") == System.String.Empty) regKeyProfile.SetValue("BotNet Database Mask", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("BotNet Password") == System.String.Empty) regKeyProfile.SetValue("BotNet Password", "b8f9b319f223ddcc38", RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("BotNet Server") == System.String.Empty) regKeyProfile.SetValue("BotNet Server", "none", RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("Brood War CD-Key") == System.String.Empty) regKeyProfile.SetValue("Brood War CD-Key", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("CD-Key User") == System.String.Empty) regKeyProfile.SetValue("CD-Key User", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("Diablo CD-Key") == System.String.Empty) regKeyProfile.SetValue("Diablo CD-Key", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("Diablo II CD-Key") == System.String.Empty) regKeyProfile.SetValue("Diablo II CD-Key", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("Diablo II: LoD CD-Key") == System.String.Empty) regKeyProfile.SetValue("Diablo II: LoD CD-Key", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("Diablo Shareware CD-Key") == System.String.Empty) regKeyProfile.SetValue("Diablo Shareware CD-Key", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("E-Mail") == System.String.Empty) regKeyProfile.SetValue("E-Mail", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("Home Channel") == System.String.Empty) regKeyProfile.SetValue("Home Channel", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("Ignore Plugin Mask") == System.String.Empty) regKeyProfile.SetValue("Ignore Plugin Mask", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("Japan StarCraft CD-Key") == System.String.Empty) regKeyProfile.SetValue("StarCraft CD-Key", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("Message Filters") == System.String.Empty) regKeyProfile.SetValue("Message Filters", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("Password") == System.String.Empty) regKeyProfile.SetValue("Password", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("Platform") == System.String.Empty) regKeyProfile.SetValue("Platform", "IX86", RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("Realm Character") == System.String.Empty) regKeyProfile.SetValue("Realm Character", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("Realm Name") == System.String.Empty) regKeyProfile.SetValue("Realm Name", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("Server") == System.String.Empty) regKeyProfile.SetValue("Server", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("StarCraft CD-Key") == System.String.Empty) regKeyProfile.SetValue("StarCraft CD-Key", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("StarCraft Shareware CD-Key") == System.String.Empty) regKeyProfile.SetValue("StarCraft Shareware CD-Key", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("The Frozen Throne CD-Key") == System.String.Empty) regKeyProfile.SetValue("The Frozen Throne CD-Key", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("Timestamp") == System.String.Empty) regKeyProfile.SetValue("User Filters", "HH:MM:SS AM/PM", RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("User Filters") == System.String.Empty) regKeyProfile.SetValue("User Filters", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("Username") == System.String.Empty) regKeyProfile.SetValue("Username", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("WarCraft II CD-Key") == System.String.Empty) regKeyProfile.SetValue("WarCraft II CD-Key", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyProfile.GetValue("WarCraft III CD-Key") == System.String.Empty) regKeyProfile.SetValue("WarCraft III CD-Key", System.String.Empty, RegistryValueKind.String);
+                if (regKeyProfile.GetValue("Auto Rejoin") == null) regKeyProfile.SetValue("Auto Rejoin", 0, RegistryValueKind.DWord);
+                if (regKeyProfile.GetValue("Away Idle") == null) regKeyProfile.SetValue("Away Idle", 0, RegistryValueKind.DWord);
+                if (regKeyProfile.GetValue("Bleed Timestamps") == null) regKeyProfile.SetValue("Bleed Timestamps", 0, RegistryValueKind.DWord);
+                if (regKeyProfile.GetValue("Channel Order") == null) regKeyProfile.SetValue("Channel Order", 0, RegistryValueKind.DWord);
+                if (regKeyProfile.GetValue("Connect to Battle.net") == null) regKeyProfile.SetValue("Connect to Battle.net", 0, RegistryValueKind.DWord);
+                if (regKeyProfile.GetValue("Describe User Flags") == null) regKeyProfile.SetValue("Describe User Flags", 0, RegistryValueKind.DWord);
+                if (regKeyProfile.GetValue("Display AD-Banner") == null) regKeyProfile.SetValue("Display AD-Banner", 0, RegistryValueKind.DWord);
+                if (regKeyProfile.GetValue("Extended Whois") == null) regKeyProfile.SetValue("Extended Whois", 0, RegistryValueKind.DWord);
+                if (regKeyProfile.GetValue("Ignore Ping") == null) regKeyProfile.SetValue("Ignore Ping", 0, RegistryValueKind.DWord);
+                if (regKeyProfile.GetValue("No UDP") == null) regKeyProfile.SetValue("No UDP", 0, RegistryValueKind.DWord);
+                if (regKeyProfile.GetValue("Notify 2") == null) regKeyProfile.SetValue("Notify 2", 1, RegistryValueKind.DWord);
+                if (regKeyProfile.GetValue("Notify") == null) regKeyProfile.SetValue("Notify", 1, RegistryValueKind.DWord);
+                if (regKeyProfile.GetValue("Post-Reply Ping") == null) regKeyProfile.SetValue("Post-Reply Ping", 0, RegistryValueKind.DWord);
+                if (regKeyProfile.GetValue("Product") == null) regKeyProfile.SetValue("Product", 1, RegistryValueKind.DWord);
+                if (regKeyProfile.GetValue("Show Undecoded") == null) regKeyProfile.SetValue("Show Undecoded", 0, RegistryValueKind.DWord);
+                if (regKeyProfile.GetValue("Spawn") == null) regKeyProfile.SetValue("Spawn", 0, RegistryValueKind.DWord);
+                if (regKeyProfile.GetValue("UDP Port") == null) regKeyProfile.SetValue("UDP Port", 0, RegistryValueKind.DWord);
 
                 // If the values for the global profile SubKey doesn't exist, it will be created with the default value of a null string or a DWORD (0x00000000) for the global profile ("SphtBotv3" SubKey)
                 if ((string)regKeyGlobal.GetValue("BNLS Address") == System.String.Empty) regKeyGlobal.SetValue("BNLS Address", "bnls.mattkv.net", RegistryValueKind.String);
@@ -147,7 +149,7 @@ namespace SphtBotv3_Registry_Manager
                 if ((string)regKeyGlobal.GetValue("Realm Name") == System.String.Empty) regKeyGlobal.SetValue("Realm Name", System.String.Empty, RegistryValueKind.String);
                 if ((string)regKeyGlobal.GetValue("Server") == System.String.Empty) regKeyGlobal.SetValue("Server", System.String.Empty, RegistryValueKind.String);
                 if ((string)regKeyGlobal.GetValue("StarCraft CD-Key") == System.String.Empty) regKeyGlobal.SetValue("StarCraft CD-Key", System.String.Empty, RegistryValueKind.String);
-                if ((string)regKeyGlobal.GetValue("StarCraft Shareware CD-Key") == System.String.Empty) regKeyGlobal.SetValue("StarCraft Shareware  CD-Key", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyGlobal.GetValue("StarCraft Shareware CD-Key") == System.String.Empty) regKeyGlobal.SetValue("StarCraft Shareware CD-Key", System.String.Empty, RegistryValueKind.String);
                 if ((string)regKeyGlobal.GetValue("The Frozen Throne CD-Key") == System.String.Empty) regKeyGlobal.SetValue("The Frozen Throne CD-Key", System.String.Empty, RegistryValueKind.String);
                 if ((string)regKeyGlobal.GetValue("Timestamp") == System.String.Empty) regKeyGlobal.SetValue("User Filters", "HH:MM:SS AM/PM", RegistryValueKind.String);
                 if ((string)regKeyGlobal.GetValue("User Filters") == System.String.Empty) regKeyGlobal.SetValue("User Filters", System.String.Empty, RegistryValueKind.String);
@@ -196,8 +198,8 @@ namespace SphtBotv3_Registry_Manager
         {
             // If the combo box text says "Global", then use the CurrentUser Registry, otherwise use the LocalMachine (where the profiles are held)
             bool global = cboProfiles.Text == "Global";
-            RegistryKey regKey = global ? Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3", RegistryKeyPermissionCheck.ReadWriteSubTree) :
-                                          Registry.LocalMachine.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3\\Profiles\\" + cboProfiles.Text, RegistryKeyPermissionCheck.ReadWriteSubTree);
+            RegistryKey regKey = global ? Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3", RegistryKeyPermissionCheck.ReadSubTree) :
+                                          Registry.LocalMachine.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3\\Profiles\\" + cboProfiles.Text, RegistryKeyPermissionCheck.ReadSubTree);
 
             // Get values of all the designated keys. Since the DWORD values come out as strings, they need to be converted
             cboADBanner.Text = Convert.ToString((Int32)regKey.GetValue("Display AD-Banner", 0, RegistryValueOptions.None));
@@ -283,6 +285,7 @@ namespace SphtBotv3_Registry_Manager
                     break;
                 case "5":
                     cboProduct.Text = "Diablo II: Lord of Destruction";
+                    txtCDKey.Text = (string)regKey.GetValue("Diablo II CD-Key");
                     txtXPCDKey.Text = (string)regKey.GetValue("Diablo II: LoD CD-Key");
                     break;
                 case "6":
@@ -295,6 +298,7 @@ namespace SphtBotv3_Registry_Manager
                     break;
                 case "8":
                     cboProduct.Text = "WarCraft III: The Frozen Throne";
+                    txtCDKey.Text = (string)regKey.GetValue("WarCraft III CD-Key");
                     txtXPCDKey.Text = (string)regKey.GetValue("The Frozen Throne CD-Key");
                     break;
                 case "9":
@@ -309,23 +313,31 @@ namespace SphtBotv3_Registry_Manager
                     cboProduct.Text = "StarCraft Shareware";
                     txtCDKey.Text = (string)regKey.GetValue("StarCraft Shareware CD-Key");
                     break;
+                default:
+                    break;
             }
 
             regKey.Close();
         }
 
-        private void SetAbled(RegistryKey regKey, ComboBox cboB, string strKey)
+        private void SetAbled(RegistryKey regKey, ComboBox cboB, string strKey, RegistryValueKind regKind)
         {
-            regKey.SetValue(strKey, cboB.Text == "Enabled" ? 1 : 0, RegistryValueKind.DWord);
+            // regKey is passed over from Write() depending on a Profile or Global.
+            // The SubKey name is passed, if the text on the ComboBox says Enabled write a 1 else a 0 value DWORD
+            regKey.SetValue(strKey, cboB.Text == "Enabled" ? 1 : 0, regKind);
         }
 
-        private void SetAble(RegistryKey regKey, CheckBox chkB, string strKey)
+        private void SetAble(RegistryKey regKey, CheckBox chkB, string strKey, RegistryValueKind regKind)
         {
-            regKey.SetValue(strKey, chkB.Checked == true ? 1 : 0, RegistryValueKind.DWord);
+            // regKey is passed over from Write() depending on a Profile or Global.
+            // The SubKey name is passed, if the CheckBox is checked then write a 1 else a 0 value DWORD
+            regKey.SetValue(strKey, chkB.Checked == true ? 1 : 0, regKind);
         }
 
         private void SetValue(RegistryKey regKey, string strKey, string Value, RegistryValueKind regKind)
         {
+            // regKey is passed over from Write() depending on a Profile or Global.
+            // The SubKey name is passed and a string value is assigned to it
             regKey.SetValue(strKey, Value, regKind);
         }
 
@@ -338,21 +350,24 @@ namespace SphtBotv3_Registry_Manager
 
             try
             {
-                SetAbled(regKey, cboADBanner, "Display AD-Banner");
-                SetAbled(regKey, cboAwayIdle, "Away Idle");
-                SetAbled(regKey, cboBleedTimestamps, "Bleed Timestamps");
-                SetAbled(regKey, cboChannelOrder, "Channel Order");
-                SetAbled(regKey, cboDescribeUserFlags, "Describe User Flags");
-                SetAbled(regKey, cboExtendedWhois, "Extended Whois");
-                SetAbled(regKey, cboShowUndecoded, "Show Undecoded");
+                // SetAbled(regKey (Global or Profile), ComboBoxName, SubKeyName, Dword/String/QWord,etc)
+                SetAbled(regKey, cboADBanner, "Display AD-Banner", RegistryValueKind.DWord);
+                SetAbled(regKey, cboAwayIdle, "Away Idle", RegistryValueKind.DWord);
+                SetAbled(regKey, cboBleedTimestamps, "Bleed Timestamps", RegistryValueKind.DWord);
+                SetAbled(regKey, cboChannelOrder, "Channel Order", RegistryValueKind.DWord);
+                SetAbled(regKey, cboDescribeUserFlags, "Describe User Flags", RegistryValueKind.DWord);
+                SetAbled(regKey, cboExtendedWhois, "Extended Whois", RegistryValueKind.DWord);
+                SetAbled(regKey, cboShowUndecoded, "Show Undecoded", RegistryValueKind.DWord);
 
-                SetAble(regKey, chkAutoRejoin, "Auto Rejoin");
-                SetAble(regKey, chkBNETAutoCon, "Connect to Battle.net");
-                SetAble(regKey, chkBanKick, "Notify 2");
-                SetAble(regKey, chkCDKey, "Spawn");
-                SetAble(regKey, chkJoinLeave, "Notify");
-                SetAble(regKey, chkUDP, "No UDP");
+                // SetAble(regKey (Global or Profile), CheckBoxName, SubKeyName, Dword/String/QWord,etc)
+                SetAble(regKey, chkAutoRejoin, "Auto Rejoin", RegistryValueKind.DWord);
+                SetAble(regKey, chkBNETAutoCon, "Connect to Battle.net", RegistryValueKind.DWord);
+                SetAble(regKey, chkBanKick, "Notify 2", RegistryValueKind.DWord);
+                SetAble(regKey, chkCDKey, "Spawn", RegistryValueKind.DWord);
+                SetAble(regKey, chkJoinLeave, "Notify", RegistryValueKind.DWord);
+                SetAble(regKey, chkUDP, "No UDP", RegistryValueKind.DWord);
 
+                // SetValue(regKey (Global or Profile), SubKeyName, TextDisplayed, String)
                 SetValue(regKey, "BNLS Address", cboBNLSAddress.Text, RegistryValueKind.String);
                 SetValue(regKey, "Bind IP", txtBindIP.Text, RegistryValueKind.String);
                 SetValue(regKey, "BotNet Account Name", txtBotNetUsername.Text, RegistryValueKind.String);
@@ -376,8 +391,10 @@ namespace SphtBotv3_Registry_Manager
                 else if (cboPing.Text == "Post-send pre-logon ping (0ms ping)")
                     regKey.SetValue("Post-Reply Ping", 1, RegistryValueKind.DWord);
                 else if (cboPing.Text == "None")
+                {
                     regKey.SetValue("Post-Reply Ping", 0, RegistryValueKind.DWord);
                     regKey.SetValue("Ignore Ping", 0, RegistryValueKind.DWord);
+                }
 
                 if (cboPlatform.Text == "Intel x86")
                     regKey.SetValue("Platform", "IX86", RegistryValueKind.String);
@@ -390,7 +407,7 @@ namespace SphtBotv3_Registry_Manager
                 {
                     case "StarCraft":
                         regKey.SetValue("Product", 1, RegistryValueKind.DWord);
-                        regKey.SetValue("StarCraft CD-Key", txtCDKey.Text, RegistryValueKind.String);
+                        SetValue(regKey, "StarCraft CD-Key", txtCDKey.Text, RegistryValueKind.String);
                         break;
                     case "StarCraft: Brood War":
                         regKey.SetValue("Product", 2, RegistryValueKind.DWord);
@@ -431,6 +448,8 @@ namespace SphtBotv3_Registry_Manager
                     case "StarCraft Shareware":
                         regKey.SetValue("Product", 11, RegistryValueKind.DWord);
                         regKey.SetValue("StarCraft Shareware CD-Key", txtCDKey.Text, RegistryValueKind.String);
+                        break;
+                    default:
                         break;
                 }
             }
@@ -481,10 +500,7 @@ namespace SphtBotv3_Registry_Manager
 
         private void tmrEditButton_Tick(object sender, EventArgs e)
         {
-            if (cboProfiles.Text == "Global")
-                btnEdit.Enabled = false;
-            else
-                btnEdit.Enabled = true;
+            btnEdit.Enabled = cboProfiles.Text == "Global" ? false : true;
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -584,6 +600,7 @@ namespace SphtBotv3_Registry_Manager
             }
         }
 
+        // This is to display which RegistryKeyValue in "real-time" with whatever Product you select
         private void cboProduct_SelectedItemChanged(object sender, EventArgs e)
         {
             bool global = cboProfiles.Text == "Global";

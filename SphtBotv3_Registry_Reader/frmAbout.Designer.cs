@@ -50,7 +50,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(373, 26);
             this.label2.TabIndex = 1;
-            this.label2.Text = "This program was last compiled on Saturday, August 6, 2011 @ 5:56 AM EST\r\nThis pr" +
+            this.label2.Text = "This program was last compiled on Saturday, August 6, 2011 @ 7:41 AM EST\r\nThis pr" +
                 "ogram was coded in C# for the .NET 4.0 Framework";
             // 
             // btnClose
