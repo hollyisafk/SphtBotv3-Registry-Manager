@@ -118,7 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="rtbChangeLog.Text" xml:space="preserve">
-    <value>1.1.6.0806 (Release)
+    <value>1.1.7 (Release)
+- Fixed some minor visual bugs
+- Added majority of IRC configuration (There are more, but will add later)
+
+1.1.6.0806 (Release)
 - Restructured some code to work with the new changes
 
 1.1.6 (Release)
