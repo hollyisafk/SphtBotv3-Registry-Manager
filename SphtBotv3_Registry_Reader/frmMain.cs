@@ -91,9 +91,10 @@ namespace SphtBotv3_Registry_Manager
                         if ((string)regKeyProfile.GetValue("IRC Username") == System.String.Empty) regKeyProfile.SetValue("IRC Username", System.String.Empty, RegistryValueKind.String);
                         if ((string)regKeyProfile.GetValue("Japan StarCraft CD-Key") == System.String.Empty) regKeyProfile.SetValue("StarCraft CD-Key", System.String.Empty, RegistryValueKind.String);
                         if ((string)regKeyProfile.GetValue("Message Filters") == System.String.Empty) regKeyProfile.SetValue("Message Filters", System.String.Empty, RegistryValueKind.String);
+                        if ((string)regKeyProfile.GetValue("Notify Keyword") == System.String.Empty) regKeyProfile.SetValue("Notify Keyword", System.String.Empty, RegistryValueKind.String);
                         if ((string)regKeyProfile.GetValue("Password") == System.String.Empty) regKeyProfile.SetValue("Password", System.String.Empty, RegistryValueKind.String);
                         if ((string)regKeyProfile.GetValue("Platform") == System.String.Empty) regKeyProfile.SetValue("Platform", "IX86", RegistryValueKind.String);
-                        if ((string)regKeyProfile.GetValue("Realm Character") == System.String.Empty) regKeyProfile.SetValue("Realm Character", System.String.Empty, RegistryValueKind.String);
+                        if ((string)regKeyProfile.GetValue("Realm Character Name") == System.String.Empty) regKeyProfile.SetValue("Realm Character Name", System.String.Empty, RegistryValueKind.String);
                         if ((string)regKeyProfile.GetValue("Realm Name") == System.String.Empty) regKeyProfile.SetValue("Realm Name", System.String.Empty, RegistryValueKind.String);
                         if ((string)regKeyProfile.GetValue("Server") == System.String.Empty) regKeyProfile.SetValue("Server", System.String.Empty, RegistryValueKind.String);
                         if ((string)regKeyProfile.GetValue("StarCraft CD-Key") == System.String.Empty) regKeyProfile.SetValue("StarCraft CD-Key", System.String.Empty, RegistryValueKind.String);
@@ -104,20 +105,22 @@ namespace SphtBotv3_Registry_Manager
                         if ((string)regKeyProfile.GetValue("Username") == System.String.Empty) regKeyProfile.SetValue("Username", System.String.Empty, RegistryValueKind.String);
                         if ((string)regKeyProfile.GetValue("WarCraft II CD-Key") == System.String.Empty) regKeyProfile.SetValue("WarCraft II CD-Key", System.String.Empty, RegistryValueKind.String);
                         if ((string)regKeyProfile.GetValue("WarCraft III CD-Key") == System.String.Empty) regKeyProfile.SetValue("WarCraft III CD-Key", System.String.Empty, RegistryValueKind.String);
-                        if (regKeyProfile.GetValue("Auto Rejoin") == null) regKeyProfile.SetValue("Auto Rejoin", 0, RegistryValueKind.DWord);
-                        if (regKeyProfile.GetValue("Away Idle") == null) regKeyProfile.SetValue("Away Idle", 0, RegistryValueKind.DWord);
+                        if (regKeyProfile.GetValue("Auto Rejoin") == null) regKeyProfile.SetValue("Auto Rejoin", 1, RegistryValueKind.DWord);
+                        if (regKeyProfile.GetValue("Away Idle") == null) regKeyProfile.SetValue("Away Idle", 1, RegistryValueKind.DWord);
                         if (regKeyProfile.GetValue("Bleed Timestamps") == null) regKeyProfile.SetValue("Bleed Timestamps", 0, RegistryValueKind.DWord);
-                        if (regKeyProfile.GetValue("Channel Order") == null) regKeyProfile.SetValue("Channel Order", 0, RegistryValueKind.DWord);
+                        if (regKeyProfile.GetValue("Channel Order") == null) regKeyProfile.SetValue("Channel Order", 1, RegistryValueKind.DWord);
                         if (regKeyProfile.GetValue("Connect to Battle.net") == null) regKeyProfile.SetValue("Connect to Battle.net", 0, RegistryValueKind.DWord);
-                        if (regKeyProfile.GetValue("Describe User Flags") == null) regKeyProfile.SetValue("Describe User Flags", 0, RegistryValueKind.DWord);
+                        if (regKeyProfile.GetValue("Describe User Flags") == null) regKeyProfile.SetValue("Describe User Flags", 1, RegistryValueKind.DWord);
+                        if (regKeyProfile.GetValue("Disable Windows Notify") == null) regKeyProfile.SetValue("Disable Windows Notify", 0, RegistryValueKind.DWord);
                         if (regKeyProfile.GetValue("Display AD-Banner") == null) regKeyProfile.SetValue("Display AD-Banner", 0, RegistryValueKind.DWord);
-                        if (regKeyProfile.GetValue("Extended Whois") == null) regKeyProfile.SetValue("Extended Whois", 0, RegistryValueKind.DWord);
+                        if (regKeyProfile.GetValue("Extended Whois") == null) regKeyProfile.SetValue("Extended Whois", 1, RegistryValueKind.DWord);
                         if (regKeyProfile.GetValue("Ignore Ping") == null) regKeyProfile.SetValue("Ignore Ping", 0, RegistryValueKind.DWord);
                         if (regKeyProfile.GetValue("No UDP") == null) regKeyProfile.SetValue("No UDP", 0, RegistryValueKind.DWord);
                         if (regKeyProfile.GetValue("Notify 2") == null) regKeyProfile.SetValue("Notify 2", 1, RegistryValueKind.DWord);
                         if (regKeyProfile.GetValue("Notify") == null) regKeyProfile.SetValue("Notify", 1, RegistryValueKind.DWord);
                         if (regKeyProfile.GetValue("Post-Reply Ping") == null) regKeyProfile.SetValue("Post-Reply Ping", 0, RegistryValueKind.DWord);
                         if (regKeyProfile.GetValue("Product") == null) regKeyProfile.SetValue("Product", 1, RegistryValueKind.DWord);
+                        if (regKeyProfile.GetValue("Realm Character Class") == null) regKeyProfile.SetValue("Realm Character Class", 0, RegistryValueKind.DWord);
                         if (regKeyProfile.GetValue("Show Undecoded") == null) regKeyProfile.SetValue("Show Undecoded", 0, RegistryValueKind.DWord);
                         if (regKeyProfile.GetValue("Spawn") == null) regKeyProfile.SetValue("Spawn", 0, RegistryValueKind.DWord);
                         if (regKeyProfile.GetValue("UDP Port") == null) regKeyProfile.SetValue("UDP Port", 0, RegistryValueKind.DWord);
@@ -149,9 +152,10 @@ namespace SphtBotv3_Registry_Manager
                 if ((string)regKeyGlobal.GetValue("IRC Username") == System.String.Empty) regKeyGlobal.SetValue("IRC Username", System.String.Empty, RegistryValueKind.String);
                 if ((string)regKeyGlobal.GetValue("Japan StarCraft CD-Key") == System.String.Empty) regKeyGlobal.SetValue("StarCraft CD-Key", System.String.Empty, RegistryValueKind.String);
                 if ((string)regKeyGlobal.GetValue("Message Filters") == System.String.Empty) regKeyGlobal.SetValue("Message Filters", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyGlobal.GetValue("Notify Keyword") == System.String.Empty) regKeyGlobal.SetValue("Notify Keyword", System.String.Empty, RegistryValueKind.String);
                 if ((string)regKeyGlobal.GetValue("Password") == System.String.Empty) regKeyGlobal.SetValue("Password", System.String.Empty, RegistryValueKind.String);
                 if ((string)regKeyGlobal.GetValue("Platform") == System.String.Empty) regKeyGlobal.SetValue("Platform", "IX86", RegistryValueKind.String);
-                if ((string)regKeyGlobal.GetValue("Realm Character") == System.String.Empty) regKeyGlobal.SetValue("Realm Character", System.String.Empty, RegistryValueKind.String);
+                if ((string)regKeyGlobal.GetValue("Realm Character Name") == System.String.Empty) regKeyGlobal.SetValue("Realm Character Name", System.String.Empty, RegistryValueKind.String);
                 if ((string)regKeyGlobal.GetValue("Realm Name") == System.String.Empty) regKeyGlobal.SetValue("Realm Name", System.String.Empty, RegistryValueKind.String);
                 if ((string)regKeyGlobal.GetValue("Server") == System.String.Empty) regKeyGlobal.SetValue("Server", System.String.Empty, RegistryValueKind.String);
                 if ((string)regKeyGlobal.GetValue("StarCraft CD-Key") == System.String.Empty) regKeyGlobal.SetValue("StarCraft CD-Key", System.String.Empty, RegistryValueKind.String);
@@ -168,6 +172,7 @@ namespace SphtBotv3_Registry_Manager
                 if (regKeyGlobal.GetValue("Channel Order") == null) regKeyGlobal.SetValue("Channel Order", 0, RegistryValueKind.DWord);
                 if (regKeyGlobal.GetValue("Connect to Battle.net") == null) regKeyGlobal.SetValue("Connect to Battle.net", 0, RegistryValueKind.DWord);
                 if (regKeyGlobal.GetValue("Describe User Flags") == null) regKeyGlobal.SetValue("Describe User Flags", 0, RegistryValueKind.DWord);
+                if (regKeyGlobal.GetValue("Disable Windows Notify") == null) regKeyGlobal.SetValue("Disable Windows Notify", 0, RegistryValueKind.DWord);
                 if (regKeyGlobal.GetValue("Display AD-Banner") == null) regKeyGlobal.SetValue("Display AD-Banner", 0, RegistryValueKind.DWord);
                 if (regKeyGlobal.GetValue("Extended Whois") == null) regKeyGlobal.SetValue("Extended Whois", 0, RegistryValueKind.DWord);
                 if (regKeyGlobal.GetValue("Ignore Ping") == null) regKeyGlobal.SetValue("Ignore Ping", 0, RegistryValueKind.DWord);
@@ -176,6 +181,7 @@ namespace SphtBotv3_Registry_Manager
                 if (regKeyGlobal.GetValue("Notify") == null) regKeyGlobal.SetValue("Notify", 1, RegistryValueKind.DWord);
                 if (regKeyGlobal.GetValue("Post-Reply Ping") == null) regKeyGlobal.SetValue("Post-Reply Ping", 0, RegistryValueKind.DWord);
                 if (regKeyGlobal.GetValue("Product") == null) regKeyGlobal.SetValue("Product", 1, RegistryValueKind.DWord);
+                if (regKeyGlobal.GetValue("Realm Character Class") == null) regKeyGlobal.SetValue("Realm Character Class", 0, RegistryValueKind.DWord);
                 if (regKeyGlobal.GetValue("Show Undecoded") == null) regKeyGlobal.SetValue("Show Undecoded", 0, RegistryValueKind.DWord);
                 if (regKeyGlobal.GetValue("Spawn") == null) regKeyGlobal.SetValue("Spawn", 0, RegistryValueKind.DWord);
                 if (regKeyGlobal.GetValue("UDP Port") == null) regKeyGlobal.SetValue("UDP Port", 0, RegistryValueKind.DWord);
@@ -223,6 +229,7 @@ namespace SphtBotv3_Registry_Manager
             cboChannelOrder.Text = Convert.ToString((Int32)regKey.GetValue("Channel Order", 0, RegistryValueOptions.None));
             cboDescribeUserFlags.Text = Convert.ToString((Int32)regKey.GetValue("Describe User Flags", 0, RegistryValueOptions.None));
             cboExtendedWhois.Text = Convert.ToString((Int32)regKey.GetValue("Extended Whois", 0, RegistryValueOptions.None));
+            cboNotify.Text = Convert.ToString((Int32)regKey.GetValue("Disable Windows Notify", 0, RegistryValueOptions.None));
             cboRealmName.Text = (string)regKey.GetValue("Realm Name", "USEast", RegistryValueOptions.None);
             cboServer.Text = (string)regKey.GetValue("Server", System.String.Empty, RegistryValueOptions.None);
             cboShowUndecoded.Text = Convert.ToString((Int32)regKey.GetValue("Show Undecoded", 0, RegistryValueOptions.None));
@@ -243,7 +250,8 @@ namespace SphtBotv3_Registry_Manager
             txtIRCPassword.Text = (string)regKey.GetValue("IRC Password", System.String.Empty, RegistryValueOptions.None);
             cboIRCServer.Text = (string)regKey.GetValue("IRC Server", System.String.Empty, RegistryValueOptions.None);
             txtMask.Text = (string)regKey.GetValue("BotNet Database Mask", System.String.Empty, RegistryValueOptions.None);
-            txtRealmCharacter.Text = (string)regKey.GetValue("Realm Character", System.String.Empty, RegistryValueOptions.None);
+            txtNotify.Text = (string)regKey.GetValue("Notify Keyword", System.String.Empty, RegistryValueOptions.None);
+            txtRealmCharacter.Text = (string)regKey.GetValue("Realm Character Name", System.String.Empty, RegistryValueOptions.None);
             txtUDPPort.Text = Convert.ToString((Int32)regKey.GetValue("UDP Port", 0, RegistryValueOptions.None));
 
             // Since the DWORD values come back as 1 or 0 due to how the program recognizes it, this basically translates 1 into Enabled or 0 into Disabled using a Ternary Operator
@@ -254,6 +262,7 @@ namespace SphtBotv3_Registry_Manager
             cboChannelOrder.Text = Convert.ToString((Int32)regKey.GetValue("Channel Order")) == "1" ? "Enabled" : "Disabled";
             cboDescribeUserFlags.Text = Convert.ToString((Int32)regKey.GetValue("Describe User Flags")) == "1" ? "Enabled" : "Disabled";
             cboExtendedWhois.Text = Convert.ToString((Int32)regKey.GetValue("Extended Whois")) == "1" ? "Enabled" : "Disabled";
+            cboNotify.Text = Convert.ToString((Int32)regKey.GetValue("Disable Windows Notify")) == "0" ? "Enabled" : "Disabled";
             cboShowUndecoded.Text = Convert.ToString((Int32)regKey.GetValue("Show Undecoded")) == "1" ? "Enabled" : "Disabled";
             chkAutoRejoin.Checked = Convert.ToString((Int32)regKey.GetValue("Auto Rejoin")) == "1" ? true : false;
             chkBNETAutoCon.Checked = Convert.ToString((Int32)regKey.GetValue("Connect to Battle.net")) == "1" ? true : false;
@@ -337,6 +346,33 @@ namespace SphtBotv3_Registry_Manager
                     break;
             }
 
+            switch (Convert.ToString((Int32)regKey.GetValue("Realm Character Class")))
+            {
+                case "0":
+                    cboClass.Text = "Amazon";
+                    break;
+                case "1":
+                    cboClass.Text = "Sorceress";
+                    break;
+                case "2":
+                    cboClass.Text = "Necromancer";
+                    break;
+                case "3":
+                    cboClass.Text = "Paladin";
+                    break;
+                case "4":
+                    cboClass.Text = "Barbarian";
+                    break;
+                case "5":
+                    cboClass.Text = "Druid";
+                    break;
+                case "6":
+                    cboClass.Text = "Assassin";
+                    break;
+                default:
+                    break;
+            }
+
             regKey.Close();
         }
 
@@ -344,7 +380,10 @@ namespace SphtBotv3_Registry_Manager
         {
             // regKey is passed over from Write() depending on a Profile or Global.
             // The SubKey name is passed, if the text on the ComboBox says Enabled write a 1 else a 0 value DWORD
-            regKey.SetValue(strKey, cboB.Text == "Enabled" ? 1 : 0, regKind);
+            if (cboB != cboNotify)
+                regKey.SetValue(strKey, cboB.Text == "Enabled" ? 1 : 0, regKind);
+            else
+                regKey.SetValue(strKey, cboB.Text == "Enabled" ? 0 : 1, regKind);
         }
 
         private void SetAble(RegistryKey regKey, CheckBox chkB, string strKey, RegistryValueKind regKind)
@@ -377,6 +416,7 @@ namespace SphtBotv3_Registry_Manager
                 SetAbled(regKey, cboChannelOrder, "Channel Order", RegistryValueKind.DWord);
                 SetAbled(regKey, cboDescribeUserFlags, "Describe User Flags", RegistryValueKind.DWord);
                 SetAbled(regKey, cboExtendedWhois, "Extended Whois", RegistryValueKind.DWord);
+                SetAbled(regKey, cboNotify, "Disable Windows Notify", RegistryValueKind.DWord);
                 SetAbled(regKey, cboShowUndecoded, "Show Undecoded", RegistryValueKind.DWord);
 
                 // SetAble(regKey (Global or Profile), CheckBoxName, SubKeyName, Dword/String/QWord,etc)
@@ -405,8 +445,9 @@ namespace SphtBotv3_Registry_Manager
                 SetValue(regKey, "IRC Password", txtIRCPassword.Text, RegistryValueKind.String);
                 SetValue(regKey, "IRC Server", cboIRCServer.Text, RegistryValueKind.String);
                 SetValue(regKey, "IRC Username", txtIRCName.Text, RegistryValueKind.String);
+                SetValue(regKey, "Notify Keyword", txtNotify.Text, RegistryValueKind.String);
                 SetValue(regKey, "Password", txtBNETPassword.Text, RegistryValueKind.String);
-                SetValue(regKey, "Realm Character", txtRealmCharacter.Text, RegistryValueKind.String);
+                SetValue(regKey, "Realm Character Name", txtRealmCharacter.Text, RegistryValueKind.String);
                 SetValue(regKey, "Realm Name", cboRealmName.Text, RegistryValueKind.String);
                 SetValue(regKey, "Server", cboServer.Text, RegistryValueKind.String);
                 SetValue(regKey, "UDP Port", txtUDPPort.Text, RegistryValueKind.DWord);
@@ -474,6 +515,33 @@ namespace SphtBotv3_Registry_Manager
                     case "StarCraft Shareware":
                         regKey.SetValue("Product", 11, RegistryValueKind.DWord);
                         regKey.SetValue("StarCraft Shareware CD-Key", txtCDKey.Text, RegistryValueKind.String);
+                        break;
+                    default:
+                        break;
+                }
+
+                switch (cboClass.Text)
+                {
+                    case "Amazon":
+                        regKey.SetValue("Realm Character Class", 0, RegistryValueKind.DWord);
+                        break;
+                    case "Sorceress":
+                        regKey.SetValue("Realm Character Class", 1, RegistryValueKind.DWord);
+                        break;
+                    case "Necromancer":
+                        regKey.SetValue("Realm Character Class", 2, RegistryValueKind.DWord);
+                        break;
+                    case "Paladin":
+                        regKey.SetValue("Realm Character Class", 3, RegistryValueKind.DWord);
+                        break;
+                    case "Barbarian":
+                        regKey.SetValue("Realm Character Class", 4, RegistryValueKind.DWord);
+                        break;
+                    case "Druid":
+                        regKey.SetValue("Realm Character Class", 5, RegistryValueKind.DWord);
+                        break;
+                    case "Assassin":
+                        regKey.SetValue("Realm Character Class", 6, RegistryValueKind.DWord);
                         break;
                     default:
                         break;

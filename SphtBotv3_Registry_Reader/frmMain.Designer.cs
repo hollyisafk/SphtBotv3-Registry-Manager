@@ -97,6 +97,15 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
             this.cboProfiles = new System.Windows.Forms.ComboBox();
             this.lblProfiles = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -119,30 +128,29 @@
             this.txtBotNetServer = new System.Windows.Forms.TextBox();
             this.txtBotNetDatabase = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.cboIRCServer = new System.Windows.Forms.ComboBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.txtIRCName = new System.Windows.Forms.TextBox();
-            this.btnIRCName = new System.Windows.Forms.Button();
-            this.txtIRCEmail = new System.Windows.Forms.TextBox();
-            this.btnIRCEmail = new System.Windows.Forms.Button();
-            this.label33 = new System.Windows.Forms.Label();
-            this.txtIRCAccount = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.txtIRCPassword = new System.Windows.Forms.TextBox();
-            this.btnIRCPassword = new System.Windows.Forms.Button();
-            this.label35 = new System.Windows.Forms.Label();
-            this.txtIRCChannels = new System.Windows.Forms.TextBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.txtPerform = new System.Windows.Forms.TextBox();
             this.btnPerform = new System.Windows.Forms.Button();
-            this.label37 = new System.Windows.Forms.Label();
+            this.txtPerform = new System.Windows.Forms.TextBox();
+            this.txtIRCChannels = new System.Windows.Forms.TextBox();
+            this.btnIRCPassword = new System.Windows.Forms.Button();
+            this.txtIRCPassword = new System.Windows.Forms.TextBox();
+            this.txtIRCAccount = new System.Windows.Forms.TextBox();
+            this.btnIRCEmail = new System.Windows.Forms.Button();
+            this.txtIRCEmail = new System.Windows.Forms.TextBox();
+            this.btnIRCName = new System.Windows.Forms.Button();
+            this.txtIRCName = new System.Windows.Forms.TextBox();
+            this.cboIRCServer = new System.Windows.Forms.ComboBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtNotify = new System.Windows.Forms.TextBox();
+            this.cboNotify = new System.Windows.Forms.ComboBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.cboClass = new System.Windows.Forms.ComboBox();
             this.mnuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // mnuStrip
@@ -172,7 +180,7 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(368, 580);
+            this.btnRead.Location = new System.Drawing.Point(368, 581);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(97, 35);
             this.btnRead.TabIndex = 3;
@@ -182,7 +190,7 @@
             // 
             // btnWrite
             // 
-            this.btnWrite.Location = new System.Drawing.Point(618, 580);
+            this.btnWrite.Location = new System.Drawing.Point(618, 581);
             this.btnWrite.Name = "btnWrite";
             this.btnWrite.Size = new System.Drawing.Size(97, 35);
             this.btnWrite.TabIndex = 4;
@@ -192,10 +200,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cboClass);
+            this.groupBox1.Controls.Add(this.label40);
             this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Controls.Add(this.cboPing);
-            this.groupBox1.Controls.Add(this.chkCDKey);
             this.groupBox1.Controls.Add(this.chkUDP);
+            this.groupBox1.Controls.Add(this.chkCDKey);
             this.groupBox1.Controls.Add(this.chkBNETAutoCon);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtRealmCharacter);
@@ -225,7 +235,7 @@
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Location = new System.Drawing.Point(15, 67);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(347, 412);
+            this.groupBox1.Size = new System.Drawing.Size(347, 439);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Battle.net Connection Setup";
@@ -234,7 +244,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(6, 316);
+            this.label22.Location = new System.Drawing.Point(6, 343);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(59, 13);
             this.label22.TabIndex = 107;
@@ -249,7 +259,7 @@
             "None",
             "Ignore pre-logon ping (-1ms ping)",
             "Post-send pre-logon ping (0ms ping)"});
-            this.cboPing.Location = new System.Drawing.Point(114, 313);
+            this.cboPing.Location = new System.Drawing.Point(114, 340);
             this.cboPing.Name = "cboPing";
             this.cboPing.Size = new System.Drawing.Size(219, 21);
             this.cboPing.TabIndex = 106;
@@ -257,7 +267,7 @@
             // chkCDKey
             // 
             this.chkCDKey.AutoSize = true;
-            this.chkCDKey.Location = new System.Drawing.Point(9, 386);
+            this.chkCDKey.Location = new System.Drawing.Point(9, 413);
             this.chkCDKey.Name = "chkCDKey";
             this.chkCDKey.Size = new System.Drawing.Size(98, 17);
             this.chkCDKey.TabIndex = 105;
@@ -267,7 +277,7 @@
             // chkUDP
             // 
             this.chkUDP.AutoSize = true;
-            this.chkUDP.Location = new System.Drawing.Point(9, 340);
+            this.chkUDP.Location = new System.Drawing.Point(9, 367);
             this.chkUDP.Name = "chkUDP";
             this.chkUDP.Size = new System.Drawing.Size(213, 17);
             this.chkUDP.TabIndex = 104;
@@ -277,7 +287,7 @@
             // chkBNETAutoCon
             // 
             this.chkBNETAutoCon.AutoSize = true;
-            this.chkBNETAutoCon.Location = new System.Drawing.Point(9, 363);
+            this.chkBNETAutoCon.Location = new System.Drawing.Point(9, 390);
             this.chkBNETAutoCon.Name = "chkBNETAutoCon";
             this.chkBNETAutoCon.Size = new System.Drawing.Size(190, 17);
             this.chkBNETAutoCon.TabIndex = 102;
@@ -917,6 +927,111 @@
                     "n be used and databases should be separated by a comma\r\nExample:\r\n    *[vL]*,BNL" +
                     "S,WebChannel,null");
             // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(6, 26);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(38, 13);
+            this.label31.TabIndex = 120;
+            this.label31.Text = "Server";
+            this.Tooltip.SetToolTip(this.label31, "This specifies the IRC server the bot will connect to.\r\nLeave as \"none\" if you do" +
+                    "n\'t want to use IRC.");
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(6, 52);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(60, 13);
+            this.label32.TabIndex = 122;
+            this.label32.Text = "Real Name";
+            this.Tooltip.SetToolTip(this.label32, "Your real name you use for IRC when people whois you.\r\n(Optional)");
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(6, 78);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(36, 13);
+            this.label33.TabIndex = 127;
+            this.label33.Text = "E-Mail";
+            this.Tooltip.SetToolTip(this.label33, "E-Mail used for IRC.\r\nNOTE: You do NOT have to use a real e-mail unless otherwise" +
+                    " specified");
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(6, 102);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(47, 13);
+            this.label34.TabIndex = 129;
+            this.label34.Text = "Account";
+            this.Tooltip.SetToolTip(this.label34, "The alias you want to chat with on an IRC network");
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(6, 129);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(53, 13);
+            this.label35.TabIndex = 132;
+            this.label35.Text = "Password";
+            this.Tooltip.SetToolTip(this.label35, "Password that authenticates with the account you\'re using");
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(6, 156);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(51, 13);
+            this.label36.TabIndex = 134;
+            this.label36.Text = "Channels";
+            this.Tooltip.SetToolTip(this.label36, "Channels you want to automatically join upon connection. You must prepend the cha" +
+                    "nnels with # and can join multiple channels with a comma\r\nExample:\r\n    #channel" +
+                    "1,#channel2,#channel3");
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(6, 184);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(43, 13);
+            this.label37.TabIndex = 137;
+            this.label37.Text = "Perform";
+            this.Tooltip.SetToolTip(this.label37, "Any actions or internal commands to process as soon as connection is sucessfully " +
+                    "achieved");
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(6, 22);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(81, 13);
+            this.label38.TabIndex = 86;
+            this.label38.Text = "Windows Notify";
+            this.Tooltip.SetToolTip(this.label38, "When enabled, if the bot doesn\'t have focus and a specified string is called then" +
+                    " it will flash in the taskbar");
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(6, 50);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(78, 13);
+            this.label39.TabIndex = 87;
+            this.label39.Text = "Notify Keyword";
+            this.Tooltip.SetToolTip(this.label39, "This is the specified string that Windows Notify relies on");
+            // 
             // cboProfiles
             // 
             this.cboProfiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -970,7 +1085,7 @@
             this.groupBox3.Controls.Add(this.chkJoinLeave);
             this.groupBox3.Controls.Add(this.txtHome);
             this.groupBox3.Controls.Add(this.label23);
-            this.groupBox3.Location = new System.Drawing.Point(15, 489);
+            this.groupBox3.Location = new System.Drawing.Point(15, 512);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(347, 116);
             this.groupBox3.TabIndex = 76;
@@ -1154,154 +1269,15 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "IRC Connection Setup";
             // 
-            // label31
+            // btnPerform
             // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(6, 26);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(38, 13);
-            this.label31.TabIndex = 120;
-            this.label31.Text = "Server";
-            this.Tooltip.SetToolTip(this.label31, "This specifies the IRC server the bot will connect to.\r\nLeave as \"none\" if you do" +
-                    "n\'t want to use IRC.");
-            // 
-            // cboIRCServer
-            // 
-            this.cboIRCServer.BackColor = System.Drawing.Color.White;
-            this.cboIRCServer.FormattingEnabled = true;
-            this.cboIRCServer.Location = new System.Drawing.Point(122, 22);
-            this.cboIRCServer.Name = "cboIRCServer";
-            this.cboIRCServer.Size = new System.Drawing.Size(219, 21);
-            this.cboIRCServer.TabIndex = 121;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(6, 52);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(60, 13);
-            this.label32.TabIndex = 122;
-            this.label32.Text = "Real Name";
-            this.Tooltip.SetToolTip(this.label32, "Your real name you use for IRC when people whois you.\r\n(Optional)");
-            // 
-            // txtIRCName
-            // 
-            this.txtIRCName.Location = new System.Drawing.Point(122, 49);
-            this.txtIRCName.MaxLength = 15;
-            this.txtIRCName.Name = "txtIRCName";
-            this.txtIRCName.Size = new System.Drawing.Size(194, 20);
-            this.txtIRCName.TabIndex = 123;
-            this.txtIRCName.UseSystemPasswordChar = true;
-            // 
-            // btnIRCName
-            // 
-            this.btnIRCName.Location = new System.Drawing.Point(322, 47);
-            this.btnIRCName.Name = "btnIRCName";
-            this.btnIRCName.Size = new System.Drawing.Size(19, 23);
-            this.btnIRCName.TabIndex = 124;
-            this.btnIRCName.UseVisualStyleBackColor = true;
-            this.btnIRCName.Click += new System.EventHandler(this.btnIRCName_Click);
-            // 
-            // txtIRCEmail
-            // 
-            this.txtIRCEmail.Location = new System.Drawing.Point(122, 75);
-            this.txtIRCEmail.MaxLength = 15;
-            this.txtIRCEmail.Name = "txtIRCEmail";
-            this.txtIRCEmail.Size = new System.Drawing.Size(194, 20);
-            this.txtIRCEmail.TabIndex = 125;
-            this.txtIRCEmail.UseSystemPasswordChar = true;
-            // 
-            // btnIRCEmail
-            // 
-            this.btnIRCEmail.Location = new System.Drawing.Point(322, 73);
-            this.btnIRCEmail.Name = "btnIRCEmail";
-            this.btnIRCEmail.Size = new System.Drawing.Size(19, 23);
-            this.btnIRCEmail.TabIndex = 126;
-            this.btnIRCEmail.UseVisualStyleBackColor = true;
-            this.btnIRCEmail.Click += new System.EventHandler(this.btnIRCEmail_Click);
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(6, 78);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(36, 13);
-            this.label33.TabIndex = 127;
-            this.label33.Text = "E-Mail";
-            this.Tooltip.SetToolTip(this.label33, "E-Mail used for IRC.\r\nNOTE: You do NOT have to use a real e-mail unless otherwise" +
-                    " specified");
-            // 
-            // txtIRCAccount
-            // 
-            this.txtIRCAccount.Location = new System.Drawing.Point(122, 101);
-            this.txtIRCAccount.MaxLength = 15;
-            this.txtIRCAccount.Name = "txtIRCAccount";
-            this.txtIRCAccount.Size = new System.Drawing.Size(219, 20);
-            this.txtIRCAccount.TabIndex = 128;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(6, 102);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(47, 13);
-            this.label34.TabIndex = 129;
-            this.label34.Text = "Account";
-            this.Tooltip.SetToolTip(this.label34, "The alias you want to chat with on an IRC network");
-            // 
-            // txtIRCPassword
-            // 
-            this.txtIRCPassword.Location = new System.Drawing.Point(122, 127);
-            this.txtIRCPassword.MaxLength = 15;
-            this.txtIRCPassword.Name = "txtIRCPassword";
-            this.txtIRCPassword.Size = new System.Drawing.Size(194, 20);
-            this.txtIRCPassword.TabIndex = 130;
-            this.txtIRCPassword.UseSystemPasswordChar = true;
-            // 
-            // btnIRCPassword
-            // 
-            this.btnIRCPassword.Location = new System.Drawing.Point(322, 124);
-            this.btnIRCPassword.Name = "btnIRCPassword";
-            this.btnIRCPassword.Size = new System.Drawing.Size(19, 23);
-            this.btnIRCPassword.TabIndex = 131;
-            this.btnIRCPassword.UseVisualStyleBackColor = true;
-            this.btnIRCPassword.Click += new System.EventHandler(this.btnIRCPassword_Click);
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(6, 129);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(53, 13);
-            this.label35.TabIndex = 132;
-            this.label35.Text = "Password";
-            this.Tooltip.SetToolTip(this.label35, "Password that authenticates with the account you\'re using");
-            // 
-            // txtIRCChannels
-            // 
-            this.txtIRCChannels.Location = new System.Drawing.Point(122, 153);
-            this.txtIRCChannels.MaxLength = 15;
-            this.txtIRCChannels.Name = "txtIRCChannels";
-            this.txtIRCChannels.Size = new System.Drawing.Size(219, 20);
-            this.txtIRCChannels.TabIndex = 133;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(6, 156);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(51, 13);
-            this.label36.TabIndex = 134;
-            this.label36.Text = "Channels";
-            this.Tooltip.SetToolTip(this.label36, "Channels you want to automatically join upon connection. You must prepend the cha" +
-                    "nnels with # and can join multiple channels with a comma\r\nExample:\r\n    #channel" +
-                    "1,#channel2,#channel3");
+            this.btnPerform.Enabled = false;
+            this.btnPerform.Location = new System.Drawing.Point(322, 180);
+            this.btnPerform.Name = "btnPerform";
+            this.btnPerform.Size = new System.Drawing.Size(19, 23);
+            this.btnPerform.TabIndex = 136;
+            this.btnPerform.UseVisualStyleBackColor = true;
+            this.btnPerform.Click += new System.EventHandler(this.btnPerform_Click);
             // 
             // txtPerform
             // 
@@ -1314,33 +1290,154 @@
             this.txtPerform.TabIndex = 135;
             this.txtPerform.UseSystemPasswordChar = true;
             // 
-            // btnPerform
+            // txtIRCChannels
             // 
-            this.btnPerform.Enabled = false;
-            this.btnPerform.Location = new System.Drawing.Point(322, 180);
-            this.btnPerform.Name = "btnPerform";
-            this.btnPerform.Size = new System.Drawing.Size(19, 23);
-            this.btnPerform.TabIndex = 136;
-            this.btnPerform.UseVisualStyleBackColor = true;
-            this.btnPerform.Click += new System.EventHandler(this.btnPerform_Click);
+            this.txtIRCChannels.Location = new System.Drawing.Point(122, 153);
+            this.txtIRCChannels.MaxLength = 15;
+            this.txtIRCChannels.Name = "txtIRCChannels";
+            this.txtIRCChannels.Size = new System.Drawing.Size(219, 20);
+            this.txtIRCChannels.TabIndex = 133;
             // 
-            // label37
+            // btnIRCPassword
             // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(6, 184);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(43, 13);
-            this.label37.TabIndex = 137;
-            this.label37.Text = "Perform";
-            this.Tooltip.SetToolTip(this.label37, "Any actions or internal commands to process as soon as connection is sucessfully " +
-                    "achieved");
+            this.btnIRCPassword.Location = new System.Drawing.Point(322, 124);
+            this.btnIRCPassword.Name = "btnIRCPassword";
+            this.btnIRCPassword.Size = new System.Drawing.Size(19, 23);
+            this.btnIRCPassword.TabIndex = 131;
+            this.btnIRCPassword.UseVisualStyleBackColor = true;
+            this.btnIRCPassword.Click += new System.EventHandler(this.btnIRCPassword_Click);
+            // 
+            // txtIRCPassword
+            // 
+            this.txtIRCPassword.Location = new System.Drawing.Point(122, 127);
+            this.txtIRCPassword.MaxLength = 15;
+            this.txtIRCPassword.Name = "txtIRCPassword";
+            this.txtIRCPassword.Size = new System.Drawing.Size(194, 20);
+            this.txtIRCPassword.TabIndex = 130;
+            this.txtIRCPassword.UseSystemPasswordChar = true;
+            // 
+            // txtIRCAccount
+            // 
+            this.txtIRCAccount.Location = new System.Drawing.Point(122, 101);
+            this.txtIRCAccount.MaxLength = 15;
+            this.txtIRCAccount.Name = "txtIRCAccount";
+            this.txtIRCAccount.Size = new System.Drawing.Size(219, 20);
+            this.txtIRCAccount.TabIndex = 128;
+            // 
+            // btnIRCEmail
+            // 
+            this.btnIRCEmail.Location = new System.Drawing.Point(322, 73);
+            this.btnIRCEmail.Name = "btnIRCEmail";
+            this.btnIRCEmail.Size = new System.Drawing.Size(19, 23);
+            this.btnIRCEmail.TabIndex = 126;
+            this.btnIRCEmail.UseVisualStyleBackColor = true;
+            this.btnIRCEmail.Click += new System.EventHandler(this.btnIRCEmail_Click);
+            // 
+            // txtIRCEmail
+            // 
+            this.txtIRCEmail.Location = new System.Drawing.Point(122, 75);
+            this.txtIRCEmail.MaxLength = 15;
+            this.txtIRCEmail.Name = "txtIRCEmail";
+            this.txtIRCEmail.Size = new System.Drawing.Size(194, 20);
+            this.txtIRCEmail.TabIndex = 125;
+            this.txtIRCEmail.UseSystemPasswordChar = true;
+            // 
+            // btnIRCName
+            // 
+            this.btnIRCName.Location = new System.Drawing.Point(322, 47);
+            this.btnIRCName.Name = "btnIRCName";
+            this.btnIRCName.Size = new System.Drawing.Size(19, 23);
+            this.btnIRCName.TabIndex = 124;
+            this.btnIRCName.UseVisualStyleBackColor = true;
+            this.btnIRCName.Click += new System.EventHandler(this.btnIRCName_Click);
+            // 
+            // txtIRCName
+            // 
+            this.txtIRCName.Location = new System.Drawing.Point(122, 49);
+            this.txtIRCName.MaxLength = 15;
+            this.txtIRCName.Name = "txtIRCName";
+            this.txtIRCName.Size = new System.Drawing.Size(194, 20);
+            this.txtIRCName.TabIndex = 123;
+            this.txtIRCName.UseSystemPasswordChar = true;
+            // 
+            // cboIRCServer
+            // 
+            this.cboIRCServer.BackColor = System.Drawing.Color.White;
+            this.cboIRCServer.FormattingEnabled = true;
+            this.cboIRCServer.Location = new System.Drawing.Point(122, 22);
+            this.cboIRCServer.Name = "cboIRCServer";
+            this.cboIRCServer.Size = new System.Drawing.Size(219, 21);
+            this.cboIRCServer.TabIndex = 121;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.txtNotify);
+            this.groupBox6.Controls.Add(this.label39);
+            this.groupBox6.Controls.Add(this.label38);
+            this.groupBox6.Controls.Add(this.cboNotify);
+            this.groupBox6.Location = new System.Drawing.Point(721, 391);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(297, 79);
+            this.groupBox6.TabIndex = 80;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Miscellaneous";
+            // 
+            // txtNotify
+            // 
+            this.txtNotify.Location = new System.Drawing.Point(161, 47);
+            this.txtNotify.MaxLength = 15;
+            this.txtNotify.Name = "txtNotify";
+            this.txtNotify.Size = new System.Drawing.Size(130, 20);
+            this.txtNotify.TabIndex = 88;
+            // 
+            // cboNotify
+            // 
+            this.cboNotify.BackColor = System.Drawing.Color.White;
+            this.cboNotify.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboNotify.FormattingEnabled = true;
+            this.cboNotify.Items.AddRange(new object[] {
+            "Enabled",
+            "Disabled"});
+            this.cboNotify.Location = new System.Drawing.Point(161, 20);
+            this.cboNotify.Name = "cboNotify";
+            this.cboNotify.Size = new System.Drawing.Size(130, 21);
+            this.cboNotify.TabIndex = 85;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(6, 316);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(107, 13);
+            this.label40.TabIndex = 108;
+            this.label40.Text = "MCP Character Class";
+            this.Tooltip.SetToolTip(this.label40, "The Diablo II MCP character class that you want to create using /createchar");
+            // 
+            // cboClass
+            // 
+            this.cboClass.BackColor = System.Drawing.Color.White;
+            this.cboClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboClass.FormattingEnabled = true;
+            this.cboClass.Items.AddRange(new object[] {
+            "Amazon",
+            "Assassin",
+            "Barbarian",
+            "Druid",
+            "Necromancer",
+            "Paladin",
+            "Sorceress"});
+            this.cboClass.Location = new System.Drawing.Point(114, 313);
+            this.cboClass.Name = "cboClass";
+            this.cboClass.Size = new System.Drawing.Size(219, 21);
+            this.cboClass.TabIndex = 109;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 627);
+            this.ClientSize = new System.Drawing.Size(1032, 637);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -1373,6 +1470,8 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1487,6 +1586,13 @@
         private System.Windows.Forms.Button btnPerform;
         private System.Windows.Forms.TextBox txtPerform;
         private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.ComboBox cboNotify;
+        private System.Windows.Forms.TextBox txtNotify;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.ComboBox cboClass;
+        private System.Windows.Forms.Label label40;
     }
 }
 
