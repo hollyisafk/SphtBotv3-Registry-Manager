@@ -118,7 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="rtbChangeLog.Text" xml:space="preserve">
-    <value>1.1.7.0818 (Release)
+    <value>1.1.8 (Release)
+- Various internal improvements
+- Added Product Language
+
+1.1.7.0818 (Release)
 - Various internal improvements
 
 1.1.7.0817 (Release)

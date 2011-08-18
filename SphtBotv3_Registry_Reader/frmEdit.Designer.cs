@@ -46,7 +46,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(224, 12);
+            this.btnDelete.Location = new System.Drawing.Point(109, 12);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(91, 41);
             this.btnDelete.TabIndex = 1;
@@ -56,7 +56,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(118, 63);
+            this.btnClose.Location = new System.Drawing.Point(206, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(91, 41);
             this.btnClose.TabIndex = 2;
@@ -68,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 116);
+            this.ClientSize = new System.Drawing.Size(308, 64);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnRename);

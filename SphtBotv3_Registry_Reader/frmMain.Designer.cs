@@ -144,6 +144,8 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.txtNotify = new System.Windows.Forms.TextBox();
             this.cboNotify = new System.Windows.Forms.ComboBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.cboLanguage = new System.Windows.Forms.ComboBox();
             this.mnuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -180,7 +182,7 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(721, 476);
+            this.btnRead.Location = new System.Drawing.Point(821, 501);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(97, 35);
             this.btnRead.TabIndex = 3;
@@ -190,7 +192,7 @@
             // 
             // btnWrite
             // 
-            this.btnWrite.Location = new System.Drawing.Point(921, 476);
+            this.btnWrite.Location = new System.Drawing.Point(821, 542);
             this.btnWrite.Name = "btnWrite";
             this.btnWrite.Size = new System.Drawing.Size(97, 35);
             this.btnWrite.TabIndex = 4;
@@ -621,6 +623,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cboLanguage);
+            this.groupBox2.Controls.Add(this.label41);
             this.groupBox2.Controls.Add(this.label30);
             this.groupBox2.Controls.Add(this.cboPlatform);
             this.groupBox2.Controls.Add(this.txtUDPPort);
@@ -645,7 +649,7 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(368, 67);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(297, 318);
+            this.groupBox2.Size = new System.Drawing.Size(297, 343);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Battle.net Miscellaneous";
@@ -1116,7 +1120,7 @@
             this.groupBox3.Controls.Add(this.label23);
             this.groupBox3.Location = new System.Drawing.Point(15, 512);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(347, 116);
+            this.groupBox3.Size = new System.Drawing.Size(347, 88);
             this.groupBox3.TabIndex = 76;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Battle.net Channel Setup";
@@ -1124,7 +1128,7 @@
             // chkAutoRejoin
             // 
             this.chkAutoRejoin.AutoSize = true;
-            this.chkAutoRejoin.Location = new System.Drawing.Point(9, 91);
+            this.chkAutoRejoin.Location = new System.Drawing.Point(213, 45);
             this.chkAutoRejoin.Name = "chkAutoRejoin";
             this.chkAutoRejoin.Size = new System.Drawing.Size(120, 17);
             this.chkAutoRejoin.TabIndex = 112;
@@ -1186,7 +1190,7 @@
             this.groupBox4.Controls.Add(this.label25);
             this.groupBox4.Controls.Add(this.txtBotNetDatabase);
             this.groupBox4.Controls.Add(this.label24);
-            this.groupBox4.Location = new System.Drawing.Point(368, 391);
+            this.groupBox4.Location = new System.Drawing.Point(368, 416);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(347, 184);
             this.groupBox4.TabIndex = 78;
@@ -1293,7 +1297,7 @@
             this.groupBox5.Controls.Add(this.label31);
             this.groupBox5.Location = new System.Drawing.Point(671, 67);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(347, 318);
+            this.groupBox5.Size = new System.Drawing.Size(347, 343);
             this.groupBox5.TabIndex = 79;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "IRC Connection Setup";
@@ -1315,7 +1319,7 @@
             this.txtPerform.MaxLength = 15;
             this.txtPerform.Multiline = true;
             this.txtPerform.Name = "txtPerform";
-            this.txtPerform.Size = new System.Drawing.Size(194, 126);
+            this.txtPerform.Size = new System.Drawing.Size(194, 151);
             this.txtPerform.TabIndex = 135;
             this.txtPerform.UseSystemPasswordChar = true;
             // 
@@ -1406,7 +1410,7 @@
             this.groupBox6.Controls.Add(this.label39);
             this.groupBox6.Controls.Add(this.label38);
             this.groupBox6.Controls.Add(this.cboNotify);
-            this.groupBox6.Location = new System.Drawing.Point(721, 391);
+            this.groupBox6.Location = new System.Drawing.Point(721, 416);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(297, 79);
             this.groupBox6.TabIndex = 80;
@@ -1434,11 +1438,34 @@
             this.cboNotify.Size = new System.Drawing.Size(130, 21);
             this.cboNotify.TabIndex = 85;
             // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(6, 314);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(55, 13);
+            this.label41.TabIndex = 89;
+            this.label41.Text = "Language";
+            this.Tooltip.SetToolTip(this.label41, "Sets the product language you want Battle.net to recoginize you\'re using.");
+            // 
+            // cboLanguage
+            // 
+            this.cboLanguage.BackColor = System.Drawing.Color.White;
+            this.cboLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboLanguage.FormattingEnabled = true;
+            this.cboLanguage.Items.AddRange(new object[] {
+            "English (United States)"});
+            this.cboLanguage.Location = new System.Drawing.Point(161, 311);
+            this.cboLanguage.Name = "cboLanguage";
+            this.cboLanguage.Size = new System.Drawing.Size(130, 21);
+            this.cboLanguage.TabIndex = 90;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 639);
+            this.ClientSize = new System.Drawing.Size(1032, 609);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -1595,6 +1622,8 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.ComboBox cboClass;
         private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.ComboBox cboLanguage;
+        private System.Windows.Forms.Label label41;
     }
 }
 
