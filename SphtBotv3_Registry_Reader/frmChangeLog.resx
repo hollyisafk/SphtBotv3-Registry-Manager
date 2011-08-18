@@ -118,7 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="rtbChangeLog.Text" xml:space="preserve">
-    <value>1.1.7.0817 (Release)
+    <value>1.1.7.0818 (Release)
+- Various internal improvements
+
+1.1.7.0817 (Release)
 - Added some recently added options
 - You can now specify what character class you want to make for Diablo II using /createchar
 

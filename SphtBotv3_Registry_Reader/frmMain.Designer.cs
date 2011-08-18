@@ -36,10 +36,12 @@
             this.btnRead = new System.Windows.Forms.Button();
             this.btnWrite = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboClass = new System.Windows.Forms.ComboBox();
+            this.label40 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.cboPing = new System.Windows.Forms.ComboBox();
-            this.chkCDKey = new System.Windows.Forms.CheckBox();
             this.chkUDP = new System.Windows.Forms.CheckBox();
+            this.chkCDKey = new System.Windows.Forms.CheckBox();
             this.chkBNETAutoCon = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtRealmCharacter = new System.Windows.Forms.TextBox();
@@ -142,8 +144,6 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.txtNotify = new System.Windows.Forms.TextBox();
             this.cboNotify = new System.Windows.Forms.ComboBox();
-            this.label40 = new System.Windows.Forms.Label();
-            this.cboClass = new System.Windows.Forms.ComboBox();
             this.mnuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -180,7 +180,7 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(368, 581);
+            this.btnRead.Location = new System.Drawing.Point(721, 476);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(97, 35);
             this.btnRead.TabIndex = 3;
@@ -190,7 +190,7 @@
             // 
             // btnWrite
             // 
-            this.btnWrite.Location = new System.Drawing.Point(618, 581);
+            this.btnWrite.Location = new System.Drawing.Point(921, 476);
             this.btnWrite.Name = "btnWrite";
             this.btnWrite.Size = new System.Drawing.Size(97, 35);
             this.btnWrite.TabIndex = 4;
@@ -240,6 +240,35 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Battle.net Connection Setup";
             // 
+            // cboClass
+            // 
+            this.cboClass.BackColor = System.Drawing.Color.White;
+            this.cboClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboClass.FormattingEnabled = true;
+            this.cboClass.Items.AddRange(new object[] {
+            "Amazon",
+            "Assassin",
+            "Barbarian",
+            "Druid",
+            "Necromancer",
+            "Paladin",
+            "Sorceress"});
+            this.cboClass.Location = new System.Drawing.Point(114, 313);
+            this.cboClass.Name = "cboClass";
+            this.cboClass.Size = new System.Drawing.Size(219, 21);
+            this.cboClass.TabIndex = 109;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(6, 316);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(107, 13);
+            this.label40.TabIndex = 108;
+            this.label40.Text = "MCP Character Class";
+            this.Tooltip.SetToolTip(this.label40, "The Diablo II MCP character class that you want to create using /createchar");
+            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -264,16 +293,6 @@
             this.cboPing.Size = new System.Drawing.Size(219, 21);
             this.cboPing.TabIndex = 106;
             // 
-            // chkCDKey
-            // 
-            this.chkCDKey.AutoSize = true;
-            this.chkCDKey.Location = new System.Drawing.Point(9, 413);
-            this.chkCDKey.Name = "chkCDKey";
-            this.chkCDKey.Size = new System.Drawing.Size(98, 17);
-            this.chkCDKey.TabIndex = 105;
-            this.chkCDKey.Text = "CD-Key Spawn";
-            this.chkCDKey.UseVisualStyleBackColor = true;
-            // 
             // chkUDP
             // 
             this.chkUDP.AutoSize = true;
@@ -283,6 +302,16 @@
             this.chkUDP.TabIndex = 104;
             this.chkUDP.Text = "Disable UDP communication subsystem";
             this.chkUDP.UseVisualStyleBackColor = true;
+            // 
+            // chkCDKey
+            // 
+            this.chkCDKey.AutoSize = true;
+            this.chkCDKey.Location = new System.Drawing.Point(9, 413);
+            this.chkCDKey.Name = "chkCDKey";
+            this.chkCDKey.Size = new System.Drawing.Size(98, 17);
+            this.chkCDKey.TabIndex = 105;
+            this.chkCDKey.Text = "CD-Key Spawn";
+            this.chkCDKey.UseVisualStyleBackColor = true;
             // 
             // chkBNETAutoCon
             // 
@@ -512,7 +541,7 @@
             // txtEMail
             // 
             this.txtEMail.Location = new System.Drawing.Point(114, 75);
-            this.txtEMail.MaxLength = 15;
+            this.txtEMail.MaxLength = 50;
             this.txtEMail.Name = "txtEMail";
             this.txtEMail.Size = new System.Drawing.Size(194, 20);
             this.txtEMail.TabIndex = 81;
@@ -1364,6 +1393,8 @@
             // 
             this.cboIRCServer.BackColor = System.Drawing.Color.White;
             this.cboIRCServer.FormattingEnabled = true;
+            this.cboIRCServer.Items.AddRange(new object[] {
+            "none"});
             this.cboIRCServer.Location = new System.Drawing.Point(122, 22);
             this.cboIRCServer.Name = "cboIRCServer";
             this.cboIRCServer.Size = new System.Drawing.Size(219, 21);
@@ -1403,40 +1434,11 @@
             this.cboNotify.Size = new System.Drawing.Size(130, 21);
             this.cboNotify.TabIndex = 85;
             // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(6, 316);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(107, 13);
-            this.label40.TabIndex = 108;
-            this.label40.Text = "MCP Character Class";
-            this.Tooltip.SetToolTip(this.label40, "The Diablo II MCP character class that you want to create using /createchar");
-            // 
-            // cboClass
-            // 
-            this.cboClass.BackColor = System.Drawing.Color.White;
-            this.cboClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboClass.FormattingEnabled = true;
-            this.cboClass.Items.AddRange(new object[] {
-            "Amazon",
-            "Assassin",
-            "Barbarian",
-            "Druid",
-            "Necromancer",
-            "Paladin",
-            "Sorceress"});
-            this.cboClass.Location = new System.Drawing.Point(114, 313);
-            this.cboClass.Name = "cboClass";
-            this.cboClass.Size = new System.Drawing.Size(219, 21);
-            this.cboClass.TabIndex = 109;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 637);
+            this.ClientSize = new System.Drawing.Size(1032, 639);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
