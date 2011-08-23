@@ -72,6 +72,8 @@
             this.cboShowUndecoded = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cboLanguage = new System.Windows.Forms.ComboBox();
+            this.label41 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.cboPlatform = new System.Windows.Forms.ComboBox();
             this.txtUDPPort = new System.Windows.Forms.TextBox();
@@ -144,8 +146,10 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.txtNotify = new System.Windows.Forms.TextBox();
             this.cboNotify = new System.Windows.Forms.ComboBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.cboLanguage = new System.Windows.Forms.ComboBox();
+            this.cboCTCP = new System.Windows.Forms.ComboBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.txtFinger = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
             this.mnuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -182,7 +186,7 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(821, 501);
+            this.btnRead.Location = new System.Drawing.Point(721, 553);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(97, 35);
             this.btnRead.TabIndex = 3;
@@ -192,7 +196,7 @@
             // 
             // btnWrite
             // 
-            this.btnWrite.Location = new System.Drawing.Point(821, 542);
+            this.btnWrite.Location = new System.Drawing.Point(921, 553);
             this.btnWrite.Name = "btnWrite";
             this.btnWrite.Size = new System.Drawing.Size(97, 35);
             this.btnWrite.TabIndex = 4;
@@ -654,6 +658,29 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Battle.net Miscellaneous";
             // 
+            // cboLanguage
+            // 
+            this.cboLanguage.BackColor = System.Drawing.Color.White;
+            this.cboLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboLanguage.FormattingEnabled = true;
+            this.cboLanguage.Items.AddRange(new object[] {
+            "English (United States)"});
+            this.cboLanguage.Location = new System.Drawing.Point(161, 311);
+            this.cboLanguage.Name = "cboLanguage";
+            this.cboLanguage.Size = new System.Drawing.Size(130, 21);
+            this.cboLanguage.TabIndex = 90;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(6, 314);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(55, 13);
+            this.label41.TabIndex = 89;
+            this.label41.Text = "Language";
+            this.Tooltip.SetToolTip(this.label41, "Sets the product language you want Battle.net to recoginize you\'re using.");
+            // 
             // label30
             // 
             this.label30.AutoSize = true;
@@ -1063,7 +1090,8 @@
             this.label39.Size = new System.Drawing.Size(78, 13);
             this.label39.TabIndex = 87;
             this.label39.Text = "Notify Keyword";
-            this.Tooltip.SetToolTip(this.label39, "This is the specified string that Windows Notify relies on");
+            this.Tooltip.SetToolTip(this.label39, "This is the specified string that Windows Notify relies on. Keywords should be se" +
+                    "parated by a comma.\r\nExample:\r\n    Holly,Baroness,cats");
             // 
             // cboProfiles
             // 
@@ -1406,13 +1434,17 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.label43);
+            this.groupBox6.Controls.Add(this.txtFinger);
+            this.groupBox6.Controls.Add(this.label42);
+            this.groupBox6.Controls.Add(this.cboCTCP);
             this.groupBox6.Controls.Add(this.txtNotify);
             this.groupBox6.Controls.Add(this.label39);
             this.groupBox6.Controls.Add(this.label38);
             this.groupBox6.Controls.Add(this.cboNotify);
             this.groupBox6.Location = new System.Drawing.Point(721, 416);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(297, 79);
+            this.groupBox6.Size = new System.Drawing.Size(297, 131);
             this.groupBox6.TabIndex = 80;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Miscellaneous";
@@ -1438,28 +1470,48 @@
             this.cboNotify.Size = new System.Drawing.Size(130, 21);
             this.cboNotify.TabIndex = 85;
             // 
-            // label41
+            // cboCTCP
             // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(6, 314);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(55, 13);
-            this.label41.TabIndex = 89;
-            this.label41.Text = "Language";
-            this.Tooltip.SetToolTip(this.label41, "Sets the product language you want Battle.net to recoginize you\'re using.");
+            this.cboCTCP.BackColor = System.Drawing.Color.White;
+            this.cboCTCP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCTCP.FormattingEnabled = true;
+            this.cboCTCP.Items.AddRange(new object[] {
+            "Enabled",
+            "Disabled"});
+            this.cboCTCP.Location = new System.Drawing.Point(161, 73);
+            this.cboCTCP.Name = "cboCTCP";
+            this.cboCTCP.Size = new System.Drawing.Size(130, 21);
+            this.cboCTCP.TabIndex = 89;
             // 
-            // cboLanguage
+            // label42
             // 
-            this.cboLanguage.BackColor = System.Drawing.Color.White;
-            this.cboLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboLanguage.FormattingEnabled = true;
-            this.cboLanguage.Items.AddRange(new object[] {
-            "English (United States)"});
-            this.cboLanguage.Location = new System.Drawing.Point(161, 311);
-            this.cboLanguage.Name = "cboLanguage";
-            this.cboLanguage.Size = new System.Drawing.Size(130, 21);
-            this.cboLanguage.TabIndex = 90;
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(6, 76);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(56, 13);
+            this.label42.TabIndex = 90;
+            this.label42.Text = "IRC CTCP";
+            this.Tooltip.SetToolTip(this.label42, "Enable or Disable the IRC CTCP system");
+            // 
+            // txtFinger
+            // 
+            this.txtFinger.Location = new System.Drawing.Point(161, 100);
+            this.txtFinger.MaxLength = 15;
+            this.txtFinger.Name = "txtFinger";
+            this.txtFinger.Size = new System.Drawing.Size(130, 20);
+            this.txtFinger.TabIndex = 91;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(6, 103);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(87, 13);
+            this.label43.TabIndex = 92;
+            this.label43.Text = "IRC Finger Reply";
+            this.Tooltip.SetToolTip(this.label43, "Sets the string to reply when someone sends you a finger request via IRC\r\n");
             // 
             // frmMain
             // 
@@ -1624,6 +1676,10 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.ComboBox cboLanguage;
         private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.ComboBox cboCTCP;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox txtFinger;
     }
 }
 

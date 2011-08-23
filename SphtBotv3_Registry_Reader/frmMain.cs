@@ -105,43 +105,45 @@ namespace SphtBotv3_Registry_Manager
                 // Get values of all the designated keys. Since the DWORD values come out as strings, they need to be converted
                 // Since the DWORD values come back as 1 or 0 due to how the program recognizes it, this basically translates 1 into Enabled or 0 into Disabled using a Ternary Operator
                 // DropDownList items can't be temporarily edited like DropDown style can. Thus read it straight from the Registry, then assign the value
-                cboADBanner.Text = Convert.ToString((Int32)regKey.GetValue("Display AD-Banner")) == "1" ? "Enabled" : "Disabled";
-                cboAwayIdle.Text = Convert.ToString((Int32)regKey.GetValue("Away Idle")) == "1" ? "Enabled" : "Disabled";
-                cboBNLSAddress.Text = (string)regKey.GetValue("BNLS Address") == System.String.Empty ? "bnls.mattkv.net" : (string)regKey.GetValue("BNLS Address");
-                cboBleedTimestamps.Text = Convert.ToString((Int32)regKey.GetValue("Bleed Timestamps")) == "1" ? "Enabled" : "Disabled";
-                cboChannelOrder.Text = Convert.ToString((Int32)regKey.GetValue("Channel Order")) == "1" ? "Enabled" : "Disabled";
-                cboDescribeUserFlags.Text = Convert.ToString((Int32)regKey.GetValue("Describe User Flags")) == "1" ? "Enabled" : "Disabled";
-                cboExtendedWhois.Text = Convert.ToString((Int32)regKey.GetValue("Extended Whois")) == "1" ? "Enabled" : "Disabled";
+                cboADBanner.Text = Convert.ToString((Int32)regKey.GetValue("Display AD-Banner", 1)) == "1" ? "Enabled" : "Disabled";
+                cboAwayIdle.Text = Convert.ToString((Int32)regKey.GetValue("Away Idle", 1)) == "1" ? "Enabled" : "Disabled";
+                cboBNLSAddress.Text = (string)regKey.GetValue("BNLS Address", "bnls.mattkv.net") == System.String.Empty ? "bnls.mattkv.net" : (string)regKey.GetValue("BNLS Address");
+                cboBleedTimestamps.Text = Convert.ToString((Int32)regKey.GetValue("Bleed Timestamps", 0)) == "1" ? "Enabled" : "Disabled";
+                cboChannelOrder.Text = Convert.ToString((Int32)regKey.GetValue("Channel Order", 1)) == "1" ? "Enabled" : "Disabled";
+                cboCTCP.Text = Convert.ToString((Int32)regKey.GetValue("Disable CTCP", 0)) == "0" ? "Enabled" : "Disabled";
+                cboDescribeUserFlags.Text = Convert.ToString((Int32)regKey.GetValue("Describe User Flags", 1)) == "1" ? "Enabled" : "Disabled";
+                cboExtendedWhois.Text = Convert.ToString((Int32)regKey.GetValue("Extended Whois", 1)) == "1" ? "Enabled" : "Disabled";
                 cboIRCServer.Text = (string)regKey.GetValue("IRC Server", System.String.Empty, RegistryValueOptions.None);
-                cboNotify.Text = Convert.ToString((Int32)regKey.GetValue("Disable Windows Notify")) == "0" ? "Enabled" : "Disabled";
+                cboNotify.Text = Convert.ToString((Int32)regKey.GetValue("Disable Windows Notify", 0)) == "0" ? "Enabled" : "Disabled";
                 cboRealmName.Text = (string)regKey.GetValue("Realm Name") == System.String.Empty ? "USEast" : (string)regKey.GetValue("Realm Name");
                 cboServer.Text = (string)regKey.GetValue("Server") == System.String.Empty ? "useast.battle.net" : (string)regKey.GetValue("Server");
-                cboShowUndecoded.Text = Convert.ToString((Int32)regKey.GetValue("Show Undecoded")) == "1" ? "Enabled" : "Disabled";
-                chkAutoRejoin.Checked = Convert.ToString((Int32)regKey.GetValue("Auto Rejoin")) == "1" ? true : false;
-                chkBNETAutoCon.Checked = Convert.ToString((Int32)regKey.GetValue("Connect to Battle.net")) == "1" ? true : false;
-                chkBanKick.Checked = Convert.ToString((Int32)regKey.GetValue("Notify 2")) == "1" ? true : false;
-                chkCDKey.Checked = Convert.ToString((Int32)regKey.GetValue("Spawn")) == "1" ? true : false;
-                chkJoinLeave.Checked = Convert.ToString((Int32)regKey.GetValue("Notify")) == "1" ? true : false;
-                chkUDP.Checked = Convert.ToString((Int32)regKey.GetValue("No UDP")) == "1" ? true : false;
+                cboShowUndecoded.Text = Convert.ToString((Int32)regKey.GetValue("Show Undecoded", 0)) == "1" ? "Enabled" : "Disabled";
+                chkAutoRejoin.Checked = Convert.ToString((Int32)regKey.GetValue("Auto Rejoin", 1)) == "1" ? true : false;
+                chkBNETAutoCon.Checked = Convert.ToString((Int32)regKey.GetValue("Connect to Battle.net", 1)) == "1" ? true : false;
+                chkBanKick.Checked = Convert.ToString((Int32)regKey.GetValue("Notify 2", 1)) == "1" ? true : false;
+                chkCDKey.Checked = Convert.ToString((Int32)regKey.GetValue("Spawn", 0)) == "1" ? true : false;
+                chkJoinLeave.Checked = Convert.ToString((Int32)regKey.GetValue("Notify", 1)) == "1" ? true : false;
+                chkUDP.Checked = Convert.ToString((Int32)regKey.GetValue("No UDP", 1)) == "1" ? true : false;
                 txtBNETPassword.Text = (string)regKey.GetValue("Password", System.String.Empty);
-                txtBNETUsername.Text = (string)regKey.GetValue("Username", System.String.Empty, RegistryValueOptions.None);
-                txtBindIP.Text = (string)regKey.GetValue("Bind IP", System.String.Empty, RegistryValueOptions.None);
-                txtBotNetPassword.Text = (string)regKey.GetValue("BotNet Account Password", System.String.Empty, RegistryValueOptions.None);
-                txtBotNetServer.Text = (string)regKey.GetValue("BotNet Server", System.String.Empty, RegistryValueOptions.None);
-                txtBotNetUsername.Text = (string)regKey.GetValue("BotNet Account Name", System.String.Empty, RegistryValueOptions.None);
-                txtCDKeyUser.Text = (string)regKey.GetValue("CD-Key User", System.String.Empty, RegistryValueOptions.None);
-                txtEMail.Text = (string)regKey.GetValue("E-Mail", System.String.Empty, RegistryValueOptions.None);
-                txtHome.Text = (string)regKey.GetValue("Home Channel", System.String.Empty, RegistryValueOptions.None);
-                txtIRCAccount.Text = (string)regKey.GetValue("IRC Nickname", System.String.Empty, RegistryValueOptions.None);
-                txtIRCChannels.Text = (string)regKey.GetValue("IRC Channels", System.String.Empty, RegistryValueOptions.None);
-                txtIRCEmail.Text = (string)regKey.GetValue("IRC E-Mail", System.String.Empty, RegistryValueOptions.None);
-                txtIRCName.Text = (string)regKey.GetValue("IRC Username", System.String.Empty, RegistryValueOptions.None);
-                txtIRCPassword.Text = (string)regKey.GetValue("IRC Password", System.String.Empty, RegistryValueOptions.None);
-                txtIgnorePluginMask.Text = (string)regKey.GetValue("Ignore Plugin Mask", System.String.Empty, RegistryValueOptions.None);
-                txtMask.Text = (string)regKey.GetValue("BotNet Database Mask", System.String.Empty, RegistryValueOptions.None);
-                txtNotify.Text = (string)regKey.GetValue("Notify Keyword", System.String.Empty, RegistryValueOptions.None);
-                txtRealmCharacter.Text = (string)regKey.GetValue("Realm Character Name", System.String.Empty, RegistryValueOptions.None);
-                txtUDPPort.Text = Convert.ToString((Int32)regKey.GetValue("UDP Port", 0, RegistryValueOptions.None));
+                txtBNETUsername.Text = (string)regKey.GetValue("Username", System.String.Empty);
+                txtBindIP.Text = (string)regKey.GetValue("Bind IP", System.String.Empty);
+                txtBotNetPassword.Text = (string)regKey.GetValue("BotNet Account Password", System.String.Empty);
+                txtBotNetServer.Text = (string)regKey.GetValue("BotNet Server", System.String.Empty);
+                txtBotNetUsername.Text = (string)regKey.GetValue("BotNet Account Name", System.String.Empty);
+                txtCDKeyUser.Text = (string)regKey.GetValue("CD-Key User", System.String.Empty);
+                txtEMail.Text = (string)regKey.GetValue("E-Mail", System.String.Empty);
+                txtFinger.Text = (string)regKey.GetValue("Finger Reply", System.String.Empty);
+                txtHome.Text = (string)regKey.GetValue("Home Channel", System.String.Empty);
+                txtIRCAccount.Text = (string)regKey.GetValue("IRC Nickname", System.String.Empty);
+                txtIRCChannels.Text = (string)regKey.GetValue("IRC Channels", System.String.Empty);
+                txtIRCEmail.Text = (string)regKey.GetValue("IRC E-Mail", System.String.Empty);
+                txtIRCName.Text = (string)regKey.GetValue("IRC Username", System.String.Empty);
+                txtIRCPassword.Text = (string)regKey.GetValue("IRC Password", System.String.Empty);
+                txtIgnorePluginMask.Text = (string)regKey.GetValue("Ignore Plugin Mask", System.String.Empty);
+                txtMask.Text = (string)regKey.GetValue("BotNet Database Mask", System.String.Empty);
+                txtNotify.Text = (string)regKey.GetValue("Notify Keyword", System.String.Empty);
+                txtRealmCharacter.Text = (string)regKey.GetValue("Realm Character Name", System.String.Empty);
+                txtUDPPort.Text = Convert.ToString((Int32)regKey.GetValue("UDP Port", System.String.Empty));
 
                 string BN = (string)regKey.GetValue("BotNet Database", System.String.Empty, RegistryValueOptions.None);
                 string[] BotNet = BN.Split(' ');
@@ -159,14 +161,14 @@ namespace SphtBotv3_Registry_Manager
                 else if (Convert.ToString((Int32)regKey.GetValue("Ignore Ping")) == "0" && Convert.ToString((Int32)regKey.GetValue("Post-Reply Ping")) == "0")
                     cboPing.Text = "None";
 
-                if ((string)regKey.GetValue("Platform") == "IX86")
+                if ((string)regKey.GetValue("Platform") == System.String.Empty || (string)regKey.GetValue("Platform") == "IX86")
                     cboPlatform.Text = "Intel x86";
                 else if ((string)regKey.GetValue("Platform") == "PMAC")
                     cboPlatform.Text = "Power Macintosh";
                 else if ((string)regKey.GetValue("Platform") == "XMAC")
                     cboPlatform.Text = "Macintosh (Mac OS X)";
 
-                if ((string)regKey.GetValue("Product Language") == "enUS")
+                if ((string)regKey.GetValue("Product Language") == System.String.Empty || (string)regKey.GetValue("Product Language") == "enUS")
                     cboLanguage.Text = "English (United States)";
 
                 switch (Convert.ToString((Int32)regKey.GetValue("Product")))
@@ -260,7 +262,7 @@ namespace SphtBotv3_Registry_Manager
         {
             // regKey is passed over from Write() depending on a Profile or Global.
             // The SubKey name is passed, if the text on the ComboBox says Enabled write a 1 else a 0 value DWORD
-            if (cboB != cboNotify)
+            if (cboB != cboNotify && cboB != cboCTCP)
                 regKey.SetValue(strKey, cboB.Text == "Enabled" ? 1 : 0, regKind);
             else
                 regKey.SetValue(strKey, cboB.Text == "Enabled" ? 0 : 1, regKind);
@@ -297,6 +299,7 @@ namespace SphtBotv3_Registry_Manager
                 SetAbled(regKey, cboDescribeUserFlags, "Describe User Flags", RegistryValueKind.DWord);
                 SetAbled(regKey, cboExtendedWhois, "Extended Whois", RegistryValueKind.DWord);
                 SetAbled(regKey, cboNotify, "Disable Windows Notify", RegistryValueKind.DWord);
+                SetAbled(regKey, cboCTCP, "Disable CTCP", RegistryValueKind.DWord);
                 SetAbled(regKey, cboShowUndecoded, "Show Undecoded", RegistryValueKind.DWord);
 
                 // SetAble(regKey (Global or Profile), CheckBoxName, SubKeyName, Dword/String/QWord,etc)
@@ -317,6 +320,7 @@ namespace SphtBotv3_Registry_Manager
                 SetValue(regKey, "BotNet Server", txtBotNetServer.Text, RegistryValueKind.String);
                 SetValue(regKey, "CD-Key User", txtCDKeyUser.Text, RegistryValueKind.String);
                 SetValue(regKey, "E-Mail", txtEMail.Text, RegistryValueKind.String);
+                SetValue(regKey, "Finger Reply", txtFinger.Text, RegistryValueKind.String);
                 SetValue(regKey, "Home Channel", txtHome.Text, RegistryValueKind.String);
                 SetValue(regKey, "Ignore Plugin Mask", txtIgnorePluginMask.Text, RegistryValueKind.String);
                 SetValue(regKey, "IRC Channels", txtIRCChannels.Text, RegistryValueKind.String);
@@ -334,9 +338,15 @@ namespace SphtBotv3_Registry_Manager
                 SetValue(regKey, "Username", txtBNETUsername.Text, RegistryValueKind.String);
 
                 if (cboPing.Text == "Ignore pre-logon ping (-1ms ping)")
+                {
                     regKey.SetValue("Ignore Ping", 1, RegistryValueKind.DWord);
+                    regKey.SetValue("Post-Reply Ping", 0, RegistryValueKind.DWord);
+                }
                 else if (cboPing.Text == "Post-send pre-logon ping (0ms ping)")
+                {
                     regKey.SetValue("Post-Reply Ping", 1, RegistryValueKind.DWord);
+                    regKey.SetValue("Ignore Ping", 0, RegistryValueKind.DWord);
+                }
                 else if (cboPing.Text == "None")
                 {
                     regKey.SetValue("Post-Reply Ping", 0, RegistryValueKind.DWord);
