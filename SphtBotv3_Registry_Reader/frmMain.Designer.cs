@@ -72,6 +72,8 @@
             this.cboShowUndecoded = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.cboColorNames = new System.Windows.Forms.ComboBox();
             this.cboLanguage = new System.Windows.Forms.ComboBox();
             this.label41 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
@@ -87,11 +89,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cboBleedTimestamps = new System.Windows.Forms.ComboBox();
             this.cboExtendedWhois = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtBindIP = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtIgnorePluginMask = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtBindIP = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.cboDescribeUserFlags = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.Tooltip = new System.Windows.Forms.ToolTip(this.components);
@@ -110,6 +112,8 @@
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
             this.cboProfiles = new System.Windows.Forms.ComboBox();
             this.lblProfiles = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -132,7 +136,6 @@
             this.txtBotNetServer = new System.Windows.Forms.TextBox();
             this.txtBotNetDatabase = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.btnPerform = new System.Windows.Forms.Button();
             this.txtPerform = new System.Windows.Forms.TextBox();
             this.txtIRCChannels = new System.Windows.Forms.TextBox();
             this.btnIRCPassword = new System.Windows.Forms.Button();
@@ -144,12 +147,10 @@
             this.txtIRCName = new System.Windows.Forms.TextBox();
             this.cboIRCServer = new System.Windows.Forms.ComboBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtFinger = new System.Windows.Forms.TextBox();
+            this.cboCTCP = new System.Windows.Forms.ComboBox();
             this.txtNotify = new System.Windows.Forms.TextBox();
             this.cboNotify = new System.Windows.Forms.ComboBox();
-            this.cboCTCP = new System.Windows.Forms.ComboBox();
-            this.label42 = new System.Windows.Forms.Label();
-            this.txtFinger = new System.Windows.Forms.TextBox();
-            this.label43 = new System.Windows.Forms.Label();
             this.mnuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -627,6 +628,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label44);
+            this.groupBox2.Controls.Add(this.cboColorNames);
             this.groupBox2.Controls.Add(this.cboLanguage);
             this.groupBox2.Controls.Add(this.label41);
             this.groupBox2.Controls.Add(this.label30);
@@ -642,21 +645,46 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.cboBleedTimestamps);
             this.groupBox2.Controls.Add(this.cboExtendedWhois);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.txtBindIP);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtIgnorePluginMask);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.txtBindIP);
-            this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.cboDescribeUserFlags);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.cboShowUndecoded);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(368, 67);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(297, 343);
+            this.groupBox2.Size = new System.Drawing.Size(297, 371);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Battle.net Miscellaneous";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(6, 210);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(78, 13);
+            this.label44.TabIndex = 92;
+            this.label44.Text = "Colorful Names";
+            this.Tooltip.SetToolTip(this.label44, "Enables or Disables the random coloring of every user (easier to distinguish who " +
+                    "is talking simply by the color of their nickname)");
+            // 
+            // cboColorNames
+            // 
+            this.cboColorNames.BackColor = System.Drawing.Color.White;
+            this.cboColorNames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboColorNames.FormattingEnabled = true;
+            this.cboColorNames.Items.AddRange(new object[] {
+            "Enabled",
+            "Disabled"});
+            this.cboColorNames.Location = new System.Drawing.Point(161, 207);
+            this.cboColorNames.Name = "cboColorNames";
+            this.cboColorNames.Size = new System.Drawing.Size(130, 21);
+            this.cboColorNames.TabIndex = 91;
             // 
             // cboLanguage
             // 
@@ -685,7 +713,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(6, 287);
+            this.label30.Location = new System.Drawing.Point(6, 341);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(45, 13);
             this.label30.TabIndex = 88;
@@ -702,7 +730,7 @@
             "Intel x86",
             "Power Macintosh",
             "Macintosh (Mac OS X)"});
-            this.cboPlatform.Location = new System.Drawing.Point(161, 284);
+            this.cboPlatform.Location = new System.Drawing.Point(161, 338);
             this.cboPlatform.Name = "cboPlatform";
             this.cboPlatform.Size = new System.Drawing.Size(130, 21);
             this.cboPlatform.TabIndex = 87;
@@ -838,6 +866,27 @@
             this.cboExtendedWhois.Size = new System.Drawing.Size(130, 21);
             this.cboExtendedWhois.TabIndex = 76;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(6, 287);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 13);
+            this.label12.TabIndex = 72;
+            this.label12.Text = "Bind IP";
+            this.Tooltip.SetToolTip(this.label12, "Can be used to override the IP address with which the program uses to connect to " +
+                    "various networks\r\nWARNING: If you don\'t know what you\'re doing, don\'t mess with " +
+                    "this");
+            // 
+            // txtBindIP
+            // 
+            this.txtBindIP.Location = new System.Drawing.Point(161, 284);
+            this.txtBindIP.MaxLength = 15;
+            this.txtBindIP.Name = "txtBindIP";
+            this.txtBindIP.Size = new System.Drawing.Size(130, 20);
+            this.txtBindIP.TabIndex = 71;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -869,27 +918,6 @@
             this.label5.Text = "Extended Whois";
             this.Tooltip.SetToolTip(this.label5, "Enable or Disable showing of the IP Address that you\'re using and the IP Address " +
                     "of the server you\'re connected to when you /whois yourself");
-            // 
-            // txtBindIP
-            // 
-            this.txtBindIP.Location = new System.Drawing.Point(161, 207);
-            this.txtBindIP.MaxLength = 15;
-            this.txtBindIP.Name = "txtBindIP";
-            this.txtBindIP.Size = new System.Drawing.Size(130, 20);
-            this.txtBindIP.TabIndex = 71;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(6, 210);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 13);
-            this.label12.TabIndex = 72;
-            this.label12.Text = "Bind IP";
-            this.Tooltip.SetToolTip(this.label12, "Can be used to override the IP address with which the program uses to connect to " +
-                    "various networks\r\nWARNING: If you don\'t know what you\'re doing, don\'t mess with " +
-                    "this");
             // 
             // cboDescribeUserFlags
             // 
@@ -1093,6 +1121,28 @@
             this.Tooltip.SetToolTip(this.label39, "This is the specified string that Windows Notify relies on. Keywords should be se" +
                     "parated by a comma.\r\nExample:\r\n    Holly,Baroness,cats");
             // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(6, 76);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(56, 13);
+            this.label42.TabIndex = 90;
+            this.label42.Text = "IRC CTCP";
+            this.Tooltip.SetToolTip(this.label42, "Enable or Disable the IRC CTCP system");
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(6, 103);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(87, 13);
+            this.label43.TabIndex = 92;
+            this.label43.Text = "IRC Finger Reply";
+            this.Tooltip.SetToolTip(this.label43, "Sets the string to reply when someone sends you a finger request via IRC\r\n");
+            // 
             // cboProfiles
             // 
             this.cboProfiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1218,7 +1268,7 @@
             this.groupBox4.Controls.Add(this.label25);
             this.groupBox4.Controls.Add(this.txtBotNetDatabase);
             this.groupBox4.Controls.Add(this.label24);
-            this.groupBox4.Location = new System.Drawing.Point(368, 416);
+            this.groupBox4.Location = new System.Drawing.Point(368, 444);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(347, 184);
             this.groupBox4.TabIndex = 78;
@@ -1306,7 +1356,6 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.label37);
-            this.groupBox5.Controls.Add(this.btnPerform);
             this.groupBox5.Controls.Add(this.txtPerform);
             this.groupBox5.Controls.Add(this.label36);
             this.groupBox5.Controls.Add(this.txtIRCChannels);
@@ -1330,24 +1379,14 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "IRC Connection Setup";
             // 
-            // btnPerform
-            // 
-            this.btnPerform.Enabled = false;
-            this.btnPerform.Location = new System.Drawing.Point(322, 180);
-            this.btnPerform.Name = "btnPerform";
-            this.btnPerform.Size = new System.Drawing.Size(19, 23);
-            this.btnPerform.TabIndex = 136;
-            this.btnPerform.UseVisualStyleBackColor = true;
-            this.btnPerform.Click += new System.EventHandler(this.btnPerform_Click);
-            // 
             // txtPerform
             // 
-            this.txtPerform.Enabled = false;
             this.txtPerform.Location = new System.Drawing.Point(122, 181);
             this.txtPerform.MaxLength = 15;
             this.txtPerform.Multiline = true;
             this.txtPerform.Name = "txtPerform";
-            this.txtPerform.Size = new System.Drawing.Size(194, 151);
+            this.txtPerform.PasswordChar = '*';
+            this.txtPerform.Size = new System.Drawing.Size(219, 151);
             this.txtPerform.TabIndex = 135;
             this.txtPerform.UseSystemPasswordChar = true;
             // 
@@ -1449,6 +1488,27 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Miscellaneous";
             // 
+            // txtFinger
+            // 
+            this.txtFinger.Location = new System.Drawing.Point(161, 100);
+            this.txtFinger.MaxLength = 15;
+            this.txtFinger.Name = "txtFinger";
+            this.txtFinger.Size = new System.Drawing.Size(130, 20);
+            this.txtFinger.TabIndex = 91;
+            // 
+            // cboCTCP
+            // 
+            this.cboCTCP.BackColor = System.Drawing.Color.White;
+            this.cboCTCP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCTCP.FormattingEnabled = true;
+            this.cboCTCP.Items.AddRange(new object[] {
+            "Enabled",
+            "Disabled"});
+            this.cboCTCP.Location = new System.Drawing.Point(161, 73);
+            this.cboCTCP.Name = "cboCTCP";
+            this.cboCTCP.Size = new System.Drawing.Size(130, 21);
+            this.cboCTCP.TabIndex = 89;
+            // 
             // txtNotify
             // 
             this.txtNotify.Location = new System.Drawing.Point(161, 47);
@@ -1470,54 +1530,11 @@
             this.cboNotify.Size = new System.Drawing.Size(130, 21);
             this.cboNotify.TabIndex = 85;
             // 
-            // cboCTCP
-            // 
-            this.cboCTCP.BackColor = System.Drawing.Color.White;
-            this.cboCTCP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCTCP.FormattingEnabled = true;
-            this.cboCTCP.Items.AddRange(new object[] {
-            "Enabled",
-            "Disabled"});
-            this.cboCTCP.Location = new System.Drawing.Point(161, 73);
-            this.cboCTCP.Name = "cboCTCP";
-            this.cboCTCP.Size = new System.Drawing.Size(130, 21);
-            this.cboCTCP.TabIndex = 89;
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(6, 76);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(56, 13);
-            this.label42.TabIndex = 90;
-            this.label42.Text = "IRC CTCP";
-            this.Tooltip.SetToolTip(this.label42, "Enable or Disable the IRC CTCP system");
-            // 
-            // txtFinger
-            // 
-            this.txtFinger.Location = new System.Drawing.Point(161, 100);
-            this.txtFinger.MaxLength = 15;
-            this.txtFinger.Name = "txtFinger";
-            this.txtFinger.Size = new System.Drawing.Size(130, 20);
-            this.txtFinger.TabIndex = 91;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(6, 103);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(87, 13);
-            this.label43.TabIndex = 92;
-            this.label43.Text = "IRC Finger Reply";
-            this.Tooltip.SetToolTip(this.label43, "Sets the string to reply when someone sends you a finger request via IRC\r\n");
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 609);
+            this.ClientSize = new System.Drawing.Size(1032, 638);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -1664,7 +1681,6 @@
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.TextBox txtIRCChannels;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Button btnPerform;
         private System.Windows.Forms.TextBox txtPerform;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.GroupBox groupBox6;
@@ -1680,6 +1696,8 @@
         private System.Windows.Forms.ComboBox cboCTCP;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox txtFinger;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.ComboBox cboColorNames;
     }
 }
 

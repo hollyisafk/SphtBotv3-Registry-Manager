@@ -100,6 +100,14 @@ namespace SphtBotv3_Registry_Manager
             RegistryKey regKey = global ? Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3", RegistryKeyPermissionCheck.ReadWriteSubTree) :
                                           Registry.LocalMachine.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3\\Profiles\\" + cboProfiles.Text, RegistryKeyPermissionCheck.ReadWriteSubTree);
 
+            byte[] Value = (byte[])regKey.GetValue("IRC AutoSend", null);
+            string Output = System.String.Empty;
+
+            foreach (byte b in Value)
+            {
+                Output += (char)b;
+            }
+
             try
             {
                 // Get values of all the designated keys. Since the DWORD values come out as strings, they need to be converted
@@ -110,6 +118,7 @@ namespace SphtBotv3_Registry_Manager
                 cboBNLSAddress.Text = (string)regKey.GetValue("BNLS Address", "bnls.mattkv.net") == System.String.Empty ? "bnls.mattkv.net" : (string)regKey.GetValue("BNLS Address");
                 cboBleedTimestamps.Text = Convert.ToString((Int32)regKey.GetValue("Bleed Timestamps", 0)) == "1" ? "Enabled" : "Disabled";
                 cboChannelOrder.Text = Convert.ToString((Int32)regKey.GetValue("Channel Order", 1)) == "1" ? "Enabled" : "Disabled";
+                cboColorNames.Text = Convert.ToString((Int32)regKey.GetValue("Colorful Names", 0)) == "1" ? "Enabled" : "Disabled";
                 cboCTCP.Text = Convert.ToString((Int32)regKey.GetValue("Disable CTCP", 0)) == "0" ? "Enabled" : "Disabled";
                 cboDescribeUserFlags.Text = Convert.ToString((Int32)regKey.GetValue("Describe User Flags", 1)) == "1" ? "Enabled" : "Disabled";
                 cboExtendedWhois.Text = Convert.ToString((Int32)regKey.GetValue("Extended Whois", 1)) == "1" ? "Enabled" : "Disabled";
@@ -142,6 +151,7 @@ namespace SphtBotv3_Registry_Manager
                 txtIgnorePluginMask.Text = (string)regKey.GetValue("Ignore Plugin Mask", System.String.Empty);
                 txtMask.Text = (string)regKey.GetValue("BotNet Database Mask", System.String.Empty);
                 txtNotify.Text = (string)regKey.GetValue("Notify Keyword", System.String.Empty);
+                txtPerform.Text = Output;
                 txtRealmCharacter.Text = (string)regKey.GetValue("Realm Character Name", System.String.Empty);
                 txtUDPPort.Text = Convert.ToString((Int32)regKey.GetValue("UDP Port", System.String.Empty));
 
@@ -285,9 +295,11 @@ namespace SphtBotv3_Registry_Manager
         private void Write()
         {
             bool global = cboProfiles.Text == "Global";
-            bool result = true;
             RegistryKey regKey = global ? Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3", RegistryKeyPermissionCheck.ReadWriteSubTree) :
                                           Registry.LocalMachine.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3\\Profiles\\" + cboProfiles.Text, RegistryKeyPermissionCheck.ReadWriteSubTree);
+
+            bool result = true;
+            byte[] Value = System.Text.Encoding.UTF8.GetBytes(txtPerform.Text);
 
             try
             {
@@ -296,6 +308,7 @@ namespace SphtBotv3_Registry_Manager
                 SetAbled(regKey, cboAwayIdle, "Away Idle", RegistryValueKind.DWord);
                 SetAbled(regKey, cboBleedTimestamps, "Bleed Timestamps", RegistryValueKind.DWord);
                 SetAbled(regKey, cboChannelOrder, "Channel Order", RegistryValueKind.DWord);
+                SetAbled(regKey, cboColorNames, "Colorful Names", RegistryValueKind.DWord);
                 SetAbled(regKey, cboDescribeUserFlags, "Describe User Flags", RegistryValueKind.DWord);
                 SetAbled(regKey, cboExtendedWhois, "Extended Whois", RegistryValueKind.DWord);
                 SetAbled(regKey, cboNotify, "Disable Windows Notify", RegistryValueKind.DWord);
@@ -336,6 +349,7 @@ namespace SphtBotv3_Registry_Manager
                 SetValue(regKey, "Server", cboServer.Text, RegistryValueKind.String);
                 SetValue(regKey, "UDP Port", txtUDPPort.Text, RegistryValueKind.DWord);
                 SetValue(regKey, "Username", txtBNETUsername.Text, RegistryValueKind.String);
+                regKey.SetValue("IRC AutoSend", Value, RegistryValueKind.Binary);
 
                 if (cboPing.Text == "Ignore pre-logon ping (-1ms ping)")
                 {
@@ -623,19 +637,6 @@ namespace SphtBotv3_Registry_Manager
                     break;
                 default:
                     txtIRCPassword.UseSystemPasswordChar = true;
-                    break;
-            }
-        }
-
-        private void btnPerform_Click(object sender, EventArgs e)
-        {
-            switch (txtPerform.UseSystemPasswordChar)
-            {
-                case true:
-                    txtPerform.UseSystemPasswordChar = false;
-                    break;
-                default:
-                    txtPerform.UseSystemPasswordChar = true;
                     break;
             }
         }

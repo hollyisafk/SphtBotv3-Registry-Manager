@@ -118,7 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="rtbChangeLog.Text" xml:space="preserve">
-    <value>1.1.9 (Release)
+    <value>1.1.9.0825 (Release)
+- Added Colorful Names
+- IRC Perform is now active and working
+
+1.1.9 (Release)
 - Various internal improvements
 - Added IRC CTCP
 - Added IRC Finger Reply
