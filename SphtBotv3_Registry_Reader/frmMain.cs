@@ -100,7 +100,7 @@ namespace SphtBotv3_Registry_Manager
             RegistryKey regKey = global ? Registry.CurrentUser.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3", RegistryKeyPermissionCheck.ReadWriteSubTree) :
                                           Registry.LocalMachine.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3\\Profiles\\" + cboProfiles.Text, RegistryKeyPermissionCheck.ReadWriteSubTree);
 
-            byte[] Value = (byte[])regKey.GetValue("IRC AutoSend", null);
+            byte[] Value = (byte[])regKey.GetValue("IRC AutoSend", new byte[] {0000});
             string Output = System.String.Empty;
 
             foreach (byte b in Value)
