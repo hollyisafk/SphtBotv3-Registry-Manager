@@ -151,6 +151,8 @@
             this.cboCTCP = new System.Windows.Forms.ComboBox();
             this.txtNotify = new System.Windows.Forms.TextBox();
             this.cboNotify = new System.Windows.Forms.ComboBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.txtIRCIgnore = new System.Windows.Forms.TextBox();
             this.mnuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -187,7 +189,7 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(721, 553);
+            this.btnRead.Location = new System.Drawing.Point(721, 593);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(97, 35);
             this.btnRead.TabIndex = 3;
@@ -197,7 +199,7 @@
             // 
             // btnWrite
             // 
-            this.btnWrite.Location = new System.Drawing.Point(921, 553);
+            this.btnWrite.Location = new System.Drawing.Point(921, 593);
             this.btnWrite.Name = "btnWrite";
             this.btnWrite.Size = new System.Drawing.Size(97, 35);
             this.btnWrite.TabIndex = 4;
@@ -776,8 +778,8 @@
             this.label7.Size = new System.Drawing.Size(53, 13);
             this.label7.TabIndex = 83;
             this.label7.Text = "Away Idle";
-            this.Tooltip.SetToolTip(this.label7, "Enable or Disable the infamous \"Away Idle\"\r\nExample:\r\nx0.Baroness is away (Bot ha" +
-                    "s been idle for 55 minutes.)");
+            this.Tooltip.SetToolTip(this.label7, "Enable or Disable the infamous \"Away Idle\"\r\nExample:\r\n    x0.Baroness is away (Bo" +
+                    "t has been idle for 55 minutes.)");
             // 
             // cboChannelOrder
             // 
@@ -1089,7 +1091,7 @@
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(6, 184);
+            this.label37.Location = new System.Drawing.Point(6, 208);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(43, 13);
             this.label37.TabIndex = 137;
@@ -1166,7 +1168,7 @@
             // btnEdit
             // 
             this.btnEdit.Enabled = false;
-            this.btnEdit.Location = new System.Drawing.Point(182, 38);
+            this.btnEdit.Location = new System.Drawing.Point(182, 39);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 74;
@@ -1181,7 +1183,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(263, 38);
+            this.btnRefresh.Location = new System.Drawing.Point(263, 39);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 75;
@@ -1355,6 +1357,8 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.txtIRCIgnore);
+            this.groupBox5.Controls.Add(this.label45);
             this.groupBox5.Controls.Add(this.label37);
             this.groupBox5.Controls.Add(this.txtPerform);
             this.groupBox5.Controls.Add(this.label36);
@@ -1374,14 +1378,14 @@
             this.groupBox5.Controls.Add(this.label31);
             this.groupBox5.Location = new System.Drawing.Point(671, 67);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(347, 343);
+            this.groupBox5.Size = new System.Drawing.Size(347, 371);
             this.groupBox5.TabIndex = 79;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "IRC Connection Setup";
             // 
             // txtPerform
             // 
-            this.txtPerform.Location = new System.Drawing.Point(122, 181);
+            this.txtPerform.Location = new System.Drawing.Point(122, 205);
             this.txtPerform.MaxLength = 15;
             this.txtPerform.Multiline = true;
             this.txtPerform.Name = "txtPerform";
@@ -1481,9 +1485,9 @@
             this.groupBox6.Controls.Add(this.label39);
             this.groupBox6.Controls.Add(this.label38);
             this.groupBox6.Controls.Add(this.cboNotify);
-            this.groupBox6.Location = new System.Drawing.Point(721, 416);
+            this.groupBox6.Location = new System.Drawing.Point(721, 444);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(297, 131);
+            this.groupBox6.Size = new System.Drawing.Size(297, 143);
             this.groupBox6.TabIndex = 80;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Miscellaneous";
@@ -1529,6 +1533,27 @@
             this.cboNotify.Name = "cboNotify";
             this.cboNotify.Size = new System.Drawing.Size(130, 21);
             this.cboNotify.TabIndex = 85;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.Location = new System.Drawing.Point(6, 182);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(37, 13);
+            this.label45.TabIndex = 138;
+            this.label45.Text = "Ignore";
+            this.Tooltip.SetToolTip(this.label45, "Users you want to ignore on IRC. You must specify the host with their username an" +
+                    "d can ignore multiple people with a comma\r\nExample:\r\n    *!*Name1@host,*!*Name2@" +
+                    "host");
+            // 
+            // txtIRCIgnore
+            // 
+            this.txtIRCIgnore.Location = new System.Drawing.Point(122, 179);
+            this.txtIRCIgnore.MaxLength = 15;
+            this.txtIRCIgnore.Name = "txtIRCIgnore";
+            this.txtIRCIgnore.Size = new System.Drawing.Size(219, 20);
+            this.txtIRCIgnore.TabIndex = 139;
             // 
             // frmMain
             // 
@@ -1698,6 +1723,8 @@
         private System.Windows.Forms.TextBox txtFinger;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.ComboBox cboColorNames;
+        private System.Windows.Forms.TextBox txtIRCIgnore;
+        private System.Windows.Forms.Label label45;
     }
 }
 
