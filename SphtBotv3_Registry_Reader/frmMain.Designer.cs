@@ -114,6 +114,7 @@
             this.label39 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
             this.cboProfiles = new System.Windows.Forms.ComboBox();
             this.lblProfiles = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -136,6 +137,7 @@
             this.txtBotNetServer = new System.Windows.Forms.TextBox();
             this.txtBotNetDatabase = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.txtIRCIgnore = new System.Windows.Forms.TextBox();
             this.txtPerform = new System.Windows.Forms.TextBox();
             this.txtIRCChannels = new System.Windows.Forms.TextBox();
             this.btnIRCPassword = new System.Windows.Forms.Button();
@@ -151,8 +153,6 @@
             this.cboCTCP = new System.Windows.Forms.ComboBox();
             this.txtNotify = new System.Windows.Forms.TextBox();
             this.cboNotify = new System.Windows.Forms.ComboBox();
-            this.label45 = new System.Windows.Forms.Label();
-            this.txtIRCIgnore = new System.Windows.Forms.TextBox();
             this.mnuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -1145,6 +1145,19 @@
             this.label43.Text = "IRC Finger Reply";
             this.Tooltip.SetToolTip(this.label43, "Sets the string to reply when someone sends you a finger request via IRC\r\n");
             // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.Location = new System.Drawing.Point(6, 182);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(37, 13);
+            this.label45.TabIndex = 138;
+            this.label45.Text = "Ignore";
+            this.Tooltip.SetToolTip(this.label45, "Users you want to ignore on IRC. You must specify the host with their username an" +
+                    "d can ignore multiple people with a comma\r\nExample:\r\n    *!*Name1@host,*!*Name2@" +
+                    "host");
+            // 
             // cboProfiles
             // 
             this.cboProfiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1383,6 +1396,14 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "IRC Connection Setup";
             // 
+            // txtIRCIgnore
+            // 
+            this.txtIRCIgnore.Location = new System.Drawing.Point(122, 179);
+            this.txtIRCIgnore.MaxLength = 15;
+            this.txtIRCIgnore.Name = "txtIRCIgnore";
+            this.txtIRCIgnore.Size = new System.Drawing.Size(219, 20);
+            this.txtIRCIgnore.TabIndex = 139;
+            // 
             // txtPerform
             // 
             this.txtPerform.Location = new System.Drawing.Point(122, 205);
@@ -1533,27 +1554,6 @@
             this.cboNotify.Name = "cboNotify";
             this.cboNotify.Size = new System.Drawing.Size(130, 21);
             this.cboNotify.TabIndex = 85;
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(6, 182);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(37, 13);
-            this.label45.TabIndex = 138;
-            this.label45.Text = "Ignore";
-            this.Tooltip.SetToolTip(this.label45, "Users you want to ignore on IRC. You must specify the host with their username an" +
-                    "d can ignore multiple people with a comma\r\nExample:\r\n    *!*Name1@host,*!*Name2@" +
-                    "host");
-            // 
-            // txtIRCIgnore
-            // 
-            this.txtIRCIgnore.Location = new System.Drawing.Point(122, 179);
-            this.txtIRCIgnore.MaxLength = 15;
-            this.txtIRCIgnore.Name = "txtIRCIgnore";
-            this.txtIRCIgnore.Size = new System.Drawing.Size(219, 20);
-            this.txtIRCIgnore.TabIndex = 139;
             // 
             // frmMain
             // 

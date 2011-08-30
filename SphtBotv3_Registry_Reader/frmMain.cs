@@ -110,163 +110,163 @@ namespace SphtBotv3_Registry_Manager
 
             try
             {
-                // Get values of all the designated keys. Since the DWORD values come out as strings, they need to be converted
-                // Since the DWORD values come back as 1 or 0 due to how the program recognizes it, this basically translates 1 into Enabled or 0 into Disabled using a Ternary Operator
-                // DropDownList items can't be temporarily edited like DropDown style can. Thus read it straight from the Registry, then assign the value
-                cboADBanner.Text = Convert.ToString((Int32)regKey.GetValue("Display AD-Banner", 0)) == "1" ? "Enabled" : "Disabled";
-                cboAwayIdle.Text = Convert.ToString((Int32)regKey.GetValue("Away Idle", 1)) == "1" ? "Enabled" : "Disabled";
-                cboBNLSAddress.Text = (string)regKey.GetValue("BNLS Address", "bnls.mattkv.net");
-                cboBleedTimestamps.Text = Convert.ToString((Int32)regKey.GetValue("Bleed Timestamps", 0)) == "1" ? "Enabled" : "Disabled";
-                cboCTCP.Text = Convert.ToString((Int32)regKey.GetValue("Disable CTCP", 0)) == "0" ? "Enabled" : "Disabled";
-                cboChannelOrder.Text = Convert.ToString((Int32)regKey.GetValue("Channel Order", 1)) == "1" ? "Enabled" : "Disabled";
-                cboColorNames.Text = Convert.ToString((Int32)regKey.GetValue("Colorful Names", 0)) == "1" ? "Enabled" : "Disabled";
-                cboDescribeUserFlags.Text = Convert.ToString((Int32)regKey.GetValue("Describe User Flags", 1)) == "1" ? "Enabled" : "Disabled";
-                cboExtendedWhois.Text = Convert.ToString((Int32)regKey.GetValue("Extended Whois", 1)) == "1" ? "Enabled" : "Disabled";
-                cboIRCServer.Text = (string)regKey.GetValue("IRC Server", "none");
-                cboNotify.Text = Convert.ToString((Int32)regKey.GetValue("Disable Windows Notify", 0)) == "0" ? "Enabled" : "Disabled";
-                cboRealmName.Text = (string)regKey.GetValue("Realm Name", "USEast");
-                cboServer.Text = (string)regKey.GetValue("Server", "useast.battle.net");
-                cboShowUndecoded.Text = Convert.ToString((Int32)regKey.GetValue("Show Undecoded", 0)) == "1" ? "Enabled" : "Disabled";
-                chkAutoRejoin.Checked = Convert.ToString((Int32)regKey.GetValue("Auto Rejoin", 1)) == "1" ? true : false;
-                chkBNETAutoCon.Checked = Convert.ToString((Int32)regKey.GetValue("Connect to Battle.net", 1)) == "1" ? true : false;
-                chkBanKick.Checked = Convert.ToString((Int32)regKey.GetValue("Notify 2", 1)) == "1" ? true : false;
-                chkCDKey.Checked = Convert.ToString((Int32)regKey.GetValue("Spawn", 0)) == "1" ? true : false;
-                chkJoinLeave.Checked = Convert.ToString((Int32)regKey.GetValue("Notify", 1)) == "1" ? true : false;
-                chkUDP.Checked = Convert.ToString((Int32)regKey.GetValue("No UDP", 0)) == "1" ? true : false;
-                txtBNETPassword.Text = (string)regKey.GetValue("Password", System.String.Empty);
-                txtBNETUsername.Text = (string)regKey.GetValue("Username", System.String.Empty);
-                txtBindIP.Text = (string)regKey.GetValue("Bind IP", System.String.Empty);
-                txtBotNetPassword.Text = (string)regKey.GetValue("BotNet Account Password", System.String.Empty);
-                txtBotNetServer.Text = (string)regKey.GetValue("BotNet Server", "none");
-                txtBotNetUsername.Text = (string)regKey.GetValue("BotNet Account Name", System.String.Empty);
-                txtCDKeyUser.Text = (string)regKey.GetValue("CD-Key User", System.String.Empty);
-                txtEMail.Text = (string)regKey.GetValue("E-Mail", System.String.Empty);
-                txtFinger.Text = (string)regKey.GetValue("Finger Reply", System.String.Empty);
-                txtHome.Text = (string)regKey.GetValue("Home Channel", System.String.Empty);
-                txtIRCAccount.Text = (string)regKey.GetValue("IRC Nickname", System.String.Empty);
-                txtIRCChannels.Text = (string)regKey.GetValue("IRC Channels", System.String.Empty);
-                txtIRCEmail.Text = (string)regKey.GetValue("IRC E-Mail", System.String.Empty);
-                txtIRCIgnore.Text = (string)regKey.GetValue("IRC Ignore Mask", System.String.Empty);
-                txtIRCName.Text = (string)regKey.GetValue("IRC Username", System.String.Empty);
-                txtIRCPassword.Text = (string)regKey.GetValue("IRC Password", System.String.Empty);
-                txtIgnorePluginMask.Text = (string)regKey.GetValue("Ignore Plugin Mask", System.String.Empty);
-                txtMask.Text = (string)regKey.GetValue("BotNet Database Mask", System.String.Empty);
-                txtNotify.Text = (string)regKey.GetValue("Notify Keyword", System.String.Empty);
-                txtPerform.Text = Output;
-                txtRealmCharacter.Text = (string)regKey.GetValue("Realm Character Name", System.String.Empty);
-                txtUDPPort.Text = Convert.ToString((Int32)regKey.GetValue("UDP Port", 0));
+                    // Get values of all the designated keys. Since the DWORD values come out as strings, they need to be converted
+                    // Since the DWORD values come back as 1 or 0 due to how the program recognizes it, this basically translates 1 into Enabled or 0 into Disabled using a Ternary Operator
+                    // DropDownList items can't be temporarily edited like DropDown style can. Thus read it straight from the Registry, then assign the value
+                    cboADBanner.Text = Convert.ToString((Int32)regKey.GetValue("Display AD-Banner", 0)) == "1" ? "Enabled" : "Disabled";
+                    cboAwayIdle.Text = Convert.ToString((Int32)regKey.GetValue("Away Idle", 1)) == "1" ? "Enabled" : "Disabled";
+                    cboBNLSAddress.Text = (string)regKey.GetValue("BNLS Address", "bnls.mattkv.net");
+                    cboBleedTimestamps.Text = Convert.ToString((Int32)regKey.GetValue("Bleed Timestamps", 0)) == "1" ? "Enabled" : "Disabled";
+                    cboCTCP.Text = Convert.ToString((Int32)regKey.GetValue("Disable CTCP", 0)) == "0" ? "Enabled" : "Disabled";
+                    cboChannelOrder.Text = Convert.ToString((Int32)regKey.GetValue("Channel Order", 1)) == "1" ? "Enabled" : "Disabled";
+                    cboColorNames.Text = Convert.ToString((Int32)regKey.GetValue("Colorful Names", 0)) == "1" ? "Enabled" : "Disabled";
+                    cboDescribeUserFlags.Text = Convert.ToString((Int32)regKey.GetValue("Describe User Flags", 1)) == "1" ? "Enabled" : "Disabled";
+                    cboExtendedWhois.Text = Convert.ToString((Int32)regKey.GetValue("Extended Whois", 1)) == "1" ? "Enabled" : "Disabled";
+                    cboIRCServer.Text = (string)regKey.GetValue("IRC Server", "none");
+                    cboNotify.Text = Convert.ToString((Int32)regKey.GetValue("Disable Windows Notify", 0)) == "0" ? "Enabled" : "Disabled";
+                    cboRealmName.Text = (string)regKey.GetValue("Realm Name", "USEast");
+                    cboServer.Text = (string)regKey.GetValue("Server", "useast.battle.net");
+                    cboShowUndecoded.Text = Convert.ToString((Int32)regKey.GetValue("Show Undecoded", 0)) == "1" ? "Enabled" : "Disabled";
+                    chkAutoRejoin.Checked = Convert.ToString((Int32)regKey.GetValue("Auto Rejoin", 1)) == "1" ? true : false;
+                    chkBNETAutoCon.Checked = Convert.ToString((Int32)regKey.GetValue("Connect to Battle.net", 1)) == "1" ? true : false;
+                    chkBanKick.Checked = Convert.ToString((Int32)regKey.GetValue("Notify 2", 1)) == "1" ? true : false;
+                    chkCDKey.Checked = Convert.ToString((Int32)regKey.GetValue("Spawn", 0)) == "1" ? true : false;
+                    chkJoinLeave.Checked = Convert.ToString((Int32)regKey.GetValue("Notify", 1)) == "1" ? true : false;
+                    chkUDP.Checked = Convert.ToString((Int32)regKey.GetValue("No UDP", 0)) == "1" ? true : false;
+                    txtBNETPassword.Text = (string)regKey.GetValue("Password", System.String.Empty);
+                    txtBNETUsername.Text = (string)regKey.GetValue("Username", System.String.Empty);
+                    txtBindIP.Text = (string)regKey.GetValue("Bind IP", System.String.Empty);
+                    txtBotNetPassword.Text = (string)regKey.GetValue("BotNet Account Password", System.String.Empty);
+                    txtBotNetServer.Text = (string)regKey.GetValue("BotNet Server", "none");
+                    txtBotNetUsername.Text = (string)regKey.GetValue("BotNet Account Name", System.String.Empty);
+                    txtCDKeyUser.Text = (string)regKey.GetValue("CD-Key User", System.String.Empty);
+                    txtEMail.Text = (string)regKey.GetValue("E-Mail", System.String.Empty);
+                    txtFinger.Text = (string)regKey.GetValue("Finger Reply", System.String.Empty);
+                    txtHome.Text = (string)regKey.GetValue("Home Channel", System.String.Empty);
+                    txtIRCAccount.Text = (string)regKey.GetValue("IRC Nickname", System.String.Empty);
+                    txtIRCChannels.Text = (string)regKey.GetValue("IRC Channels", System.String.Empty);
+                    txtIRCEmail.Text = (string)regKey.GetValue("IRC E-Mail", System.String.Empty);
+                    txtIRCIgnore.Text = (string)regKey.GetValue("IRC Ignore Mask", System.String.Empty);
+                    txtIRCName.Text = (string)regKey.GetValue("IRC Username", System.String.Empty);
+                    txtIRCPassword.Text = (string)regKey.GetValue("IRC Password", System.String.Empty);
+                    txtIgnorePluginMask.Text = (string)regKey.GetValue("Ignore Plugin Mask", System.String.Empty);
+                    txtMask.Text = (string)regKey.GetValue("BotNet Database Mask", System.String.Empty);
+                    txtNotify.Text = (string)regKey.GetValue("Notify Keyword", System.String.Empty);
+                    txtPerform.Text = Output;
+                    txtRealmCharacter.Text = (string)regKey.GetValue("Realm Character Name", System.String.Empty);
+                    txtUDPPort.Text = Convert.ToString((Int32)regKey.GetValue("UDP Port", 0));
 
-                switch ((string)regKey.GetValue("BotNet Database", System.String.Empty))
-                {
-                    case "":
-                        break;
-                    default:
-                        string BN = (string)regKey.GetValue("BotNet Database", System.String.Empty);
-                        string[] BotNet = BN.Split(' ');
+                    switch ((string)regKey.GetValue("BotNet Database", System.String.Empty))
+                    {
+                        case "":
+                            break;
+                        default:
+                            string BN = (string)regKey.GetValue("BotNet Database", System.String.Empty);
+                            string[] BotNet = BN.Split(' ');
 
-                        string Value1 = BotNet[0];
-                        string Value2 = BotNet[1];
+                            string Value1 = BotNet[0];
+                            string Value2 = BotNet[1];
 
-                        txtBotNetDatabase.Text = Value1;
-                        txtDatabasePassword.Text = Value2;
-                        break;
-                }
+                            txtBotNetDatabase.Text = Value1;
+                            txtDatabasePassword.Text = Value2;
+                            break;
+                    }
 
-                if (Convert.ToString((Int32)regKey.GetValue("Ignore Ping", 0)) == "1")
-                    cboPing.Text = "Ignore pre-logon ping (-1ms ping)";
-                else if (Convert.ToString((Int32)regKey.GetValue("Post-Reply Ping", 1)) == "1")
-                    cboPing.Text = "Post-send pre-logon ping (0ms ping)";
-                else if (Convert.ToString((Int32)regKey.GetValue("Ignore Ping", 0)) == "0" && Convert.ToString((Int32)regKey.GetValue("Post-Reply Ping", 1)) == "0")
-                    cboPing.Text = "None";
+                    if (Convert.ToString((Int32)regKey.GetValue("Ignore Ping", 0)) == "1")
+                        cboPing.Text = "Ignore pre-logon ping (-1ms ping)";
+                    else if (Convert.ToString((Int32)regKey.GetValue("Post-Reply Ping", 1)) == "1")
+                        cboPing.Text = "Post-send pre-logon ping (0ms ping)";
+                    else if (Convert.ToString((Int32)regKey.GetValue("Ignore Ping", 0)) == "0" && Convert.ToString((Int32)regKey.GetValue("Post-Reply Ping", 1)) == "0")
+                        cboPing.Text = "None";
 
-                if ((string)regKey.GetValue("Platform", "IX86") == System.String.Empty || (string)regKey.GetValue("Platform", "IX86") == "IX86")
-                    cboPlatform.Text = "Intel x86";
-                else if ((string)regKey.GetValue("Platform", "IX86") == "PMAC")
-                    cboPlatform.Text = "Power Macintosh";
-                else if ((string)regKey.GetValue("Platform", "IX86") == "XMAC")
-                    cboPlatform.Text = "Macintosh (Mac OS X)";
+                    if ((string)regKey.GetValue("Platform", "IX86") == System.String.Empty || (string)regKey.GetValue("Platform", "IX86") == "IX86")
+                        cboPlatform.Text = "Intel x86";
+                    else if ((string)regKey.GetValue("Platform", "IX86") == "PMAC")
+                        cboPlatform.Text = "Power Macintosh";
+                    else if ((string)regKey.GetValue("Platform", "IX86") == "XMAC")
+                        cboPlatform.Text = "Macintosh (Mac OS X)";
 
-                if ((string)regKey.GetValue("Product Language", "enUS") == System.String.Empty || (string)regKey.GetValue("Product Language", "enUS") == "enUS")
-                    cboLanguage.Text = "English (United States)";
+                    if ((string)regKey.GetValue("Product Language", "enUS") == System.String.Empty || (string)regKey.GetValue("Product Language", "enUS") == "enUS")
+                        cboLanguage.Text = "English (United States)";
 
-                switch (Convert.ToString((Int32)regKey.GetValue("Product", 1)))
-                {
-                    case "1":
-                        cboProduct.Text = "StarCraft";
-                        txtCDKey.Text = (string)regKey.GetValue("StarCraft CD-Key", System.String.Empty);
-                        break;
-                    case "2":
-                        cboProduct.Text = "StarCraft: Brood War";
-                        txtCDKey.Text = (string)regKey.GetValue("Brood War CD-Key", System.String.Empty);
-                        break;
-                    case "3":
-                        cboProduct.Text = "WarCraft II: Battle.net Edition";
-                        txtCDKey.Text = (string)regKey.GetValue("WarCraft II CD-Key", System.String.Empty);
-                        break;
-                    case "4":
-                        cboProduct.Text = "Diablo II";
-                        txtCDKey.Text = (string)regKey.GetValue("Diablo II CD-Key", System.String.Empty);
-                        break;
-                    case "5":
-                        cboProduct.Text = "Diablo II: Lord of Destruction";
-                        txtCDKey.Text = (string)regKey.GetValue("Diablo II CD-Key", System.String.Empty);
-                        txtXPCDKey.Text = (string)regKey.GetValue("Diablo II: LoD CD-Key", System.String.Empty);
-                        break;
-                    case "6":
-                        cboProduct.Text = "StarCraft: Japan";
-                        txtCDKey.Text = (string)regKey.GetValue("Japan StarCraft CD-Key", System.String.Empty);
-                        break;
-                    case "7":
-                        cboProduct.Text = "WarCraft III: Reign of Chaos";
-                        txtCDKey.Text = (string)regKey.GetValue("WarCraft III CD-Key", System.String.Empty);
-                        break;
-                    case "8":
-                        cboProduct.Text = "WarCraft III: The Frozen Throne";
-                        txtCDKey.Text = (string)regKey.GetValue("WarCraft III CD-Key", System.String.Empty);
-                        txtXPCDKey.Text = (string)regKey.GetValue("The Frozen Throne CD-Key", System.String.Empty);
-                        break;
-                    case "9":
-                        cboProduct.Text = "Diablo";
-                        txtCDKey.Text = (string)regKey.GetValue("Diablo CD-Key", System.String.Empty);
-                        break;
-                    case "10":
-                        cboProduct.Text = "Diablo Shareware";
-                        txtCDKey.Text = (string)regKey.GetValue("Diablo Shareware CD-Key", System.String.Empty);
-                        break;
-                    case "11":
-                        cboProduct.Text = "StarCraft Shareware";
-                        txtCDKey.Text = (string)regKey.GetValue("StarCraft Shareware CD-Key", System.String.Empty);
-                        break;
-                    default:
-                        break;
-                }
+                    switch (Convert.ToString((Int32)regKey.GetValue("Product", 1)))
+                    {
+                        case "1":
+                            cboProduct.Text = "StarCraft";
+                            txtCDKey.Text = (string)regKey.GetValue("StarCraft CD-Key", System.String.Empty);
+                            break;
+                        case "2":
+                            cboProduct.Text = "StarCraft: Brood War";
+                            txtCDKey.Text = (string)regKey.GetValue("Brood War CD-Key", System.String.Empty);
+                            break;
+                        case "3":
+                            cboProduct.Text = "WarCraft II: Battle.net Edition";
+                            txtCDKey.Text = (string)regKey.GetValue("WarCraft II CD-Key", System.String.Empty);
+                            break;
+                        case "4":
+                            cboProduct.Text = "Diablo II";
+                            txtCDKey.Text = (string)regKey.GetValue("Diablo II CD-Key", System.String.Empty);
+                            break;
+                        case "5":
+                            cboProduct.Text = "Diablo II: Lord of Destruction";
+                            txtCDKey.Text = (string)regKey.GetValue("Diablo II CD-Key", System.String.Empty);
+                            txtXPCDKey.Text = (string)regKey.GetValue("Diablo II: LoD CD-Key", System.String.Empty);
+                            break;
+                        case "6":
+                            cboProduct.Text = "StarCraft: Japan";
+                            txtCDKey.Text = (string)regKey.GetValue("Japan StarCraft CD-Key", System.String.Empty);
+                            break;
+                        case "7":
+                            cboProduct.Text = "WarCraft III: Reign of Chaos";
+                            txtCDKey.Text = (string)regKey.GetValue("WarCraft III CD-Key", System.String.Empty);
+                            break;
+                        case "8":
+                            cboProduct.Text = "WarCraft III: The Frozen Throne";
+                            txtCDKey.Text = (string)regKey.GetValue("WarCraft III CD-Key", System.String.Empty);
+                            txtXPCDKey.Text = (string)regKey.GetValue("The Frozen Throne CD-Key", System.String.Empty);
+                            break;
+                        case "9":
+                            cboProduct.Text = "Diablo";
+                            txtCDKey.Text = (string)regKey.GetValue("Diablo CD-Key", System.String.Empty);
+                            break;
+                        case "10":
+                            cboProduct.Text = "Diablo Shareware";
+                            txtCDKey.Text = (string)regKey.GetValue("Diablo Shareware CD-Key", System.String.Empty);
+                            break;
+                        case "11":
+                            cboProduct.Text = "StarCraft Shareware";
+                            txtCDKey.Text = (string)regKey.GetValue("StarCraft Shareware CD-Key", System.String.Empty);
+                            break;
+                        default:
+                            break;
+                    }
 
-                switch (Convert.ToString((Int32)regKey.GetValue("Realm Character Class", 1)))
-                {
-                    case "0":
-                        cboClass.Text = "Amazon";
-                        break;
-                    case "1":
-                        cboClass.Text = "Sorceress";
-                        break;
-                    case "2":
-                        cboClass.Text = "Necromancer";
-                        break;
-                    case "3":
-                        cboClass.Text = "Paladin";
-                        break;
-                    case "4":
-                        cboClass.Text = "Barbarian";
-                        break;
-                    case "5":
-                        cboClass.Text = "Druid";
-                        break;
-                    case "6":
-                        cboClass.Text = "Assassin";
-                        break;
-                    default:
-                        break;
-                }
+                    switch (Convert.ToString((Int32)regKey.GetValue("Realm Character Class", 1)))
+                    {
+                        case "0":
+                            cboClass.Text = "Amazon";
+                            break;
+                        case "1":
+                            cboClass.Text = "Sorceress";
+                            break;
+                        case "2":
+                            cboClass.Text = "Necromancer";
+                            break;
+                        case "3":
+                            cboClass.Text = "Paladin";
+                            break;
+                        case "4":
+                            cboClass.Text = "Barbarian";
+                            break;
+                        case "5":
+                            cboClass.Text = "Druid";
+                            break;
+                        case "6":
+                            cboClass.Text = "Assassin";
+                            break;
+                        default:
+                            break;
+                    }
 
                 regKey.Close();
             }

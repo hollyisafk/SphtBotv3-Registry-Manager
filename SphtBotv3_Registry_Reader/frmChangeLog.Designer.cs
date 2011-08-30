@@ -41,13 +41,13 @@
             this.rtbChangeLog.Name = "rtbChangeLog";
             this.rtbChangeLog.ReadOnly = true;
             this.rtbChangeLog.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbChangeLog.Size = new System.Drawing.Size(632, 312);
+            this.rtbChangeLog.Size = new System.Drawing.Size(632, 426);
             this.rtbChangeLog.TabIndex = 0;
             this.rtbChangeLog.Text = resources.GetString("rtbChangeLog.Text");
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(281, 330);
+            this.btnClose.Location = new System.Drawing.Point(277, 444);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(100, 46);
             this.btnClose.TabIndex = 3;
@@ -59,7 +59,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(651, 382);
+            this.ClientSize = new System.Drawing.Size(651, 502);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.rtbChangeLog);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
