@@ -401,7 +401,6 @@
             // txtCDKeyUser
             // 
             this.txtCDKeyUser.Location = new System.Drawing.Point(114, 207);
-            this.txtCDKeyUser.MaxLength = 15;
             this.txtCDKeyUser.Name = "txtCDKeyUser";
             this.txtCDKeyUser.Size = new System.Drawing.Size(219, 20);
             this.txtCDKeyUser.TabIndex = 95;
@@ -550,7 +549,6 @@
             // txtEMail
             // 
             this.txtEMail.Location = new System.Drawing.Point(114, 75);
-            this.txtEMail.MaxLength = 50;
             this.txtEMail.Name = "txtEMail";
             this.txtEMail.Size = new System.Drawing.Size(194, 20);
             this.txtEMail.TabIndex = 81;
@@ -579,7 +577,6 @@
             // txtBNETPassword
             // 
             this.txtBNETPassword.Location = new System.Drawing.Point(114, 49);
-            this.txtBNETPassword.MaxLength = 30;
             this.txtBNETPassword.Name = "txtBNETPassword";
             this.txtBNETPassword.Size = new System.Drawing.Size(194, 20);
             this.txtBNETPassword.TabIndex = 78;
@@ -1293,7 +1290,6 @@
             // txtMask
             // 
             this.txtMask.Location = new System.Drawing.Point(117, 151);
-            this.txtMask.MaxLength = 30;
             this.txtMask.Name = "txtMask";
             this.txtMask.Size = new System.Drawing.Size(216, 20);
             this.txtMask.TabIndex = 117;
@@ -1310,7 +1306,6 @@
             // txtBotNetPassword
             // 
             this.txtBotNetPassword.Location = new System.Drawing.Point(117, 125);
-            this.txtBotNetPassword.MaxLength = 30;
             this.txtBotNetPassword.Name = "txtBotNetPassword";
             this.txtBotNetPassword.Size = new System.Drawing.Size(194, 20);
             this.txtBotNetPassword.TabIndex = 114;
@@ -1319,7 +1314,6 @@
             // txtBotNetUsername
             // 
             this.txtBotNetUsername.Location = new System.Drawing.Point(117, 99);
-            this.txtBotNetUsername.MaxLength = 30;
             this.txtBotNetUsername.Name = "txtBotNetUsername";
             this.txtBotNetUsername.Size = new System.Drawing.Size(216, 20);
             this.txtBotNetUsername.TabIndex = 113;
@@ -1345,7 +1339,6 @@
             // txtDatabasePassword
             // 
             this.txtDatabasePassword.Location = new System.Drawing.Point(117, 73);
-            this.txtDatabasePassword.MaxLength = 30;
             this.txtDatabasePassword.Name = "txtDatabasePassword";
             this.txtDatabasePassword.Size = new System.Drawing.Size(194, 20);
             this.txtDatabasePassword.TabIndex = 86;
@@ -1354,7 +1347,6 @@
             // txtBotNetServer
             // 
             this.txtBotNetServer.Location = new System.Drawing.Point(117, 21);
-            this.txtBotNetServer.MaxLength = 30;
             this.txtBotNetServer.Name = "txtBotNetServer";
             this.txtBotNetServer.Size = new System.Drawing.Size(194, 20);
             this.txtBotNetServer.TabIndex = 87;
@@ -1363,7 +1355,6 @@
             // txtBotNetDatabase
             // 
             this.txtBotNetDatabase.Location = new System.Drawing.Point(117, 47);
-            this.txtBotNetDatabase.MaxLength = 30;
             this.txtBotNetDatabase.Name = "txtBotNetDatabase";
             this.txtBotNetDatabase.Size = new System.Drawing.Size(216, 20);
             this.txtBotNetDatabase.TabIndex = 85;
@@ -1399,7 +1390,6 @@
             // txtIRCIgnore
             // 
             this.txtIRCIgnore.Location = new System.Drawing.Point(122, 179);
-            this.txtIRCIgnore.MaxLength = 15;
             this.txtIRCIgnore.Name = "txtIRCIgnore";
             this.txtIRCIgnore.Size = new System.Drawing.Size(219, 20);
             this.txtIRCIgnore.TabIndex = 139;
@@ -1407,7 +1397,6 @@
             // txtPerform
             // 
             this.txtPerform.Location = new System.Drawing.Point(122, 205);
-            this.txtPerform.MaxLength = 15;
             this.txtPerform.Multiline = true;
             this.txtPerform.Name = "txtPerform";
             this.txtPerform.PasswordChar = '*';
@@ -1418,7 +1407,6 @@
             // txtIRCChannels
             // 
             this.txtIRCChannels.Location = new System.Drawing.Point(122, 153);
-            this.txtIRCChannels.MaxLength = 15;
             this.txtIRCChannels.Name = "txtIRCChannels";
             this.txtIRCChannels.Size = new System.Drawing.Size(219, 20);
             this.txtIRCChannels.TabIndex = 133;
@@ -1435,7 +1423,6 @@
             // txtIRCPassword
             // 
             this.txtIRCPassword.Location = new System.Drawing.Point(122, 127);
-            this.txtIRCPassword.MaxLength = 15;
             this.txtIRCPassword.Name = "txtIRCPassword";
             this.txtIRCPassword.Size = new System.Drawing.Size(194, 20);
             this.txtIRCPassword.TabIndex = 130;
@@ -1444,7 +1431,6 @@
             // txtIRCAccount
             // 
             this.txtIRCAccount.Location = new System.Drawing.Point(122, 101);
-            this.txtIRCAccount.MaxLength = 15;
             this.txtIRCAccount.Name = "txtIRCAccount";
             this.txtIRCAccount.Size = new System.Drawing.Size(219, 20);
             this.txtIRCAccount.TabIndex = 128;
@@ -1461,7 +1447,6 @@
             // txtIRCEmail
             // 
             this.txtIRCEmail.Location = new System.Drawing.Point(122, 75);
-            this.txtIRCEmail.MaxLength = 15;
             this.txtIRCEmail.Name = "txtIRCEmail";
             this.txtIRCEmail.Size = new System.Drawing.Size(194, 20);
             this.txtIRCEmail.TabIndex = 125;
@@ -1479,7 +1464,6 @@
             // txtIRCName
             // 
             this.txtIRCName.Location = new System.Drawing.Point(122, 49);
-            this.txtIRCName.MaxLength = 15;
             this.txtIRCName.Name = "txtIRCName";
             this.txtIRCName.Size = new System.Drawing.Size(194, 20);
             this.txtIRCName.TabIndex = 123;
@@ -1516,7 +1500,6 @@
             // txtFinger
             // 
             this.txtFinger.Location = new System.Drawing.Point(161, 100);
-            this.txtFinger.MaxLength = 15;
             this.txtFinger.Name = "txtFinger";
             this.txtFinger.Size = new System.Drawing.Size(130, 20);
             this.txtFinger.TabIndex = 91;
@@ -1537,7 +1520,6 @@
             // txtNotify
             // 
             this.txtNotify.Location = new System.Drawing.Point(161, 47);
-            this.txtNotify.MaxLength = 15;
             this.txtNotify.Name = "txtNotify";
             this.txtNotify.Size = new System.Drawing.Size(130, 20);
             this.txtNotify.TabIndex = 88;
