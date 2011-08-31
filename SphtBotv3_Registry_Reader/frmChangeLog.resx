@@ -118,7 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="rtbChangeLog.Text" xml:space="preserve">
-    <value>1.2.0830.0155 (Release)
+    <value>1.2.0830.2039 (Release)
+- Fixed another issue with IRC Perform
+
+1.2.0830.0155 (Release)
 - Fixed text box lengths
 
 1.2.0830.0015 (Release)

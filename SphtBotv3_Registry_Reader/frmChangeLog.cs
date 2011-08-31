@@ -19,5 +19,10 @@ namespace SphtBotv3_Registry_Manager
         {
             this.Close();
         }
+
+        private void frmChangeLog_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -69,6 +69,7 @@
             this.Name = "frmChangeLog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChangeLog";
+            this.Load += new System.EventHandler(this.frmChangeLog_Load);
             this.ResumeLayout(false);
 
         }

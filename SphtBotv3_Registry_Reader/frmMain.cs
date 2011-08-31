@@ -307,7 +307,7 @@ namespace SphtBotv3_Registry_Manager
                                           Registry.LocalMachine.CreateSubKey("Software\\Valhalla's Legends\\Spht\\SphtBotv3\\Profiles\\" + cboProfiles.Text, RegistryKeyPermissionCheck.ReadWriteSubTree);
 
             bool result = true;
-            byte[] Value = System.Text.Encoding.UTF8.GetBytes(txtPerform.Text);
+            byte[] Value = System.Text.Encoding.UTF8.GetBytes(txtPerform.Text);            
 
             try
             {
@@ -358,7 +358,11 @@ namespace SphtBotv3_Registry_Manager
                 SetValue(regKey, "Server", cboServer.Text, RegistryValueKind.String);
                 SetValue(regKey, "Username", txtBNETUsername.Text, RegistryValueKind.String);
 
-                regKey.SetValue("IRC AutoSend", Value, RegistryValueKind.Binary);
+                if (txtPerform.Text == System.String.Empty)
+                    regKey.SetValue("IRC AutoSend", new byte[] {0000}, RegistryValueKind.Binary);
+                else
+                    regKey.SetValue("IRC AutoSend", Value, RegistryValueKind.Binary);
+
                 regKey.SetValue("UDP Port", txtUDPPort.Text, RegistryValueKind.DWord);
 
                 if (cboPing.Text == "Ignore pre-logon ping (-1ms ping)")

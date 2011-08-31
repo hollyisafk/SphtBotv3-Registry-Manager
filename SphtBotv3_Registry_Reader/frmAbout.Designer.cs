@@ -50,7 +50,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(379, 26);
             this.label2.TabIndex = 1;
-            this.label2.Text = "This program was last compiled on Saturday, August 30, 2011 @ 1:55 AM EST\r\nThis p" +
+            this.label2.Text = "This program was last compiled on Saturday, August 30, 2011 @ 8:39 AM EST\r\nThis p" +
                 "rogram was coded in C# for the .NET 4.0 Framework";
             // 
             // btnClose
