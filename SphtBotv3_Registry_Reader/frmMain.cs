@@ -122,6 +122,7 @@ namespace SphtBotv3_Registry_Manager
                     cboColorNames.Text = Convert.ToString((Int32)regKey.GetValue("Colorful Names", 0)) == "1" ? "Enabled" : "Disabled";
                     cboDescribeUserFlags.Text = Convert.ToString((Int32)regKey.GetValue("Describe User Flags", 1)) == "1" ? "Enabled" : "Disabled";
                     cboExtendedWhois.Text = Convert.ToString((Int32)regKey.GetValue("Extended Whois", 1)) == "1" ? "Enabled" : "Disabled";
+                    cboIdle.Text = Convert.ToString((Int32)regKey.GetValue("Count Idle", 0)) == "1" ? "Enabled" : "Disabled";
                     cboIRCServer.Text = (string)regKey.GetValue("IRC Server", "none");
                     cboNotify.Text = Convert.ToString((Int32)regKey.GetValue("Disable Windows Notify", 0)) == "0" ? "Enabled" : "Disabled";
                     cboRealmName.Text = (string)regKey.GetValue("Realm Name", "USEast");
@@ -319,6 +320,7 @@ namespace SphtBotv3_Registry_Manager
                 SetAbled(regKey, cboColorNames, "Colorful Names", RegistryValueKind.DWord);
                 SetAbled(regKey, cboDescribeUserFlags, "Describe User Flags", RegistryValueKind.DWord);
                 SetAbled(regKey, cboExtendedWhois, "Extended Whois", RegistryValueKind.DWord);
+                SetAbled(regKey, cboIdle, "Count Idle", RegistryValueKind.DWord);
                 SetAbled(regKey, cboNotify, "Disable Windows Notify", RegistryValueKind.DWord);
                 SetAbled(regKey, cboCTCP, "Disable CTCP", RegistryValueKind.DWord);
                 SetAbled(regKey, cboShowUndecoded, "Show Undecoded", RegistryValueKind.DWord);

@@ -153,6 +153,8 @@
             this.cboCTCP = new System.Windows.Forms.ComboBox();
             this.txtNotify = new System.Windows.Forms.TextBox();
             this.cboNotify = new System.Windows.Forms.ComboBox();
+            this.cboIdle = new System.Windows.Forms.ComboBox();
+            this.label46 = new System.Windows.Forms.Label();
             this.mnuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -623,10 +625,12 @@
             this.label6.TabIndex = 57;
             this.label6.Text = "Show Undecoded";
             this.Tooltip.SetToolTip(this.label6, "Enable or Disable the showing of non-encrypted messages in addition to the encryp" +
-                    "ted messages from other users");
+        "ted messages from other users");
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label46);
+            this.groupBox2.Controls.Add(this.cboIdle);
             this.groupBox2.Controls.Add(this.label44);
             this.groupBox2.Controls.Add(this.cboColorNames);
             this.groupBox2.Controls.Add(this.cboLanguage);
@@ -655,7 +659,7 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(368, 67);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(297, 371);
+            this.groupBox2.Size = new System.Drawing.Size(297, 393);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Battle.net Miscellaneous";
@@ -670,7 +674,7 @@
             this.label44.TabIndex = 92;
             this.label44.Text = "Colorful Names";
             this.Tooltip.SetToolTip(this.label44, "Enables or Disables the random coloring of every user (easier to distinguish who " +
-                    "is talking simply by the color of their nickname)");
+        "is talking simply by the color of their nickname)");
             // 
             // cboColorNames
             // 
@@ -718,7 +722,7 @@
             this.label30.TabIndex = 88;
             this.label30.Text = "Platform";
             this.Tooltip.SetToolTip(this.label30, "Sets the platform you want Battle.net to recoginize you\'re on. (IX86, PMAC, or XM" +
-                    "AC)");
+        "AC)");
             // 
             // cboPlatform
             // 
@@ -776,7 +780,7 @@
             this.label7.TabIndex = 83;
             this.label7.Text = "Away Idle";
             this.Tooltip.SetToolTip(this.label7, "Enable or Disable the infamous \"Away Idle\"\r\nExample:\r\n    x0.Baroness is away (Bo" +
-                    "t has been idle for 55 minutes.)");
+        "t has been idle for 55 minutes.)");
             // 
             // cboChannelOrder
             // 
@@ -801,7 +805,7 @@
             this.label2.TabIndex = 81;
             this.label2.Text = "Channel Order";
             this.Tooltip.SetToolTip(this.label2, "Enable or Disable the channel ordering process. Having this option on displays th" +
-                    "e operators at the top.");
+        "e operators at the top.");
             // 
             // cboADBanner
             // 
@@ -837,7 +841,7 @@
             this.label1.TabIndex = 78;
             this.label1.Text = "Bleed Timestamps";
             this.Tooltip.SetToolTip(this.label1, "Enable or Disable of setting the timestamp color to that of the message that foll" +
-                    "ows\r\nNOTE: Doesn\'t work with StyleScripting");
+        "ows\r\nNOTE: Doesn\'t work with StyleScripting");
             // 
             // cboBleedTimestamps
             // 
@@ -875,8 +879,8 @@
             this.label12.TabIndex = 72;
             this.label12.Text = "Bind IP";
             this.Tooltip.SetToolTip(this.label12, "Can be used to override the IP address with which the program uses to connect to " +
-                    "various networks\r\nWARNING: If you don\'t know what you\'re doing, don\'t mess with " +
-                    "this");
+        "various networks\r\nWARNING: If you don\'t know what you\'re doing, don\'t mess with " +
+        "this");
             // 
             // txtBindIP
             // 
@@ -896,8 +900,8 @@
             this.label10.TabIndex = 69;
             this.label10.Text = "Ignore Plugin Mask";
             this.Tooltip.SetToolTip(this.label10, "Adds the ability to ignore plugins that are automatically loaded (BCP file extens" +
-                    "ion)\r\nEach plugin is separated by a comma\r\nExample:\r\n    oper.bcp, winampcontrol" +
-                    ".bcp, aliases.bcp");
+        "ion)\r\nEach plugin is separated by a comma\r\nExample:\r\n    oper.bcp, winampcontrol" +
+        ".bcp, aliases.bcp");
             // 
             // txtIgnorePluginMask
             // 
@@ -916,7 +920,7 @@
             this.label5.TabIndex = 75;
             this.label5.Text = "Extended Whois";
             this.Tooltip.SetToolTip(this.label5, "Enable or Disable showing of the IP Address that you\'re using and the IP Address " +
-                    "of the server you\'re connected to when you /whois yourself");
+        "of the server you\'re connected to when you /whois yourself");
             // 
             // cboDescribeUserFlags
             // 
@@ -941,8 +945,8 @@
             this.label3.TabIndex = 73;
             this.label3.Text = "Describe User Flags";
             this.Tooltip.SetToolTip(this.label3, "Enable or Disable the explanation of exactly what type of flags a user has in the" +
-                    " channel\r\nExample (when you hover over the user):\r\nFlags: 10 (no udp) or Flags: " +
-                    "2 (operator)");
+        " channel\r\nExample (when you hover over the user):\r\nFlags: 10 (no udp) or Flags: " +
+        "2 (operator)");
             // 
             // label24
             // 
@@ -954,7 +958,7 @@
             this.label24.TabIndex = 83;
             this.label24.Text = "Server";
             this.Tooltip.SetToolTip(this.label24, "This specifies the BotNet server the bot will connect to.\r\nLeave as \"none\" if you" +
-                    " don\'t want to use BotNet.");
+        " don\'t want to use BotNet.");
             // 
             // label25
             // 
@@ -988,7 +992,7 @@
             this.label27.TabIndex = 112;
             this.label27.Text = "Username";
             this.Tooltip.SetToolTip(this.label27, "Username you\'ll use to login to BotNet.\r\nNOTE: Only alphanumeric characters and t" +
-                    "he [ ] brackets are allowed");
+        "he [ ] brackets are allowed");
             // 
             // label28
             // 
@@ -1011,8 +1015,8 @@
             this.label29.TabIndex = 118;
             this.label29.Text = "Database Mask";
             this.Tooltip.SetToolTip(this.label29, "The bot will only report users joining/leaving from these databases. Wildcards ca" +
-                    "n be used and databases should be separated by a comma\r\nExample:\r\n    *[vL]*,BNL" +
-                    "S,WebChannel,null");
+        "n be used and databases should be separated by a comma\r\nExample:\r\n    *[vL]*,BNL" +
+        "S,WebChannel,null");
             // 
             // label31
             // 
@@ -1024,7 +1028,7 @@
             this.label31.TabIndex = 120;
             this.label31.Text = "Server";
             this.Tooltip.SetToolTip(this.label31, "This specifies the IRC server the bot will connect to.\r\nLeave as \"none\" if you do" +
-                    "n\'t want to use IRC.");
+        "n\'t want to use IRC.");
             // 
             // label32
             // 
@@ -1047,7 +1051,7 @@
             this.label33.TabIndex = 127;
             this.label33.Text = "E-Mail";
             this.Tooltip.SetToolTip(this.label33, "E-Mail used for IRC.\r\nNOTE: You do NOT have to use a real e-mail unless otherwise" +
-                    " specified");
+        " specified");
             // 
             // label34
             // 
@@ -1081,8 +1085,8 @@
             this.label36.TabIndex = 134;
             this.label36.Text = "Channels";
             this.Tooltip.SetToolTip(this.label36, "Channels you want to automatically join upon connection. You must prepend the cha" +
-                    "nnels with # and can join multiple channels with a comma\r\nExample:\r\n    #channel" +
-                    "1,#channel2,#channel3");
+        "nnels with # and can join multiple channels with a comma\r\nExample:\r\n    #channel" +
+        "1,#channel2,#channel3");
             // 
             // label37
             // 
@@ -1094,7 +1098,7 @@
             this.label37.TabIndex = 137;
             this.label37.Text = "Perform";
             this.Tooltip.SetToolTip(this.label37, "Any actions or internal commands to process as soon as connection is sucessfully " +
-                    "achieved");
+        "achieved");
             // 
             // label38
             // 
@@ -1106,7 +1110,7 @@
             this.label38.TabIndex = 86;
             this.label38.Text = "Windows Notify";
             this.Tooltip.SetToolTip(this.label38, "When enabled, if the bot doesn\'t have focus and a specified string is called then" +
-                    " it will flash in the taskbar");
+        " it will flash in the taskbar");
             // 
             // label39
             // 
@@ -1118,7 +1122,7 @@
             this.label39.TabIndex = 87;
             this.label39.Text = "Notify Keyword";
             this.Tooltip.SetToolTip(this.label39, "This is the specified string that Windows Notify relies on. Keywords should be se" +
-                    "parated by a comma.\r\nExample:\r\n    Holly,Baroness,cats");
+        "parated by a comma.\r\nExample:\r\n    Holly,Baroness,cats");
             // 
             // label42
             // 
@@ -1152,8 +1156,8 @@
             this.label45.TabIndex = 138;
             this.label45.Text = "Ignore";
             this.Tooltip.SetToolTip(this.label45, "Users you want to ignore on IRC. You must specify the host with their username an" +
-                    "d can ignore multiple people with a comma\r\nExample:\r\n    *!*Name1@host,*!*Name2@" +
-                    "host");
+        "d can ignore multiple people with a comma\r\nExample:\r\n    *!*Name1@host,*!*Name2@" +
+        "host");
             // 
             // cboProfiles
             // 
@@ -1280,7 +1284,7 @@
             this.groupBox4.Controls.Add(this.label25);
             this.groupBox4.Controls.Add(this.txtBotNetDatabase);
             this.groupBox4.Controls.Add(this.label24);
-            this.groupBox4.Location = new System.Drawing.Point(368, 444);
+            this.groupBox4.Location = new System.Drawing.Point(368, 466);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(347, 184);
             this.groupBox4.TabIndex = 78;
@@ -1537,11 +1541,36 @@
             this.cboNotify.Size = new System.Drawing.Size(130, 21);
             this.cboNotify.TabIndex = 85;
             // 
+            // cboIdle
+            // 
+            this.cboIdle.BackColor = System.Drawing.Color.White;
+            this.cboIdle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboIdle.FormattingEnabled = true;
+            this.cboIdle.Items.AddRange(new object[] {
+            "Enabled",
+            "Disabled"});
+            this.cboIdle.Location = new System.Drawing.Point(161, 365);
+            this.cboIdle.Name = "cboIdle";
+            this.cboIdle.Size = new System.Drawing.Size(130, 21);
+            this.cboIdle.TabIndex = 93;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.Location = new System.Drawing.Point(6, 368);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(55, 13);
+            this.label46.TabIndex = 94;
+            this.label46.Text = "Count Idle";
+            this.Tooltip.SetToolTip(this.label46, "Enables or Disables \"hmm\" idle. If enabled, after 35 talk events on Battle.net th" +
+        "e bot will randomly say \"hmm\", \"hrmm\", or any other variant of \"hmm\"");
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 638);
+            this.ClientSize = new System.Drawing.Size(1032, 658);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -1707,6 +1736,8 @@
         private System.Windows.Forms.ComboBox cboColorNames;
         private System.Windows.Forms.TextBox txtIRCIgnore;
         private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.ComboBox cboIdle;
     }
 }
 
