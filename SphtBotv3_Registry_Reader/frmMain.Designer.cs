@@ -72,6 +72,8 @@
             this.cboShowUndecoded = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.cboIdle = new System.Windows.Forms.ComboBox();
             this.label44 = new System.Windows.Forms.Label();
             this.cboColorNames = new System.Windows.Forms.ComboBox();
             this.cboLanguage = new System.Windows.Forms.ComboBox();
@@ -153,8 +155,10 @@
             this.cboCTCP = new System.Windows.Forms.ComboBox();
             this.txtNotify = new System.Windows.Forms.TextBox();
             this.cboNotify = new System.Windows.Forms.ComboBox();
-            this.cboIdle = new System.Windows.Forms.ComboBox();
-            this.label46 = new System.Windows.Forms.Label();
+            this.cboColorNamesEX = new System.Windows.Forms.ComboBox();
+            this.cboIgnoreUTF = new System.Windows.Forms.ComboBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
             this.mnuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -191,7 +195,7 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(721, 593);
+            this.btnRead.Location = new System.Drawing.Point(15, 606);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(97, 35);
             this.btnRead.TabIndex = 3;
@@ -201,7 +205,7 @@
             // 
             // btnWrite
             // 
-            this.btnWrite.Location = new System.Drawing.Point(921, 593);
+            this.btnWrite.Location = new System.Drawing.Point(265, 606);
             this.btnWrite.Name = "btnWrite";
             this.btnWrite.Size = new System.Drawing.Size(97, 35);
             this.btnWrite.TabIndex = 4;
@@ -629,6 +633,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label48);
+            this.groupBox2.Controls.Add(this.label47);
+            this.groupBox2.Controls.Add(this.cboIgnoreUTF);
+            this.groupBox2.Controls.Add(this.cboColorNamesEX);
             this.groupBox2.Controls.Add(this.label46);
             this.groupBox2.Controls.Add(this.cboIdle);
             this.groupBox2.Controls.Add(this.label44);
@@ -642,7 +650,9 @@
             this.groupBox2.Controls.Add(this.cboAwayIdle);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.cboChannelOrder);
+            this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.txtIgnorePluginMask);
             this.groupBox2.Controls.Add(this.cboADBanner);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label1);
@@ -650,8 +660,6 @@
             this.groupBox2.Controls.Add(this.cboExtendedWhois);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.txtBindIP);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.txtIgnorePluginMask);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.cboDescribeUserFlags);
             this.groupBox2.Controls.Add(this.label3);
@@ -659,10 +667,35 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(368, 67);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(297, 393);
+            this.groupBox2.Size = new System.Drawing.Size(297, 447);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Battle.net Miscellaneous";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.Location = new System.Drawing.Point(6, 395);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(55, 13);
+            this.label46.TabIndex = 94;
+            this.label46.Text = "Count Idle";
+            this.Tooltip.SetToolTip(this.label46, "Enables or Disables \"hmm\" idle. If enabled, after 35 talk events on Battle.net th" +
+        "e bot will randomly say \"hmm\", \"hrmm\", or any other variant of \"hmm\"");
+            // 
+            // cboIdle
+            // 
+            this.cboIdle.BackColor = System.Drawing.Color.White;
+            this.cboIdle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboIdle.FormattingEnabled = true;
+            this.cboIdle.Items.AddRange(new object[] {
+            "Enabled",
+            "Disabled"});
+            this.cboIdle.Location = new System.Drawing.Point(161, 392);
+            this.cboIdle.Name = "cboIdle";
+            this.cboIdle.Size = new System.Drawing.Size(130, 21);
+            this.cboIdle.TabIndex = 93;
             // 
             // label44
             // 
@@ -696,7 +729,7 @@
             this.cboLanguage.FormattingEnabled = true;
             this.cboLanguage.Items.AddRange(new object[] {
             "English (United States)"});
-            this.cboLanguage.Location = new System.Drawing.Point(161, 311);
+            this.cboLanguage.Location = new System.Drawing.Point(161, 365);
             this.cboLanguage.Name = "cboLanguage";
             this.cboLanguage.Size = new System.Drawing.Size(130, 21);
             this.cboLanguage.TabIndex = 90;
@@ -705,7 +738,7 @@
             // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(6, 314);
+            this.label41.Location = new System.Drawing.Point(6, 368);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(55, 13);
             this.label41.TabIndex = 89;
@@ -894,7 +927,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(6, 236);
+            this.label10.Location = new System.Drawing.Point(6, 313);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(98, 13);
             this.label10.TabIndex = 69;
@@ -905,7 +938,7 @@
             // 
             // txtIgnorePluginMask
             // 
-            this.txtIgnorePluginMask.Location = new System.Drawing.Point(161, 233);
+            this.txtIgnorePluginMask.Location = new System.Drawing.Point(161, 310);
             this.txtIgnorePluginMask.Name = "txtIgnorePluginMask";
             this.txtIgnorePluginMask.Size = new System.Drawing.Size(130, 20);
             this.txtIgnorePluginMask.TabIndex = 70;
@@ -1284,7 +1317,7 @@
             this.groupBox4.Controls.Add(this.label25);
             this.groupBox4.Controls.Add(this.txtBotNetDatabase);
             this.groupBox4.Controls.Add(this.label24);
-            this.groupBox4.Location = new System.Drawing.Point(368, 466);
+            this.groupBox4.Location = new System.Drawing.Point(368, 520);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(347, 184);
             this.groupBox4.TabIndex = 78;
@@ -1541,36 +1574,60 @@
             this.cboNotify.Size = new System.Drawing.Size(130, 21);
             this.cboNotify.TabIndex = 85;
             // 
-            // cboIdle
+            // cboColorNamesEX
             // 
-            this.cboIdle.BackColor = System.Drawing.Color.White;
-            this.cboIdle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboIdle.FormattingEnabled = true;
-            this.cboIdle.Items.AddRange(new object[] {
+            this.cboColorNamesEX.BackColor = System.Drawing.Color.White;
+            this.cboColorNamesEX.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboColorNamesEX.FormattingEnabled = true;
+            this.cboColorNamesEX.Items.AddRange(new object[] {
             "Enabled",
             "Disabled"});
-            this.cboIdle.Location = new System.Drawing.Point(161, 365);
-            this.cboIdle.Name = "cboIdle";
-            this.cboIdle.Size = new System.Drawing.Size(130, 21);
-            this.cboIdle.TabIndex = 93;
+            this.cboColorNamesEX.Location = new System.Drawing.Point(161, 234);
+            this.cboColorNamesEX.Name = "cboColorNamesEX";
+            this.cboColorNamesEX.Size = new System.Drawing.Size(130, 21);
+            this.cboColorNamesEX.TabIndex = 95;
             // 
-            // label46
+            // cboIgnoreUTF
             // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.Location = new System.Drawing.Point(6, 368);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(55, 13);
-            this.label46.TabIndex = 94;
-            this.label46.Text = "Count Idle";
-            this.Tooltip.SetToolTip(this.label46, "Enables or Disables \"hmm\" idle. If enabled, after 35 talk events on Battle.net th" +
-        "e bot will randomly say \"hmm\", \"hrmm\", or any other variant of \"hmm\"");
+            this.cboIgnoreUTF.BackColor = System.Drawing.Color.White;
+            this.cboIgnoreUTF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboIgnoreUTF.FormattingEnabled = true;
+            this.cboIgnoreUTF.Items.AddRange(new object[] {
+            "Enabled",
+            "Disabled"});
+            this.cboIgnoreUTF.Location = new System.Drawing.Point(161, 419);
+            this.cboIgnoreUTF.Name = "cboIgnoreUTF";
+            this.cboIgnoreUTF.Size = new System.Drawing.Size(130, 21);
+            this.cboIgnoreUTF.TabIndex = 96;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Location = new System.Drawing.Point(6, 422);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(118, 13);
+            this.label47.TabIndex = 97;
+            this.label47.Text = "Ignore UTF-8 Encoding";
+            this.Tooltip.SetToolTip(this.label47, "Enables or Disables UTF-8 encoding");
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.Location = new System.Drawing.Point(6, 237);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(126, 13);
+            this.label48.TabIndex = 98;
+            this.label48.Text = "Colorful Names Extended";
+            this.Tooltip.SetToolTip(this.label48, "If \'Enabled\', will display the text the same color as the user (If Colorful Names" +
+        " is Enabled)");
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 658);
+            this.ClientSize = new System.Drawing.Size(1032, 707);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -1738,6 +1795,10 @@
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.ComboBox cboIdle;
+        private System.Windows.Forms.ComboBox cboColorNamesEX;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.ComboBox cboIgnoreUTF;
     }
 }
 

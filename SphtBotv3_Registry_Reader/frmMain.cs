@@ -119,10 +119,12 @@ namespace SphtBotv3_Registry_Manager
                     cboBleedTimestamps.Text = Convert.ToString((Int32)regKey.GetValue("Bleed Timestamps", 0)) == "1" ? "Enabled" : "Disabled";
                     cboCTCP.Text = Convert.ToString((Int32)regKey.GetValue("Disable CTCP", 0)) == "0" ? "Enabled" : "Disabled";
                     cboChannelOrder.Text = Convert.ToString((Int32)regKey.GetValue("Channel Order", 1)) == "1" ? "Enabled" : "Disabled";
+                    cboColorNamesEX.Text = Convert.ToString((Int32)regKey.GetValue("Colorful Names Extended", 0)) == "1" ? "Enabled" : "Disabled";
                     cboColorNames.Text = Convert.ToString((Int32)regKey.GetValue("Colorful Names", 0)) == "1" ? "Enabled" : "Disabled";
                     cboDescribeUserFlags.Text = Convert.ToString((Int32)regKey.GetValue("Describe User Flags", 1)) == "1" ? "Enabled" : "Disabled";
                     cboExtendedWhois.Text = Convert.ToString((Int32)regKey.GetValue("Extended Whois", 1)) == "1" ? "Enabled" : "Disabled";
                     cboIdle.Text = Convert.ToString((Int32)regKey.GetValue("Count Idle", 0)) == "1" ? "Enabled" : "Disabled";
+                    cboIgnoreUTF.Text = Convert.ToString((Int32)regKey.GetValue("Ignored UTF8", 0)) == "1" ? "Enabled" : "Disabled";
                     cboIRCServer.Text = (string)regKey.GetValue("IRC Server", "none");
                     cboNotify.Text = Convert.ToString((Int32)regKey.GetValue("Disable Windows Notify", 0)) == "0" ? "Enabled" : "Disabled";
                     cboRealmName.Text = (string)regKey.GetValue("Realm Name", "USEast");
@@ -317,10 +319,12 @@ namespace SphtBotv3_Registry_Manager
                 SetAbled(regKey, cboAwayIdle, "Away Idle", RegistryValueKind.DWord);
                 SetAbled(regKey, cboBleedTimestamps, "Bleed Timestamps", RegistryValueKind.DWord);
                 SetAbled(regKey, cboChannelOrder, "Channel Order", RegistryValueKind.DWord);
+                SetAbled(regKey, cboColorNamesEX, "Colorful Names Extended", RegistryValueKind.DWord);
                 SetAbled(regKey, cboColorNames, "Colorful Names", RegistryValueKind.DWord);
                 SetAbled(regKey, cboDescribeUserFlags, "Describe User Flags", RegistryValueKind.DWord);
                 SetAbled(regKey, cboExtendedWhois, "Extended Whois", RegistryValueKind.DWord);
                 SetAbled(regKey, cboIdle, "Count Idle", RegistryValueKind.DWord);
+                SetAbled(regKey, cboIgnoreUTF, "Ignored UTF8", RegistryValueKind.DWord);
                 SetAbled(regKey, cboNotify, "Disable Windows Notify", RegistryValueKind.DWord);
                 SetAbled(regKey, cboCTCP, "Disable CTCP", RegistryValueKind.DWord);
                 SetAbled(regKey, cboShowUndecoded, "Show Undecoded", RegistryValueKind.DWord);
