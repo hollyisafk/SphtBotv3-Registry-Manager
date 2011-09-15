@@ -126,6 +126,7 @@ namespace SphtBotv3_Registry_Manager
                     cboIdle.Text = Convert.ToString((Int32)regKey.GetValue("Count Idle", 0)) == "1" ? "Enabled" : "Disabled";
                     cboIgnoreUTF.Text = Convert.ToString((Int32)regKey.GetValue("Ignored UTF8", 0)) == "1" ? "Enabled" : "Disabled";
                     cboIRCServer.Text = (string)regKey.GetValue("IRC Server", "none");
+                    cboIRCMode.Text = Convert.ToString((Int32)regKey.GetValue("IRC Show User Mode", 1)) == "1" ? "Enabled" : "Disabled";
                     cboNotify.Text = Convert.ToString((Int32)regKey.GetValue("Disable Windows Notify", 0)) == "0" ? "Enabled" : "Disabled";
                     cboRealmName.Text = (string)regKey.GetValue("Realm Name", "USEast");
                     cboServer.Text = (string)regKey.GetValue("Server", "useast.battle.net");
@@ -325,6 +326,7 @@ namespace SphtBotv3_Registry_Manager
                 SetAbled(regKey, cboExtendedWhois, "Extended Whois", RegistryValueKind.DWord);
                 SetAbled(regKey, cboIdle, "Count Idle", RegistryValueKind.DWord);
                 SetAbled(regKey, cboIgnoreUTF, "Ignored UTF8", RegistryValueKind.DWord);
+                SetAbled(regKey, cboIRCMode, "IRC Show User Mode", RegistryValueKind.DWord);
                 SetAbled(regKey, cboNotify, "Disable Windows Notify", RegistryValueKind.DWord);
                 SetAbled(regKey, cboCTCP, "Disable CTCP", RegistryValueKind.DWord);
                 SetAbled(regKey, cboShowUndecoded, "Show Undecoded", RegistryValueKind.DWord);

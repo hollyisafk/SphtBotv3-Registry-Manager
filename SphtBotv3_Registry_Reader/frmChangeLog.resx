@@ -118,7 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="rtbChangeLog.Text" xml:space="preserve">
-    <value>1.2.0913.1828 (Release)
+    <value>1.2.0915.0029 (Release)
+- Added IRC Show Usermode
+
+1.2.0913.1828 (Release)
 - Added Colorful Names Extended and Ignore UTF-8 Encoding
 
 1.2.0909.0617 (Release)

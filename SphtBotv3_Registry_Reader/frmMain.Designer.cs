@@ -72,6 +72,10 @@
             this.cboShowUndecoded = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.cboIgnoreUTF = new System.Windows.Forms.ComboBox();
+            this.cboColorNamesEX = new System.Windows.Forms.ComboBox();
             this.label46 = new System.Windows.Forms.Label();
             this.cboIdle = new System.Windows.Forms.ComboBox();
             this.label44 = new System.Windows.Forms.Label();
@@ -85,7 +89,9 @@
             this.cboAwayIdle = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cboChannelOrder = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtIgnorePluginMask = new System.Windows.Forms.TextBox();
             this.cboADBanner = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -93,8 +99,6 @@
             this.cboExtendedWhois = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtBindIP = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtIgnorePluginMask = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cboDescribeUserFlags = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -155,10 +159,8 @@
             this.cboCTCP = new System.Windows.Forms.ComboBox();
             this.txtNotify = new System.Windows.Forms.TextBox();
             this.cboNotify = new System.Windows.Forms.ComboBox();
-            this.cboColorNamesEX = new System.Windows.Forms.ComboBox();
-            this.cboIgnoreUTF = new System.Windows.Forms.ComboBox();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
+            this.cboIRCMode = new System.Windows.Forms.ComboBox();
+            this.label49 = new System.Windows.Forms.Label();
             this.mnuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -672,6 +674,55 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Battle.net Miscellaneous";
             // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.Location = new System.Drawing.Point(6, 237);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(126, 13);
+            this.label48.TabIndex = 98;
+            this.label48.Text = "Colorful Names Extended";
+            this.Tooltip.SetToolTip(this.label48, "If \'Enabled\', will display the text the same color as the user (If Colorful Names" +
+        " is Enabled)");
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Location = new System.Drawing.Point(6, 422);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(118, 13);
+            this.label47.TabIndex = 97;
+            this.label47.Text = "Ignore UTF-8 Encoding";
+            this.Tooltip.SetToolTip(this.label47, "Enables or Disables UTF-8 encoding");
+            // 
+            // cboIgnoreUTF
+            // 
+            this.cboIgnoreUTF.BackColor = System.Drawing.Color.White;
+            this.cboIgnoreUTF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboIgnoreUTF.FormattingEnabled = true;
+            this.cboIgnoreUTF.Items.AddRange(new object[] {
+            "Enabled",
+            "Disabled"});
+            this.cboIgnoreUTF.Location = new System.Drawing.Point(161, 419);
+            this.cboIgnoreUTF.Name = "cboIgnoreUTF";
+            this.cboIgnoreUTF.Size = new System.Drawing.Size(130, 21);
+            this.cboIgnoreUTF.TabIndex = 96;
+            // 
+            // cboColorNamesEX
+            // 
+            this.cboColorNamesEX.BackColor = System.Drawing.Color.White;
+            this.cboColorNamesEX.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboColorNamesEX.FormattingEnabled = true;
+            this.cboColorNamesEX.Items.AddRange(new object[] {
+            "Enabled",
+            "Disabled"});
+            this.cboColorNamesEX.Location = new System.Drawing.Point(161, 234);
+            this.cboColorNamesEX.Name = "cboColorNamesEX";
+            this.cboColorNamesEX.Size = new System.Drawing.Size(130, 21);
+            this.cboColorNamesEX.TabIndex = 95;
+            // 
             // label46
             // 
             this.label46.AutoSize = true;
@@ -828,6 +879,19 @@
             this.cboChannelOrder.Size = new System.Drawing.Size(130, 21);
             this.cboChannelOrder.TabIndex = 82;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(6, 313);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(98, 13);
+            this.label10.TabIndex = 69;
+            this.label10.Text = "Ignore Plugin Mask";
+            this.Tooltip.SetToolTip(this.label10, "Adds the ability to ignore plugins that are automatically loaded (BCP file extens" +
+        "ion)\r\nEach plugin is separated by a comma\r\nExample:\r\n    oper.bcp, winampcontrol" +
+        ".bcp, aliases.bcp");
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -839,6 +903,13 @@
             this.label2.Text = "Channel Order";
             this.Tooltip.SetToolTip(this.label2, "Enable or Disable the channel ordering process. Having this option on displays th" +
         "e operators at the top.");
+            // 
+            // txtIgnorePluginMask
+            // 
+            this.txtIgnorePluginMask.Location = new System.Drawing.Point(161, 310);
+            this.txtIgnorePluginMask.Name = "txtIgnorePluginMask";
+            this.txtIgnorePluginMask.Size = new System.Drawing.Size(130, 20);
+            this.txtIgnorePluginMask.TabIndex = 70;
             // 
             // cboADBanner
             // 
@@ -922,26 +993,6 @@
             this.txtBindIP.Name = "txtBindIP";
             this.txtBindIP.Size = new System.Drawing.Size(130, 20);
             this.txtBindIP.TabIndex = 71;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(6, 313);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(98, 13);
-            this.label10.TabIndex = 69;
-            this.label10.Text = "Ignore Plugin Mask";
-            this.Tooltip.SetToolTip(this.label10, "Adds the ability to ignore plugins that are automatically loaded (BCP file extens" +
-        "ion)\r\nEach plugin is separated by a comma\r\nExample:\r\n    oper.bcp, winampcontrol" +
-        ".bcp, aliases.bcp");
-            // 
-            // txtIgnorePluginMask
-            // 
-            this.txtIgnorePluginMask.Location = new System.Drawing.Point(161, 310);
-            this.txtIgnorePluginMask.Name = "txtIgnorePluginMask";
-            this.txtIgnorePluginMask.Size = new System.Drawing.Size(130, 20);
-            this.txtIgnorePluginMask.TabIndex = 70;
             // 
             // label5
             // 
@@ -1519,6 +1570,8 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.label49);
+            this.groupBox6.Controls.Add(this.cboIRCMode);
             this.groupBox6.Controls.Add(this.label43);
             this.groupBox6.Controls.Add(this.txtFinger);
             this.groupBox6.Controls.Add(this.label42);
@@ -1529,7 +1582,7 @@
             this.groupBox6.Controls.Add(this.cboNotify);
             this.groupBox6.Location = new System.Drawing.Point(721, 444);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(297, 143);
+            this.groupBox6.Size = new System.Drawing.Size(297, 156);
             this.groupBox6.TabIndex = 80;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Miscellaneous";
@@ -1574,54 +1627,29 @@
             this.cboNotify.Size = new System.Drawing.Size(130, 21);
             this.cboNotify.TabIndex = 85;
             // 
-            // cboColorNamesEX
+            // cboIRCMode
             // 
-            this.cboColorNamesEX.BackColor = System.Drawing.Color.White;
-            this.cboColorNamesEX.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboColorNamesEX.FormattingEnabled = true;
-            this.cboColorNamesEX.Items.AddRange(new object[] {
+            this.cboIRCMode.BackColor = System.Drawing.Color.White;
+            this.cboIRCMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboIRCMode.FormattingEnabled = true;
+            this.cboIRCMode.Items.AddRange(new object[] {
             "Enabled",
             "Disabled"});
-            this.cboColorNamesEX.Location = new System.Drawing.Point(161, 234);
-            this.cboColorNamesEX.Name = "cboColorNamesEX";
-            this.cboColorNamesEX.Size = new System.Drawing.Size(130, 21);
-            this.cboColorNamesEX.TabIndex = 95;
+            this.cboIRCMode.Location = new System.Drawing.Point(161, 126);
+            this.cboIRCMode.Name = "cboIRCMode";
+            this.cboIRCMode.Size = new System.Drawing.Size(130, 21);
+            this.cboIRCMode.TabIndex = 93;
             // 
-            // cboIgnoreUTF
+            // label49
             // 
-            this.cboIgnoreUTF.BackColor = System.Drawing.Color.White;
-            this.cboIgnoreUTF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboIgnoreUTF.FormattingEnabled = true;
-            this.cboIgnoreUTF.Items.AddRange(new object[] {
-            "Enabled",
-            "Disabled"});
-            this.cboIgnoreUTF.Location = new System.Drawing.Point(161, 419);
-            this.cboIgnoreUTF.Name = "cboIgnoreUTF";
-            this.cboIgnoreUTF.Size = new System.Drawing.Size(130, 21);
-            this.cboIgnoreUTF.TabIndex = 96;
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.Location = new System.Drawing.Point(6, 422);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(118, 13);
-            this.label47.TabIndex = 97;
-            this.label47.Text = "Ignore UTF-8 Encoding";
-            this.Tooltip.SetToolTip(this.label47, "Enables or Disables UTF-8 encoding");
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.Location = new System.Drawing.Point(6, 237);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(126, 13);
-            this.label48.TabIndex = 98;
-            this.label48.Text = "Colorful Names Extended";
-            this.Tooltip.SetToolTip(this.label48, "If \'Enabled\', will display the text the same color as the user (If Colorful Names" +
-        " is Enabled)");
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.Location = new System.Drawing.Point(6, 129);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(113, 13);
+            this.label49.TabIndex = 94;
+            this.label49.Text = "Display IRC Usermode";
+            this.Tooltip.SetToolTip(this.label49, "Sets the string to reply when someone sends you a finger request via IRC\r\n");
             // 
             // frmMain
             // 
@@ -1799,6 +1827,8 @@
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.ComboBox cboIgnoreUTF;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.ComboBox cboIRCMode;
     }
 }
 
