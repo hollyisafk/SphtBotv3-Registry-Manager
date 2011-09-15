@@ -121,6 +121,7 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
             this.cboProfiles = new System.Windows.Forms.ComboBox();
             this.lblProfiles = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -155,12 +156,11 @@
             this.txtIRCName = new System.Windows.Forms.TextBox();
             this.cboIRCServer = new System.Windows.Forms.ComboBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.cboIRCMode = new System.Windows.Forms.ComboBox();
             this.txtFinger = new System.Windows.Forms.TextBox();
             this.cboCTCP = new System.Windows.Forms.ComboBox();
             this.txtNotify = new System.Windows.Forms.TextBox();
             this.cboNotify = new System.Windows.Forms.ComboBox();
-            this.cboIRCMode = new System.Windows.Forms.ComboBox();
-            this.label49 = new System.Windows.Forms.Label();
             this.mnuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -1243,6 +1243,18 @@
         "d can ignore multiple people with a comma\r\nExample:\r\n    *!*Name1@host,*!*Name2@" +
         "host");
             // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.Location = new System.Drawing.Point(6, 129);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(113, 13);
+            this.label49.TabIndex = 94;
+            this.label49.Text = "Display IRC Usermode";
+            this.Tooltip.SetToolTip(this.label49, "Enable or Disable the showing of usermodes on IRC (+ for voice, @ for operator, e" +
+        "tc.)");
+            // 
             // cboProfiles
             // 
             this.cboProfiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1587,6 +1599,19 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Miscellaneous";
             // 
+            // cboIRCMode
+            // 
+            this.cboIRCMode.BackColor = System.Drawing.Color.White;
+            this.cboIRCMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboIRCMode.FormattingEnabled = true;
+            this.cboIRCMode.Items.AddRange(new object[] {
+            "Enabled",
+            "Disabled"});
+            this.cboIRCMode.Location = new System.Drawing.Point(161, 126);
+            this.cboIRCMode.Name = "cboIRCMode";
+            this.cboIRCMode.Size = new System.Drawing.Size(130, 21);
+            this.cboIRCMode.TabIndex = 93;
+            // 
             // txtFinger
             // 
             this.txtFinger.Location = new System.Drawing.Point(161, 100);
@@ -1626,30 +1651,6 @@
             this.cboNotify.Name = "cboNotify";
             this.cboNotify.Size = new System.Drawing.Size(130, 21);
             this.cboNotify.TabIndex = 85;
-            // 
-            // cboIRCMode
-            // 
-            this.cboIRCMode.BackColor = System.Drawing.Color.White;
-            this.cboIRCMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboIRCMode.FormattingEnabled = true;
-            this.cboIRCMode.Items.AddRange(new object[] {
-            "Enabled",
-            "Disabled"});
-            this.cboIRCMode.Location = new System.Drawing.Point(161, 126);
-            this.cboIRCMode.Name = "cboIRCMode";
-            this.cboIRCMode.Size = new System.Drawing.Size(130, 21);
-            this.cboIRCMode.TabIndex = 93;
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(6, 129);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(113, 13);
-            this.label49.TabIndex = 94;
-            this.label49.Text = "Display IRC Usermode";
-            this.Tooltip.SetToolTip(this.label49, "Sets the string to reply when someone sends you a finger request via IRC\r\n");
             // 
             // frmMain
             // 
