@@ -50,12 +50,12 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(389, 26);
             this.label2.TabIndex = 1;
-            this.label2.Text = "This program was last compiled on Friday, September 15, 2011 @ 12:44 AM EST\r\nThis" +
+            this.label2.Text = "This program was last compiled on Friday, September 15, 2011 @ 12:49 AM EST\r\nThis" +
     " program was coded in C# for the .NET 4.0 Framework";
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(137, 107);
+            this.btnClose.Location = new System.Drawing.Point(148, 107);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(100, 46);
             this.btnClose.TabIndex = 2;
