@@ -1123,7 +1123,7 @@
             this.label32.Size = new System.Drawing.Size(31, 13);
             this.label32.TabIndex = 122;
             this.label32.Text = "Ident";
-            this.Tooltip.SetToolTip(this.label32, "Your real name you use for IRC when people whois you.\r\n(Optional)");
+            this.Tooltip.SetToolTip(this.label32, "Your Ident name you use for IRC when people whois you.");
             // 
             // label33
             // 
