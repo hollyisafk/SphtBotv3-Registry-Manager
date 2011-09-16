@@ -1120,9 +1120,9 @@
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.Location = new System.Drawing.Point(6, 52);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(60, 13);
+            this.label32.Size = new System.Drawing.Size(31, 13);
             this.label32.TabIndex = 122;
-            this.label32.Text = "Real Name";
+            this.label32.Text = "Ident";
             this.Tooltip.SetToolTip(this.label32, "Your real name you use for IRC when people whois you.\r\n(Optional)");
             // 
             // label33
