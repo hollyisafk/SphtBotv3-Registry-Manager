@@ -24,17 +24,17 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://darkblizz.org/baroness/Battle.net%2520Bots/SphtBotv3%2520Registry%2520Manager/</InstallUrl>
-    <UpdateUrl>http://darkblizz.org/baroness/Battle.net/SphtBotv3%2520Registry%2520Manager/</UpdateUrl>
+    <InstallUrl>http://darkblizz.org/baroness/Battle.net/SBv3RM/publish/</InstallUrl>
+    <UpdateUrl>http://darkblizz.org/baroness/Battle.net/SBv3RM/publish/</UpdateUrl>
     <TargetCulture>en-US</TargetCulture>
     <ProductName>SphtBotv3 Registry Manager</ProductName>
     <PublisherName>Holly Lane</PublisherName>
-    <MinimumRequiredVersion>1.2.0916.1840</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.2.0921.0150</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>1840</ApplicationRevision>
-    <ApplicationVersion>1.2.0916.1840</ApplicationVersion>
+    <ApplicationRevision>150</ApplicationRevision>
+    <ApplicationVersion>1.2.0921.0150</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -187,10 +187,22 @@
     <Content Include="OldCode.txt" />
     <Content Include="registry.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="OldCode.txt">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_UpdateAssemblyVersion="True" BuildVersion_BuildVersioningStyle="None.None.MonthAndDayStamp.TimeStamp" BuildVersion_StartDate="2011/8/29" BuildVersion_UpdateFileVersion="True" />
+      <UserProperties BuildVersion_UpdateAssemblyVersion="True" BuildVersion_BuildVersioningStyle="None.None.MonthAndDayStamp.TimeStamp" BuildVersion_StartDate="2011/9/21" BuildVersion_UpdateFileVersion="True" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
