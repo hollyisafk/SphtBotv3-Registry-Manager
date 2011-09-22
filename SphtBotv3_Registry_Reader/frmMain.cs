@@ -158,6 +158,7 @@ namespace SphtBotv3_Registry_Manager
                     txtNotify.Text = (string)regKey.GetValue("Notify Keyword", System.String.Empty);
                     txtPerform.Text = Output;
                     txtRealmCharacter.Text = (string)regKey.GetValue("Realm Character Name", System.String.Empty);
+                    txtSVP.Text = Convert.ToString((Int32)regKey.GetValue("ShortVisit Protect", 2500));
                     txtUDPPort.Text = Convert.ToString((Int32)regKey.GetValue("UDP Port", 0));
 
                     switch ((string)regKey.GetValue("BotNet Database", System.String.Empty))
@@ -189,6 +190,15 @@ namespace SphtBotv3_Registry_Manager
                         cboPlatform.Text = "Power Macintosh";
                     else if ((string)regKey.GetValue("Platform", "IX86") == "XMAC")
                         cboPlatform.Text = "Macintosh (Mac OS X)";
+
+                    if (Convert.ToString((Int32)regKey.GetValue("Window Options", 0)) == "0")
+                        cboWindowOptions.Text = "Normal";
+                    else if (Convert.ToString((Int32)regKey.GetValue("Window Options", 0)) == "1")
+                        cboWindowOptions.Text = "Minimized";
+                    else if (Convert.ToString((Int32)regKey.GetValue("Window Options", 0)) == "2")
+                        cboWindowOptions.Text = "Maximized";
+                    else if (Convert.ToString((Int32)regKey.GetValue("Window Options", 0)) == "3")
+                        cboWindowOptions.Text = "Disabled";
 
                     if ((string)regKey.GetValue("Product Language", "enUS") == System.String.Empty || (string)regKey.GetValue("Product Language", "enUS") == "enUS")
                         cboLanguage.Text = "English (United States)";
@@ -366,12 +376,13 @@ namespace SphtBotv3_Registry_Manager
                 SetValue(regKey, "Server", cboServer.Text, RegistryValueKind.String);
                 SetValue(regKey, "Username", txtBNETUsername.Text, RegistryValueKind.String);
 
+                regKey.SetValue("ShortVisit Protect", txtSVP.Text, RegistryValueKind.DWord);
+                regKey.SetValue("UDP Port", txtUDPPort.Text, RegistryValueKind.DWord);
+
                 if (txtPerform.Text == System.String.Empty)
                     regKey.SetValue("IRC AutoSend", new byte[] {0000}, RegistryValueKind.Binary);
                 else
                     regKey.SetValue("IRC AutoSend", Value, RegistryValueKind.Binary);
-
-                regKey.SetValue("UDP Port", txtUDPPort.Text, RegistryValueKind.DWord);
 
                 if (cboPing.Text == "Ignore pre-logon ping (-1ms ping)")
                 {
@@ -388,6 +399,15 @@ namespace SphtBotv3_Registry_Manager
                     regKey.SetValue("Post-Reply Ping", 0, RegistryValueKind.DWord);
                     regKey.SetValue("Ignore Ping", 0, RegistryValueKind.DWord);
                 }
+
+                if (cboWindowOptions.Text == "Normal")
+                    regKey.SetValue("Window Options", 0, RegistryValueKind.DWord);
+                else if (cboWindowOptions.Text == "Minimized")
+                    regKey.SetValue("Window Options", 1, RegistryValueKind.DWord);
+                else if (cboWindowOptions.Text == "Maximized")
+                    regKey.SetValue("Window Options", 2, RegistryValueKind.DWord);
+                else if (cboWindowOptions.Text == "Disabled")
+                    regKey.SetValue("Window Options", 3, RegistryValueKind.DWord);
 
                 if (cboPlatform.Text == "Intel x86")
                     regKey.SetValue("Platform", "IX86", RegistryValueKind.String);

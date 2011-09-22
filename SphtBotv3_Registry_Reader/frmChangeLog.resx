@@ -118,7 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="rtbChangeLog.Text" xml:space="preserve">
-    <value>1.2.0921.0150 (Release)
+    <value>1.2.0921.2250 (Release)
+- Added 'Window Options' and 'ShortVisit Protect'
+
+1.2.0921.0150 (Release)
 - Fixed the 'Ignore UTF-8 Encoding" read/write problem
 
 1.2.0916.1911 (Release)

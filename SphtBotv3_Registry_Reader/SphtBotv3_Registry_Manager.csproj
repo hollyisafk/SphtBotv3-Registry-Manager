@@ -29,12 +29,12 @@
     <TargetCulture>en-US</TargetCulture>
     <ProductName>SphtBotv3 Registry Manager</ProductName>
     <PublisherName>Holly Lane</PublisherName>
-    <MinimumRequiredVersion>1.2.0921.0150</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.2.0921.2255</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>150</ApplicationRevision>
-    <ApplicationVersion>1.2.0921.0150</ApplicationVersion>
+    <ApplicationRevision>2255</ApplicationRevision>
+    <ApplicationVersion>1.2.0921.2255</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -202,7 +202,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_UpdateAssemblyVersion="True" BuildVersion_BuildVersioningStyle="None.None.MonthAndDayStamp.TimeStamp" BuildVersion_StartDate="2011/9/21" BuildVersion_UpdateFileVersion="True" />
+      <UserProperties BuildVersion_UpdateFileVersion="True" BuildVersion_StartDate="2011/9/21" BuildVersion_BuildVersioningStyle="None.None.MonthAndDayStamp.TimeStamp" BuildVersion_UpdateAssemblyVersion="True" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
